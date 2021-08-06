@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create Elements</title>
+</head>
+
+
+
+<body>
+<p>Hi It's create Element practice here </p>
+</body>
+<script>
+// The createElement() method creates an Element Node with the specified name.
+
+const para=document.createElement("p");
+para.innerText="Hello Buddy";
+document.body.appendChild(para);
+
+const hr1= document.createElement("hr");
+document.body.appendChild(hr1);
+
+const btn=document.createElement("button");
+
+const txtnode=document.createTextNode("Hello I am button !");
+btn.appendChild(txtnode);
+document.body.appendChild(btn);
+
+const para1=document.createElement("p");
+const txtnd=document.createTextNode("Hello I am Paragraph !");
+para1.appendChild(txtnd);
+document.body.appendChild(para1);
+
+const fm= document.createElement("form");
+const ip=document.createElement("input");
+fm.appendChild(ip);
+document.body.appendChild(fm);
+
+// const info=document.body.innerText;
+// alert(info);
+// para.innerText=(info);
+
+</script>
+
+
+
+</html>

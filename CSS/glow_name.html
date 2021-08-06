@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajay kumar verma </title>
+</head>
+<style>
+p{
+color:white;
+text-shadow: 3px 3px 2px pink;
+
+animation-direction: alternate-reverse;
+animation-name: para;
+animation-iteration-count: infinite;
+animation-duration: 1s;
+position: relative;
+}
+
+@keyframes para {
+
+0%{
+color:white;
+text-shadow: 3px 3px 2px pink;
+top: 1px; left: 1px; 
+
+}
+25%{
+color: white;
+text-shadow: 2px 2px 3px orangered;
+top: 4px; left: 2px;
+}
+
+75%{
+color: white;
+text-shadow: 2px 2px 3px yellowgreen;
+top: 5px; left: 2px;
+}
+100%{
+color: black;
+text-shadow: 2px 2px 3px red;
+top: 7px; left: 4px;
+}
+
+
+
+}
+
+
+
+
+</style>
+
+
+<body>
+   
+
+<p>Ajay kumar verma</p>
+
+
+</body>
+
+<script>
+const name= prompt("Enter your name");
+
+if(name!=""){
+    
+document.getElementsByTagName("p")[0].innerText=name;
+
+}
+
+</script>
+
+</html>

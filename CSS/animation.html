@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation </title>
+<style>
+div{
+background-color: red;
+height: 200px;
+width: 200px;
+animation-name: boxs;
+/* it is used for delay the animation  */
+animation-delay: 1s; 
+animation-duration:20s;
+/* This is used for no of count  */
+animation-iteration-count: infinite; 
+/* this is used to reverse the proces after end  */
+animation-direction:alternate; 
+/* alternate it start from reverse  */
+animation-fill-mode: forwards;
+/* it is used for , where to stop   */
+
+/* animation-play-state: running;
+it is used for pause or running 
+ */
+position: relative;
+
+ animation-timing-function: ease-in;
+
+}
+
+
+
+
+
+@keyframes boxs{
+
+  0%   {background: red; left: 0px; top: 0px; box-shadow: 32px 32px 4px pink; }
+  10%  {background: yellow; left: 200px; top: 0px;  box-shadow: 32px 42px 4px pink; }
+  20%  {background: blue; left: 200px; top: 200px; box-shadow: 42px 32px 4px pink; }
+  30%  {background: green; left: 0px; top: 200px;}
+  100% {background: red; left: 0px; top: 0px;}
+/* percentage is used for diving part of works  */
+}
+
+
+</style>
+
+
+
+</head>
+
+
+
+<body>
+    <!-- 
+@keyframes is used for changing property from to   
+     -->
+
+
+<div></div>
+
+
+</body>
+
+
+
+</html>

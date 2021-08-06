@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECMA Script</title>
+</head>
+<body>
+    
+
+
+    <script>
+// ES5 Features
+
+ar="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+console.log(ar.charAt(1),ar[1]) // we can access char making an array 
+console.log("Ajay kumar "+ // Splitting one line into multiple line
+"Verma "
+)
+
+
+var obj = {number: "John", new: "yes"} // Reserver word can be used for name of an array 
+console.log(obj.number,obj.new)
+
+var str = "       Hello World!        ";
+console.log(str.trim(),"\n",str);  // it remove white spaces 
+
+console.log(Array.isArray(str)) // it check whether object is an Array or not  
+
+var numbers = [45, 4, 9, 16, 25];
+  numbers.forEach(ele=>console.log(ele)) // it provide forEach loop for traversing the array 
+//   we can also use forOf 
+
+var numbers1 = [45, 4, 9, 16, 25];
+console.log(numbers1.map(e=>e*2)) // map method makes chanhes in each elements
+
+
+var number3 = [45, 4, 19, 6, 25];
+
+console.log(number3.filter(e=>e>=18)) // It return ele that satisfied tha condition
+
+
+
+// Array.reduce is used for make some calculation or manipulation  of given array
+
+num=["1","2","3","4"]
+
+console.log(num.reduce((a,b)=>a+b))
+console.log(num.reduce((a,b)=>a*b))
+
+
+var numbers4 = [45, 4, 9, 16, 25];
+var sum = numbers1.reduceRight(myFunction);
+
+function myFunction(total, value) {
+  return total + value;
+}
+
+console.log(sum)
+
+
+
+// Array.every  it check all elements whether it satisfied condition or not 
+
+age=[22,34,18,62,67,28,29,45] // it check condition to all elements
+
+console.log(age.every(e=>e>=18))
+
+
+// Array.some()
+// This example checks if some values are over 18:
+
+age=[22,34,18,6,67,28,29,45] // it return true  anyone satisfied given condtion 
+
+console.log(age.some(e=>e<18)) // it is for checking satisfied one ele given condtion
+
+
+//Array.indexOf()
+
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.indexOf("Apple"))
+
+
+
+
+    </script>
+</body>
+</html>

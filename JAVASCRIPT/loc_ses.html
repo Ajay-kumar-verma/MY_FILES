@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local and session storage </title>
+</head>
+<body>
+    
+<script>
+//  setItem is used for set the data to brower
+ localStorage.setItem("name","Ajay kumar verma");
+localStorage.setItem("mob","997");
+
+//getItem is used for get the data from the brower 
+const name1= localStorage.getItem("name");
+console.log(name1);
+// localStorage.clear();  It is used for clearation 
+localStorage.removeItem("mob");  // it is used for removing particular item 
+
+console.log(localStorage.getItem("mob"));
+
+// for storing array or object we have to stringify first 
+
+var obj={
+name:"Ajay",
+mob:997354,
+addr:"bangalore"
+}
+
+var data=JSON.stringify(obj);
+localStorage.setItem("info",data);
+console.log(JSON.parse(localStorage.getItem("info")).name);
+
+// localStorage is valid forever
+
+// Session storage  valid till brower is open
+
+sessionStorage.setItem("name","vikash kumar");
+console.log(sessionStorage.getItem("name"));
+
+
+
+</script>
+
+</body>
+</html>

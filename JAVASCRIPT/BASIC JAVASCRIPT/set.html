@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sets in javascript</title>
+</head>
+<body>
+    
+    <script>
+// A Set is a collection of unique values.
+// Each value may occur only once in a Set.
+// A Set can hold any values of any data type.
+
+// Create a Set
+const letters = new Set();
+
+letters.add("a");
+letters.add("b");
+letters.add("c");
+letters.add("d");
+letters.add("b");
+letters.add("d");
+letters.add("d");
+letters.add("b");
+letters.add("d");
+letters.add("p");
+letters.add("b");
+letters.add("d");
+
+letters.forEach(e=>console.log(e));
+console.log(typeof letters); // it return objects
+
+
+
+
+console.log("JAVASCRIPT METHOD ");
+
+// new Set()	Creates a new Set object
+// add()	Adds a new element to the Set
+// clear()	Removes all elements from a Set
+// delete()	Removes an element specified by its value.
+// entries()	Returns an array of the values in a Set object
+// has()	Returns true if a value exists
+// forEach()	Invokes a callback for each element
+// keys()	Returns an array of the values in a Set object
+// values()	Same as keys()
+// size	Returns the element count
+
+
+// letters.clear();
+letters.delete("a"); // it is used for deleteing particular value 
+
+console.log(letters,letters.size,letters.entries())
+
+
+
+    </script>
+</body>
+</html>

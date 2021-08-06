@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+/* Div must have three property 1 height 2 width 3 background-color */
+
+
+
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+}
+
+#div1 {transition-timing-function: linear;}
+#div2 {transition-timing-function: ease;}
+#div3 {transition-timing-function: ease-in;}
+#div4 {transition-timing-function: ease-out;}
+#div5 {transition-timing-function: ease-in-out;}
+
+div:hover {
+  width: 300px;
+}
+#div1{
+height:200px;
+width: 200px;
+background-color: cadetblue;
+/* by default transition time is zero   for all*/
+transition: all; /* all for all transition none for none transition */   
+/* transition is defineed as property and time together */
+transition:width 2s,height 12s,transform 1s;
+/* transition-duration:  ; */
+transition-delay: 2s;
+}
+
+
+/* If we dont select, selector it will select itself automatically  */
+#div1:hover {
+height: 300px;
+width:  300px;
+background-color: rgb(255, 255, 255);
+transform: rotate(180deg);
+}
+</style>
+
+<body>
+
+<a href="https://www.w3schools.com/css/css3_transitions.asp"> Learn from here </a>
+
+
+
+
+<div id="div1">
+<p>Hi I am Ajay kumar verma</p>
+</div>
+
+<div id="div2">
+
+
+    
+</div>
+
+
+
+
+<h1>The transition-timing-function Property</h1>
+
+<p>Hover over the div elements below, to see the different speed curves:</p>
+
+<div id="div1">linear</div><br>
+<div id="div2">ease</div><br>
+<div id="div3">ease-in</div><br>
+<div id="div4">ease-out</div><br>
+<div id="div5">ease-in-out</div><br>
+
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+
+</body>
+</html>

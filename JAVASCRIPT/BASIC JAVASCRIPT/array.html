@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY IN JAVASCRIPT</title>
+</head>
+<body>
+<script>
+// Array declaration 
+let ar1=[2,3,"Ajay",true,,8]; // this is fastest method for Array declration 
+let ar2= new Array(NaN,"",null,1e2); // This is slower method  //1e2==100
+
+console.log(ar1,ar2)
+
+// ar1.forEach(val=>console.log(typeof(val)))
+
+ar2.forEach(val=>console.table(typeof(val)))
+
+let emtyar=[]
+ emtyar[1]="Engineering "
+ emtyar[2]="Doing "
+ emtyar[3]="Verma"
+ emtyar[4]="Kumar "
+ emtyar[0]="Ajay "
+ console.log(emtyar[0],emtyar[4])
+ emtyar[0]="Delhi ";
+ 
+console.log(emtyar)
+
+
+
+
+//  printing an ARRAY 
+
+ar=[
+    "ajay",
+   "verma",
+   "kumar"
+]
+
+
+document.write(ar)  // it auto gets converts into an string 
+console.log(ar,ar.toString(" ")) // this will wil works for console 
+
+// Array is an Objects
+// Array can contain simmilar and dissimiar type type of data memeber
+//  Array could be a collection of an Objects 
+// Array is a powerful because method and its property 
+
+document.write("<br/>",ar.length)
+
+char_ar=['A',"C","E","D","B","W","S"]
+
+document.write("<br/>",char_ar.sort()) // it sorts the array in alphabetical order 
+//it is for getting first and last elements 
+document.write("<br/>",char_ar[0],char_ar[char_ar.length-1])
+
+
+// Array travsersing 
+// forEach 
+
+char_ar.forEach(ele=>{
+document.write(ele,"<br/>")
+}
+)
+
+// we can aslo use simple for loop 
+
+// Adding ele at last position using push () method 
+
+char_ar.push("A+ ")
+
+document.write("<br/>",char_ar)
+
+// adding using index method 
+char_ar[char_ar.length]="B+" // adding at last 
+
+document.write("<br/>",char_ar)
+
+char_ar[char_ar.length]="C+" // adding at any position  
+
+document.write("<br/>",typeof char_ar[19]) // it will return undefined
+
+// Replacing elements 
+char_ar[0]="Z"
+document.write("<br/>",char_ar)
+
+
+// Many programming languages support array with named indexes
+//  but javascrip does not support array with named index 
+// It only support numered index  
+
+
+
+
+
+
+// The Difference Between Arrays and Objects
+// In JavaScript, arrays use numbered indexes.  
+
+// In JavaScript, objects use named indexes.
+
+
+// Arrays are a special kind of objects, with numbered indexes.
+
+
+
+// When to Use Arrays. When to use Objects.
+// JavaScript does not support associative arrays.
+// You should use objects when you want the element names to be strings (text).
+// You should use arrays when you want the element names to be numbers.
+
+
+// How to check whether it is an Array or not 
+
+// Array is an object  in javascript
+//  typeOf function return object for an array 
+
+// from ES5 we have Array.isArray()  for checking an for an Array
+
+document.write("<br/>", typeof char_ar ," ", Array.isArray(char_ar))
+
+
+
+// Some array  Useful  method 
+//toString()
+// The JavaScript method toString() converts an array to a string of (comma separated) array values 
+
+
+// The join() method also joins all array elements into a string.
+
+// It behaves just like toString(), but in addition you can specify the separator:
+
+
+document.write("<br/>",char_ar.toString()," "," ",char_ar.join("**"))
+
+
+// pushing is used for inserting ele at last position and it return position 
+// pop is  used for removing ele at last postion  it return last ele 
+
+
+document.write("<br/>",char_ar.push("AJAY")," ", char_ar)
+document.write("<br/>",char_ar.pop())
+document.write("<br/>",char_ar)
+
+
+
+
+// shift is used for adding ppping ele at first position 
+// unshift is used for inserting an elements at first position
+// these two are similar to pop and push()
+
+
+
+// Changing elemenst 
+//  We can change ele using their index value 
+// for deleteing we can use delete keyword
+// it  put their hole or undefined
+ar2=["Ajay","sachin","kesav"]
+
+delete ar2[1]
+
+document.write(ar2)
+  
+// Splicing in javascript 
+// It is used fro adding and removing  ele or set ot ele  in An array
+names=["Ajay","Sachin","kesav","ravi"];
+
+document.write("<br/><br/>",names);
+
+names.splice(0, 2,"VIKASH KUMAR ","RAVI RAJPUT");  // this is very powerful method in javascript 
+// 1 paramenter takes for from where it have to insert element or array
+// 2 parameter takes for how many elmenst it should delete
+
+
+document.write("<br/>",names);
+
+// for deleting splice elements is used 
+
+names.splice(0,2,"Elements deletded ") // it will delete 2 ele from 0 and add one ele from 0  
+
+document.write("<br/>",names);
+
+
+// new_arr=names.splice(2) // it will delete 2 ele from 0 and add one ele from 0  
+
+// document.write("<br/>",new_arr,names);
+
+console.log("Array inside array ");
+
+ar_in_ar=[[2,3,5,6],[23,56,78,32],[123,43,3,221,3],[[[[123456]]]]]
+
+console.log(ar_in_ar)
+ar_in_ar.forEach(ar=>{
+console.log(ar);
+
+})
+
+
+ar_obj=[
+    {name:"rahul lumar ",
+    addr:"Delhi",
+    mob:"997"},
+
+    {name:"mukash lumar ",
+    addr:"Patna",
+    mob:"991127"},
+
+    {name:"vikash lumar ",
+    addr:"Dehradun",
+    mob:"9337"},
+
+    {name:"priyanka lumar ",
+    addr:"Mumbai",
+    mob:"22137"}
+
+]
+
+
+ar_obj.forEach(ar=>{
+
+for(let key in ar){
+    console.table(ar[key]);
+   
+}
+console.log(" ")
+
+})
+
+console.log("Method of an array");
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

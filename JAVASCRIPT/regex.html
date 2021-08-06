@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Exprression </title>
+</head>
+<body>
+    
+</body>
+<script>
+
+
+let  reg=/ajay/g; // g is used for global search 
+ reg=/AJAY/i;   // case insensivity
+  
+let str= "kumar Ajay ajay ajay ajay ajAy ajay  ajay";
+
+console.log(reg);
+console.log(reg.source);
+
+// exec return null for no match or array for match 
+ console.log(reg.exec(str));
+ console.log(str.match(reg));
+ console.log(str.search(reg));
+
+ console.log(str.replace(reg,"suraj yadav"));
+
+ console.log(str.replace(reg,"suraj yadav"));
+
+ console.log(str.replace(reg,"suraj yadav"));
+
+ console.log(str.replace(reg,"suraj yadav"));
+
+
+
+</script>
+
+
+
+
+
+</html>

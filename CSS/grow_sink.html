@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<style>
+P{
+text-align: center;
+color: red;
+font-size: 50pt;
+
+animation-name: para;
+animation-iteration-count: infinite;
+animation-direction: alternate-reverse;
+animation-duration: 5s;
+}
+
+@keyframes para{
+from{
+color: red;
+font-size: 50pt;
+}
+to{
+    color: blue;;
+   font-size: 5pt;
+}
+
+}
+
+
+
+</style>
+<body>
+    
+
+ <p>TEXT-GROWING</p>
+
+
+
+
+</body>
+<script>
+
+document.title="Growing and shinking :-Ajay kumar verma ";
+
+setInterval(() => {
+var txt= document.getElementsByTagName("p")[0];
+
+ txt.innerText=(txt.innerText=="TEXT-SHINKING")?"TEXT GROWING":"TEXT-SHINKING";
+
+//    if(txt.innerText=="TEXT-SHINKING"){
+//     txt.innerText="TEXT GRWING";
+//    }else{
+//     txt.innerText="TEXT-SHINKING";
+//    } 
+   
+
+}, 5000);
+
+</script>
+
+</html>

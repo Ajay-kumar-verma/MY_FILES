@@ -1,0 +1,1809 @@
+<!Doctype html>
+<html class="no-js" lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff" />
+
+  <title>C++ Data Types</title>
+  <link rel="shortcut icon" href="/sites/all/themes/programiz/assets/favicon.png" />
+  <link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_WSgzCiaLFuERen0TMp4LzgnjcxS3tn-QyZRD85wZ2cs.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_botNHIYRQPys-RH2iA3U4LbV9bPNRS64tLAs8ec1ch8.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_l1ysxpPHIK3HhRzowKWMrDgNPR_OxenPnqieIpeLj8A.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_lJ9ZOdMVGFVWQD3sgHFPyRVV4tG-uikwykL-rxRZsnk.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_aq9xtJGw36T2QSbqifoPCDAQ7BKnDtrqwBOCjrSOWik.css" media="all" />
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="dns-prefetch" href="//cdn.programiz.com" />
+<!--[if IE 9]>
+<link rel="prefetch" href="//cdn.programiz.com" />
+<![endif]-->
+<meta name="description" content="In this tutorial, we will learn about basic data types such as int, float, char, etc. in C++ programming with the help of examples. A data type determines the type and size of an variable." />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://www.programiz.com/cpp-programming/data-types" />
+<link rel="shortlink" href="https://www.programiz.com/node/1661" />
+<script src="https://cmp.uniconsent.com/v2/stub.min.js"></script>
+<script async src='https://cmp.uniconsent.com/v2/a8d3ae4937/cmp.js'></script>
+<script type="text/javascript">
+    window.googletag = window.googletag || {};
+    window.googletag.cmd = window.googletag.cmd || [];
+    window.googletag.cmd.push(function () {
+        window.googletag.pubads().enableAsyncRendering();
+        window.googletag.pubads().disableInitialLoad();
+    });
+    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;
+</script>
+<script>
+    __tcfapi("addEventListener", 2, function (tcData, success) {
+        if (success && tcData.unicLoad === true) {
+            if (!window._initAds) {
+                window._initAds = true;
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = '//dsh7ky7308k4b.cloudfront.net/publishers/Programizcomnew.min.js';
+                document.head.appendChild(script);
+                var pathName = window.location.pathname;
+
+                if (pathName != "/" ||
+                    pathName != "/cpp-programming" |
+                    pathName != "/c-programming" ||
+                    pathName != "/cpp-programming" ||
+                    pathName != "/java-programming" ||
+                    pathName != "/python-programming" ||
+                    pathName != "/csharp-programming" ||
+                    pathName != "/swift-programming" ||
+                    pathName != "/kotlin-programming" ||
+                    pathName != "/dsa" ||
+                    pathName != "/csharp-programming") {
+                        script = document.createElement('script');
+                        script.async = true;
+                        script.src = '//dsh7ky7308k4b.cloudfront.net/smartview/Programizcom_inview.min.js';
+                        document.head.appendChild(script);
+                }
+
+                try {
+                    fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function (response) {
+                        return true;
+                    }).catch(function (e) {
+                        if (document.getElementsByClassName("content-top-ad") !=  null && document.getElementsByClassName("content-top-ad").length > 0) {
+                            document.getElementsByClassName("content-top-ad")[0].style.display = "none";
+                        }
+                        var ad_elements = document.getElementsByClassName("pub-ad");
+                        while (ad_elements.length > 0) {
+                            ad_elements[0].parentNode.removeChild(ad_elements[0]);
+                        }
+
+                        if (document.getElementById("carbon-block") != null) {
+                            var carbonScript = document.createElement("script");
+                            carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CKYDL27L&placement=wwwprogramizcom";
+                            carbonScript.id = "_carbonads_js";
+                            document.getElementById("carbon-block").appendChild(carbonScript);
+                        }
+                    });
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+        }
+    });
+</script>
+<style>.pub-ad{z-index:0;clear:both;position:relative;text-align:center}.pub-ad::before{content:'ADVERTISEMENTS';display:block;position:absolute;top:-20px;left:0;right:0;height:20px;font-size:9px;line-height:20px;letter-spacing:1px;color:#bcbfc5}</style>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '123000288571689');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=123000288571689&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_38VWQ3jjQx0wRFj7gkntZr077GgJoGn5nv3v05IeLLo.js"></script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_GfhfG87z3G2pfx75lv_6Kp7vstsqWlnAb2C3ovnrHMY.js"></script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_0EDobzbOeU8CmSVIjKwmqfmTC9h43DFxyiWtQ95qYKQ.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var base_path = '/'; var module_path = 'sites/all/modules/programiz_rate_share';
+//--><!]]>
+</script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_JPRsqb7LGxvd6bG_O6mGsgDWYtmjHoO0CWqFMo8cxvY.js"></script>
+<script type="text/javascript" defer="defer" src="https://www.google.com/recaptcha/api.js?hl=en"></script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_lTSXWzq4cICkyKNPfLUR-wFRO5c0j3BzGIXfenk0WIk.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-36675496-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_Zl7pVK4nOlWjvTsQqpx3UaLFo6CLjk7Lj19lYfEitls.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"programiz","theme_token":"ktav3uMaJe7cEh2l5Ob3YV-FmWunbRmXuV-l7CSnrI0","jquery_version":"1.10","js":{"\/\/code.jquery.com\/jquery-1.10.2.min.js":1,"0":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/programiz_rate_share\/programiz_rate_share.js":1,"1":1,"sites\/all\/modules\/captcha\/captcha.js":1,"https:\/\/www.google.com\/recaptcha\/api.js?hl=en":1,"misc\/textarea.js":1,"misc\/progress.js":1,"sites\/all\/modules\/webform\/js\/webform.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"2":1,"sites\/all\/themes\/programiz\/dist\/main.min.js":1,"sites\/all\/themes\/programiz\/lib\/highlightjs\/highlight.min.js":1,"sites\/all\/themes\/programiz\/lib\/mautic\/mautic.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/webform\/css\/webform.css":1,"sites\/all\/themes\/programiz\/lib\/highlightjs\/highlight.min.css":1,"sites\/all\/themes\/programiz\/lib\/mautic\/mautic.css":1,"sites\/all\/themes\/programiz\/dist\/main.css":1}},"ajax":{"edit-submit":{"callback":"page_feedback_webform_ajax_validate","wrapper":"webform-client-form-1680","progress":{"type":"throbber"},"event":"mousedown","keypress":true,"prevent":"click","url":"\/system\/ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Submit"}}},"urlIsAjaxTrusted":{"\/system\/ajax":true,"\/cpp-programming\/data-types":true},"better_exposed_filters":{"views":{"tutorials_related_articles":{"displays":{"block_2":{"filters":[]}}}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"}});
+//--><!]]>
+</script>
+</head>
+
+<body>
+    
+<main class="soft-bg has-notice-bar-top">
+  <header class="main-nav d-flex flex-column justify-content-center">
+            
+    
+    
+    
+    <div class="notice-bar-top d-none d-md-block">
+  <div class="container">
+    <div class="notice-bar-top__message-wrapper">
+      <span class="tag-border-less tag-border-less--orange">NEW</span>
+      <p class="notice-bar-top__message">
+        <!--<a class="notice-bar-top__message--link" href="/learn-python/programiz-challenge" title="Programiz Pro is here!" target="_blank">Solve Python challenge and get a chance to win a free 1 year subscription of Programiz Pro. Learn more <svg class="programiz-icon notice-bar-top__message__icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#chevron-right"></use></svg></a>-->
+        <a class="notice-bar-top__message--link" href="https://www.youtube.com/c/Programiz-studios" title="Python Basics Video Course now on Youtube! Watch Now." target="_blank">Python Basics Video Course now on Youtube! Watch Now. <svg class="programiz-icon notice-bar-top__message__icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#chevron-right"></use></svg></a>
+      </p>
+    </div>
+  </div>
+</div>
+
+        
+    <nav>
+      <div class="container flex-1">
+        <div class="d-flex align-items-center p-relative">
+          <button class="main-nav__menu-btn d-lg-none d-flex">
+            <svg class="programiz-icon">
+              <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#menu" />
+            </svg>
+          </button>
+
+          <div class="brand">
+            <a href="/" title="Programiz">
+              <img class="d-lg-none" src="/sites/all/themes/programiz/assets/sp_logo.svg" alt="Programiz">
+              <img class="d-none d-lg-block" src="/sites/all/themes/programiz/assets/pc_logo.svg" alt="Programiz">
+            </a>
+          </div>
+
+                      <div class="navigation d-none d-lg-flex align-items-center">
+                
+    
+    
+    
+    <a title="Programming Tutorials" href="#" class="navigation__node">
+  <span class="navigation__node__label">
+    Tutorials
+  </span>
+  <svg class="programiz-icon programiz-icon--smallest navigation__node__icon">
+    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#chevron-down"></use>
+  </svg>
+</a>
+
+<a title="Programming Examples" href="javascript:void(0);" class="navigation__node">
+  <span class="navigation__node__label">
+    Examples
+  </span>
+  <svg class="programiz-icon programiz-icon--smallest navigation__node__icon">
+    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#chevron-down"></use>
+  </svg>
+</a>
+
+                </div>
+          
+                        
+    
+    
+    
+    <form action="/cpp-programming/data-types" method="post" id="search-api-page-search-form-simplest-programming-tutorials-f" accept-charset="UTF-8"><div><div class="search-input search-api-page-search-form-simplest-programming-tutorials-f" ><button type="submit" class="search-input__form-submit" hidden ></button><button type=\"button\" class="search-input__clear btn"><svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x" /></svg></button><button type=\"button\" class="btn btn--clear c-default"><svg class="programiz-icon programiz-icon--small search-input__icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#search" /></svg></button><input type="text" value="" placeholder="Search tutorials and examples" id="edit-keys-2" name="keys_2" class="search-input__control" autocomplete="off" /><input type="hidden" name="id" value="2" /><input type="hidden" name="form_build_id" value="form-6dVcJ79qx-FJb0PD9OAP1_uexd0U24dNrTRTNld_u0I" /><input type="hidden" name="form_id" value="search_api_page_search_form_simplest_programming_tutorials_f" /></div></div></form>
+              
+        </div>
+      </div>
+
+      <!-- Only on page.tpl.php -->
+      <!-- Show progress bar as the user scrolls the page for tutorials, examples and methods individual pages -->
+      <div class="main-nav__progress-bar-wrapper">
+        <div class="progress-bar"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Tutorials and Examples contents -->
+  <div class="sub-menu--backdrop"></div>
+        
+    
+    
+    
+    
+<!-- Mobile view -->
+<div class="sub-menu sub-menu--sp sub-menu--sp--tutorial-examples">
+  <div class="sub-menu__wrap">
+    <div class="sub-menu__head">
+      <div class="sub-menu__tab">
+        <div class="sub-menu__tab__head">
+          <button class="sub-menu__tab__node sub-menu__tab__node--index d-none">
+            <!-- Change the title dynamically -->
+            Course Index
+          </button>
+          <button class="sub-menu__tab__node sub-menu__tab__node--explore">
+            Explore Programiz
+          </button>
+        </div>
+        <div class="sub-menu__tab__body sub-menu__tab__body--index d-none"></div>
+        <div class="sub-menu__tab__body sub-menu__tab__body--explore">
+                      <a
+              href="javascript:void(0);"
+              title="Python"
+              class="sub-menu__tab__list-node "
+              data-language="python"
+            >Python</a>
+                      <a
+              href="javascript:void(0);"
+              title="JavaScript"
+              class="sub-menu__tab__list-node "
+              data-language="javascript"
+            >JavaScript</a>
+                      <a
+              href="javascript:void(0);"
+              title="C"
+              class="sub-menu__tab__list-node "
+              data-language="c"
+            >C</a>
+                      <a
+              href="javascript:void(0);"
+              title="C++"
+              class="sub-menu__tab__list-node sub-menu__tab__list-node--active"
+              data-language="cpp"
+            >C++</a>
+                      <a
+              href="javascript:void(0);"
+              title="Java"
+              class="sub-menu__tab__list-node "
+              data-language="java"
+            >Java</a>
+                      <a
+              href="javascript:void(0);"
+              title="Kotlin"
+              class="sub-menu__tab__list-node "
+              data-language="kotlin"
+            >Kotlin</a>
+                      <a
+              href="javascript:void(0);"
+              title="Swift"
+              class="sub-menu__tab__list-node "
+              data-language="swift"
+            >Swift</a>
+                      <a
+              href="javascript:void(0);"
+              title="C#"
+              class="sub-menu__tab__list-node "
+              data-language="csharp"
+            >C#</a>
+                      <a
+              href="javascript:void(0);"
+              title="DSA"
+              class="sub-menu__tab__list-node "
+              data-language="dsa"
+            >DSA</a>
+                  </div>
+      </div>
+
+      <button class="btn btn--skeleton menu-hide-trigger">
+        <svg class="programiz-icon">
+          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="tabbed-content tabbed-content--no-border">
+      <div class="tabbed-content__right tabbed-content__right--index d-none">
+        <!-- Load contents dynamically -->
+      </div>
+      <div class="tabbed-content__right tabbed-content__right--explore">
+        <div class="sub-menu__contents sub-menu__contents--cpp" id="m-cpp">
+          <div class="sub-menu__cta">
+                        <a
+              href="/cpp-programming"
+              title="C++ Tutorials"
+              class="btn btn--primary btn--xlarge d-flex align-items-center mr-6x-sm mb-5x mb-0x-md"
+            >
+              <span for="" class="btn__label">Start Learning C++</span>
+              <svg class="programiz-icon ml-2x">
+                <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+              </svg>
+            </a>
+            
+                        <a
+              href="/cpp-programming/examples"
+              title="C++ Examples"
+              class="btn btn--primary btn--xlarge d-flex align-items-center mb-5x mb-0x-md"
+            >
+              <span for="" class="btn__label">Explore C++ Examples</span>
+              <svg class="programiz-icon ml-2x">
+                <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+              </svg>
+            </a>
+                      </div>
+
+          <div class="sub-menu__links">
+            <!-- Popular tutorials -->
+                          <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                <div class="sub-menu__link">
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a
+                          title="C++ if...else Statement"
+                          href="/cpp-programming/if-else"
+                          class="sub-menu__link__column"
+                        >C++ if...else Statement</a>
+                      </div>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a
+                          title="C++ for Loop"
+                          href="/cpp-programming/for-loop"
+                          class="sub-menu__link__column"
+                        >C++ for Loop</a>
+                      </div>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a
+                          title="Arrays in C++"
+                          href="/cpp-programming/arrays"
+                          class="sub-menu__link__column"
+                        >Arrays in C++</a>
+                      </div>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a
+                          title="Strings in C++"
+                          href="/cpp-programming/strings"
+                          class="sub-menu__link__column"
+                        >Strings in C++</a>
+                      </div>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a
+                          title="C++ Class &amp; Objects"
+                          href="/cpp-programming/object-class"
+                          class="sub-menu__link__column"
+                        >C++ Class & Objects</a>
+                      </div>
+                    </div>
+                                  </div>
+              </div>
+            
+            <!-- Popular examples -->
+                          <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Examples</h4>
+                <div class="sub-menu__link">
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a
+                          title="Create a simple calculator"
+                          href="/cpp-programming/examples/calculator-switch-case"
+                          class="sub-menu__link__column"
+                        >Create a simple calculator</a>
+                      </div>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a
+                          title="Check prime number"
+                          href="/cpp-programming/examples/prime-number"
+                          class="sub-menu__link__column"
+                        >Check prime number</a>
+                      </div>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a
+                          title="Print the Fibonacci sequence"
+                          href="/cpp-programming/examples/fibonacci-series"
+                          class="sub-menu__link__column"
+                        >Print the Fibonacci sequence</a>
+                      </div>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a
+                          title="Check if a number is palindrome or not"
+                          href="/cpp-programming/examples/palindrome-number"
+                          class="sub-menu__link__column"
+                        >Check if a number is palindrome or not</a>
+                      </div>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <div class="sub-menu__link__column">
+                        <a
+                          title="Program to multiply matrix"
+                          href="/cpp-programming/examples/matrix-multiplication"
+                          class="sub-menu__link__column"
+                        >Program to multiply matrix</a>
+                      </div>
+                    </div>
+                                  </div>
+              </div>
+            
+            <!-- Reference materials -->
+                          <div class="sub-menu__links__column sub-menu__links__column--right">
+                <h4 class="sub-menu__links__column__title">Reference Materials</h4>
+                <div class="sub-menu__link">
+                                      <div class="sub-menu__link__row">
+                      <a
+                        href="/cpp-programming/library-function/iostream"
+                        title="iostream"
+                        class="btn btn--gray btn--small btn--block d-flex align-items-center"
+                      >
+                        iostream                        <svg class="programiz-icon programiz-icon--small ml-auto">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <a
+                        href="/cpp-programming/library-function/cmath"
+                        title="cmath"
+                        class="btn btn--gray btn--small btn--block d-flex align-items-center"
+                      >
+                        cmath                        <svg class="programiz-icon programiz-icon--small ml-auto">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <a
+                        href="/cpp-programming/library-function/cstring"
+                        title="cstring"
+                        class="btn btn--gray btn--small btn--block d-flex align-items-center"
+                      >
+                        cstring                        <svg class="programiz-icon programiz-icon--small ml-auto">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                                      <div class="sub-menu__link__row">
+                      <a
+                        href="/cpp-programming/library-function/ctime"
+                        title="ctime"
+                        class="btn btn--gray btn--small btn--block d-flex align-items-center"
+                      >
+                        ctime                        <svg class="programiz-icon programiz-icon--small ml-auto">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  
+                  <a
+                    title="C++ References"
+                    href="/cpp-programming/library-function"
+                    class="d-flex align-items-center font-weight-500"
+                  >
+                    View all
+                    <svg class="programiz-icon programiz-icon--small ml-2x">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Desktop view -->
+<div class="sub-menu sub-menu--pc sub-menu--pc--tutorial">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-10">
+        <div class="sub-menu__wrap">
+          <div class="tabbed-content tabbed-content--no-border">
+            <div class="tabbed-content__left tabbed-content__left--small">
+              <div class="tabbed-link-container">
+                                  <div class="tabbed-link">
+                    <a
+                      title="Python"
+                      href="javascript:void(0);"
+                      class="tabbed-link__node "
+                      data-language="python"
+                    >
+                      Python                    </a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a
+                      title="JavaScript"
+                      href="javascript:void(0);"
+                      class="tabbed-link__node "
+                      data-language="javascript"
+                    >
+                      JavaScript                    </a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a
+                      title="C"
+                      href="javascript:void(0);"
+                      class="tabbed-link__node "
+                      data-language="c"
+                    >
+                      C                    </a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a
+                      title="C++"
+                      href="javascript:void(0);"
+                      class="tabbed-link__node tabbed-link__node--active"
+                      data-language="cpp"
+                    >
+                      C++                    </a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a
+                      title="Java"
+                      href="javascript:void(0);"
+                      class="tabbed-link__node "
+                      data-language="java"
+                    >
+                      Java                    </a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a
+                      title="Kotlin"
+                      href="javascript:void(0);"
+                      class="tabbed-link__node "
+                      data-language="kotlin"
+                    >
+                      Kotlin                    </a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a
+                      title="Swift"
+                      href="javascript:void(0);"
+                      class="tabbed-link__node "
+                      data-language="swift"
+                    >
+                      Swift                    </a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a
+                      title="C#"
+                      href="javascript:void(0);"
+                      class="tabbed-link__node "
+                      data-language="csharp"
+                    >
+                      C#                    </a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a
+                      title="DSA"
+                      href="javascript:void(0);"
+                      class="tabbed-link__node "
+                      data-language="dsa"
+                    >
+                      DSA                    </a>
+                  </div>
+                              </div>
+            </div>
+            <div class="tabbed-content__right">
+              <div class="sub-menu__contents sub-menu__contents--cpp" id="t-cpp">
+                <div class="sub-menu__cta">
+                  <a
+                    class="btn btn--primary btn--xlarge d-flex align-items-center"
+                    title="C++ Tutorials"
+                    href="/cpp-programming"
+                  >
+                    <span for="" class="btn__label">Start Learning C++</span>
+                    <svg class="programiz-icon ml-2x">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                    </svg>
+                  </a>
+                  <button class="btn btn--skeleton ml-auto">
+                    <svg class="programiz-icon">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="sub-menu__links">
+                  <!-- Popular tutorials -->
+                                      <div class="sub-menu__links__column sub-menu__links__column--left">
+                      <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                      <div class="sub-menu__link">
+                                                  <div class="sub-menu__link__row">
+                            <div class="sub-menu__link__column">
+                              <a
+                                title="C++ if...else Statement"
+                                href="/cpp-programming/if-else"
+                                class="sub-menu__link__column"
+                              >C++ if...else Statement</a>
+                            </div>
+                          </div>
+                                                  <div class="sub-menu__link__row">
+                            <div class="sub-menu__link__column">
+                              <a
+                                title="C++ for Loop"
+                                href="/cpp-programming/for-loop"
+                                class="sub-menu__link__column"
+                              >C++ for Loop</a>
+                            </div>
+                          </div>
+                                                  <div class="sub-menu__link__row">
+                            <div class="sub-menu__link__column">
+                              <a
+                                title="Arrays in C++"
+                                href="/cpp-programming/arrays"
+                                class="sub-menu__link__column"
+                              >Arrays in C++</a>
+                            </div>
+                          </div>
+                                                  <div class="sub-menu__link__row">
+                            <div class="sub-menu__link__column">
+                              <a
+                                title="Strings in C++"
+                                href="/cpp-programming/strings"
+                                class="sub-menu__link__column"
+                              >Strings in C++</a>
+                            </div>
+                          </div>
+                                                  <div class="sub-menu__link__row">
+                            <div class="sub-menu__link__column">
+                              <a
+                                title="C++ Class &amp; Objects"
+                                href="/cpp-programming/object-class"
+                                class="sub-menu__link__column"
+                              >C++ Class & Objects</a>
+                            </div>
+                          </div>
+                                              </div>
+                      <a
+                        title="C++ tutorials"
+                        href="/cpp-programming"
+                        class="d-flex align-items-center font-weight-500"
+                      >
+                        View all tutorials
+                        <svg class="programiz-icon programiz-icon--small ml-2x">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  
+                  <!-- Reference materials -->
+                                      <div class="sub-menu__links__column sub-menu__links__column--right">
+                      <h4 class="sub-menu__links__column__title">Reference Materials</h4>
+                      <div class="sub-menu__link">
+                        
+                                                  <div class="sub-menu__link__row">
+                            <a
+                              title="iostream"
+                              href="/cpp-programming/library-function/iostream"
+                              class="btn btn--gray btn--small btn--block d-flex align-items-center"
+                            >
+                              iostream                              <svg class="programiz-icon programiz-icon--small ml-auto">
+                                <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                              </svg>
+                            </a>
+                          </div>
+                                                  <div class="sub-menu__link__row">
+                            <a
+                              title="cmath"
+                              href="/cpp-programming/library-function/cmath"
+                              class="btn btn--gray btn--small btn--block d-flex align-items-center"
+                            >
+                              cmath                              <svg class="programiz-icon programiz-icon--small ml-auto">
+                                <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                              </svg>
+                            </a>
+                          </div>
+                                                  <div class="sub-menu__link__row">
+                            <a
+                              title="cstring"
+                              href="/cpp-programming/library-function/cstring"
+                              class="btn btn--gray btn--small btn--block d-flex align-items-center"
+                            >
+                              cstring                              <svg class="programiz-icon programiz-icon--small ml-auto">
+                                <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                              </svg>
+                            </a>
+                          </div>
+                                                  <div class="sub-menu__link__row">
+                            <a
+                              title="ctime"
+                              href="/cpp-programming/library-function/ctime"
+                              class="btn btn--gray btn--small btn--block d-flex align-items-center"
+                            >
+                              ctime                              <svg class="programiz-icon programiz-icon--small ml-auto">
+                                <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                              </svg>
+                            </a>
+                          </div>
+                                              </div>
+                      <a
+                        title="C++ References"
+                        href="/cpp-programming/library-function"
+                        class="d-flex align-items-center font-weight-500"
+                      >
+                        View all
+                        <svg class="programiz-icon programiz-icon--small ml-2x">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+        
+    
+    
+    
+    
+<!-- Desktop view only -->
+<div class="sub-menu sub-menu--pc sub-menu--pc--examples">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-10">
+        <div class="sub-menu__wrap">
+          <div class="tabbed-content tabbed-content--no-border">
+            <div class="tabbed-content__left tabbed-content__left--small">
+
+              <div class="tabbed-link-container">
+                                  <div class="tabbed-link">
+                    <a
+                      title="Python"
+                      href="javascript:void(0);"
+                      class="tabbed-link__node "
+                      data-language="python"
+                    >Python</a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a
+                      title="JavaScript"
+                      href="javascript:void(0);"
+                      class="tabbed-link__node "
+                      data-language="javascript"
+                    >JavaScript</a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a
+                      title="C"
+                      href="javascript:void(0);"
+                      class="tabbed-link__node "
+                      data-language="c"
+                    >C</a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a
+                      title="C++"
+                      href="javascript:void(0);"
+                      class="tabbed-link__node tabbed-link__node--active"
+                      data-language="cpp"
+                    >C++</a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a
+                      title="Java"
+                      href="javascript:void(0);"
+                      class="tabbed-link__node "
+                      data-language="java"
+                    >Java</a>
+                  </div>
+                                  <div class="tabbed-link">
+                    <a
+                      title="Kotlin"
+                      href="javascript:void(0);"
+                      class="tabbed-link__node "
+                      data-language="kotlin"
+                    >Kotlin</a>
+                  </div>
+                              </div>
+
+            </div>
+            <div class="tabbed-content__right">
+              <div class="sub-menu__contents sub-menu__contents--cpp" id="examples-cpp">
+                <div class="sub-menu__cta">
+                  <a
+                    href="/cpp-programming/examples"
+                    title="C++ Examples"
+                    class="btn btn--primary btn--xlarge d-flex align-items-center">
+                    <span for="" class="btn__label">Explore C++ Examples</span>
+                    <svg class="programiz-icon ml-2x">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                    </svg>
+                  </a>
+                  <button class="btn btn--skeleton ml-auto">
+                    <svg class="programiz-icon">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="sub-menu__links">
+                  <div class="sub-menu__links__column sub-menu__links__column--left">
+                    <h4 class="sub-menu__links__column__title">Popular Examples</h4>
+                    <div class="sub-menu__link">
+                                            <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a
+                            title="Create a simple calculator"
+                            href="/cpp-programming/examples/calculator-switch-case"
+                            class="sub-menu__link__column"
+                          >Create a simple calculator</a>
+                        </div>
+                      </div>
+                                            <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a
+                            title="Check prime number"
+                            href="/cpp-programming/examples/prime-number"
+                            class="sub-menu__link__column"
+                          >Check prime number</a>
+                        </div>
+                      </div>
+                                            <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a
+                            title="Print the Fibonacci sequence"
+                            href="/cpp-programming/examples/fibonacci-series"
+                            class="sub-menu__link__column"
+                          >Print the Fibonacci sequence</a>
+                        </div>
+                      </div>
+                                            <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a
+                            title="Check if a number is palindrome or not"
+                            href="/cpp-programming/examples/palindrome-number"
+                            class="sub-menu__link__column"
+                          >Check if a number is palindrome or not</a>
+                        </div>
+                      </div>
+                                            <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a
+                            title="Program to multiply matrix"
+                            href="/cpp-programming/examples/matrix-multiplication"
+                            class="sub-menu__link__column"
+                          >Program to multiply matrix</a>
+                        </div>
+                      </div>
+                                          </div>
+                    <a title="C++ Examples" href="/cpp-programming/examples"
+                      class="d-flex align-items-center font-weight-500">
+                      View all examples
+                      <svg class="programiz-icon programiz-icon--small ml-2x">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+  <div class="contents">
+    <div class="container">
+
+              <div class="toc-trigger"><button class="btn btn--secondary align-items-center btn--toc d-none d-md-flex">
+    <svg class="programiz-icon programiz-icon--small programiz-icon--reversed mr-1x">
+      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#log-in"/>
+    </svg>
+    TOC
+</button>
+<button class="btn btn--secondary align-items-center btn--toc d-flex d-md-none">
+    <svg class="programiz-icon programiz-icon--small programiz-icon--reversed">
+      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#log-in"/>
+    </svg>
+</button>
+</div>      
+      <div class="row">
+        <div class="col-sm-12 d-md-flex">
+
+                      <div class="left-bar left-bar--large-r-margin d-none d-lg-block">
+                
+    
+    
+    
+    <div class="menu-with-accordion mb-10x mobile-sidebar-tab">
+	<ul class="topmenu">
+		<li>
+			<h3>C++ Introduction</h3>
+
+			<ul>
+				<li><a href="/cpp-programming/variables-literals" title="C++ Variables and Literals"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Variables and Literals</a></li>
+				<li><a href="/cpp-programming/data-types" title="C++ Data Types"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Data Types</a></li>
+				<li><a href="/cpp-programming/input-output" title="C++ Basic I/O"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Basic I/O</a></li>
+				<li><a href="/cpp-programming/type-conversion" title="C++ Type Conversion"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Type Conversion</a></li>
+				<li><a href="/cpp-programming/operators" title="C++ Operators"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Operators</a></li>
+				<li><a href="/cpp-programming/comments" title="C++ Comments"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Comments</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Flow Control</h3>
+
+			<ul>
+				<li><a href="/cpp-programming/if-else" title="C++ if...else"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ if...else</a></li>
+				<li><a href="/cpp-programming/for-loop" title="C++ for Loop"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ for Loop</a></li>
+				<li><a href="/cpp-programming/do-while-loop" title="C++ while and do...while Loop"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ do...while Loop</a></li>
+				<li><a href="/cpp-programming/break-statement" title="C++ break Statement"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ break</a></li>
+				<li><a href="/cpp-programming/continue-statement" title="C++ continue Statement"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ continue</a></li>
+				<li><a href="/cpp-programming/switch-case" title="C++ switch Statement"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ switch Statement</a></li>
+				<li><a href="/cpp-programming/goto" title="C++ goto Statement"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ goto Statement</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Functions</h3>
+
+			<ul>
+				<li><a href="/cpp-programming/function" title="C++ Functions"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Functions</a></li>
+				<li><a href="/cpp-programming/user-defined-function-types" title="Different ways to write functions in C++"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Function Types</a></li>
+				<li><a href="/cpp-programming/function-overloading" title="C++ Function Overloading"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Function Overloading</a></li>
+				<li><a href="/cpp-programming/default-argument" title="C++ Default Arguments"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Default Argument</a></li>
+				<li><a href="/cpp-programming/storage-class" title="C++ Storage Classes"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Storage Class</a></li>
+				<li><a href="/cpp-programming/recursion" title="C++ Recursion"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Recursion</a></li>
+				<li><a href="/cpp-programming/return-reference" title="C++ Return Reference"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Return Reference</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Arrays &amp; String</h3>
+
+			<ul>
+				<li><a href="/cpp-programming/arrays" title="C++ Array"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Arrays</a></li>
+				<li><a href="/cpp-programming/multidimensional-arrays" title="C++ Multidimensional Arrays"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>Multidimensional Arrays</a></li>
+				<li><a href="/cpp-programming/passing-arrays-function" title="Passing Array to Function in C++"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Function and Array</a></li>
+				<li><a href="/cpp-programming/strings" title="C++ Strings"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ String</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Structures</h3>
+
+			<ul>
+				<li><a href="/cpp-programming/structure" title="C++ struct"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Structures</a></li>
+				<li><a href="/cpp-programming/structure-function" title="C++ Structures and Functions"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>Structure and Function</a></li>
+				<li><a href="/cpp-programming/structure-pointer" title="Pointers to Structure in C++"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Pointers to Structure</a></li>
+				<li><a href="/cpp-programming/enumeration" title="C++ Enumeration"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Enumeration</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Object &amp; Class</h3>
+
+			<ul>
+				<li><a href="/cpp-programming/object-class" title="C++ Objects and Class"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Objects and Class</a></li>
+				<li><a href="/cpp-programming/constructors" title="C++ Constructors"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Constructors</a></li>
+				<li><a href="/cpp-programming/pass-return-object-function" title="C++ Passing and Returning Objects"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Objects &amp; Function</a></li>
+				<li><a href="/cpp-programming/operator-overloading" title="C++ Operator Overloading"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Operator Overloading</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Pointers</h3>
+
+			<ul>
+				<li><a href="/cpp-programming/pointers" title="C++ Pointers"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Pointers</a></li>
+				<li><a href="/cpp-programming/pointers-arrays" title="Relation between Pointers and Arrays in C++"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Pointers and Arrays</a></li>
+				<li><a href="/cpp-programming/pointers-function" title="C++ Pointers and Function"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Pointers and Functions</a></li>
+				<li><a href="/cpp-programming/memory-management" title="Dynamic Memory Management in C++"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Memory Management</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Inheritance</h3>
+
+			<ul>
+				<li><a href="/cpp-programming/inheritance" title="C++ Inheritance"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Inheritance</a></li>
+				<li><a href="/cpp-programming/public-protected-private-inheritance" title="C++ Access Control in Inheritance"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>Inheritance Access Control</a></li>
+				<li><a href="/cpp-programming/function-overriding" title="Function Overriding in C++ Programming"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Function Overriding</a></li>
+				<li><a href="/cpp-programming/multilevel-multiple-inheritance" title="Multiple &amp; Multilevel Inheritance"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>Inheritance Types</a></li>
+				<li><a href="/cpp-programming/friend-function-class" title="Friend Function and Friend Class in C++"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Friend Function</a></li>
+				<li><a href="/cpp-programming/virtual-functions" title="C++ Virtual Function"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Virtual Function</a></li>
+				<li><a href="/cpp-programming/templates" title="C++ Templates"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg></span>C++ Templates</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+    
+    
+    
+    
+    <style>
+    #div-gpt-ad-Programizcom36792 {display:none; }
+    @media(min-width: 992px) { #div-gpt-ad-Programizcom36792 {display: block;} }
+    </style>
+    
+    <div id='div-gpt-ad-Programizcom36792' class="pub-ad" style='width:300px; min-height: 250px; margin: 40px 0;'>
+    </div>
+    
+    
+    
+    
+    <div id="mauticform_wrapper_csubscribersform" class="mauticform_wrapper">
+  <form autocomplete="false" role="form" method="post" action="https://email.programiz.com/form/submit?formId=10" id="mauticform_csubscribersform" data-mautic-form="csubscribersform" enctype="multipart/form-data" class="card-alt card-alt--even-spaced mb-10x">
+    <div class="mauticform-error" id="mauticform_csubscribersform_error"></div>
+    <div class="mauticform-message" id="mauticform_csubscribersform_message"></div>
+    <div class="mauticform-innerform">
+      <div class="card-alt__form-title">Join our newsletter for the latest updates.</div>
+      <div class="mauticform-page-wrapper mauticform-page-1 input-group" data-mautic-form-page="1">
+        <div id="mauticform_csubscribersform_email1" class="mauticform-row mauticform-email mauticform-field-1 mauticform-required input-group" data-validate="email1" data-validation-type="email">
+            <input id="mauticform_input_csubscribersform_email1" name="mauticform[email1]" value="" placeholder="Enter Email Address*" class="mauticform-input input-group__control" type="email">
+            <span class="mauticform-errormsg" style="display: none;">This is required.</span>
+        </div>
+        <div id="mauticform_csubscribersform_submit" class="mauticform-row mauticform-button-wrapper mauticform-field-2 input-group">
+            <button type="submit" name="mauticform[submit]" id="mauticform_input_csubscribersform_submit" value="" class="mauticform-button input-group__action btn btn--primary">Join</button>
+        </div>
+        </div>
+    </div>
+
+    <input type="hidden" name="mauticform[formId]" id="mauticform_csubscribersform_id" value="10">
+    <input type="hidden" name="mauticform[return]" id="mauticform_csubscribersform_return" value="">
+    <input type="hidden" name="mauticform[formName]" id="mauticform_csubscribersform_name" value="csubscribersform">
+
+  </form>
+</div>
+    
+    
+    
+    
+    <style>
+    #div-gpt-ad-Programizcom36787 {display:none; }
+    @media(min-width: 992px) { #div-gpt-ad-Programizcom36787 {display: block; max-width: 300px; margin: 40px auto;} }
+    </style>
+    
+    <div class="pub-ad">
+    <div id="div-gpt-ad-Programizcom36787">
+    </div>
+    </div>
+                </div>
+          
+          <div class="right-bar">
+
+                          <div class='tutorial-toc'><div class='tutorial-toc__inner'><button class='btn btn--secondary align-items-center btn--toc-close'>
+      <svg class='programiz-icon programiz-icon--small programiz-icon--reversed'>
+        <use xlink:href='/sites/all/themes/programiz/assets/feather-sprite.svg#log-in'/>
+      </svg>
+      </button><h3 class='tutorial-toc__title'>Table of Contents
+      <button class='btn btn--clear align-items-center'>
+      <svg class='programiz-icon'>
+        <use xlink:href='/sites/all/themes/programiz/assets/feather-sprite.svg#x'/>
+      </svg>
+      </button></h3><div class='tutorial-toc__links'><ul>
+	<li><a href="#fundamental-types">C++ Fundamental Data Types</a></li>
+	<li><a href="#int">int</a></li>
+	<li><a href="#float-double">float and double</a></li>
+	<li><a href="#character">char</a></li>
+	<li><a href="#wide-character">wchar_t</a></li>
+	<li><a href="#boolean">bool</a></li>
+	<li><a href="#void">void</a></li>
+	<li><a href="#type-modifiers">C++ Type Modifiers</a></li>
+	<li><a href="#derived-types">Derived Data Types</a></li>
+</ul>
+</div></div></div>            
+
+            
+            <div class="editor-contents">
+                              <h1>C++ Data Types</h1>
+              
+              
+                              <p class="editor-contents__short-description">In this tutorial, we will learn about basic data types such as int, float, char, etc. in C++ programming with the help of examples.</p>
+              
+                                
+    
+    
+    
+    <style>
+    #div-gpt-ad-Programizcom36791 {display:none; }
+    #div-gpt-ad-Programizcom36795 {display: block;}
+    @media(min-width: 992px) { #div-gpt-ad-Programizcom36791 {display: block;} #div-gpt-ad-Programizcom36795 {display: none;}}
+    </style>
+    
+    <div id="div-gpt-ad-Programizcom36791" class="pub-ad content-top-ad" style="height:90px; width:728px; margin: 42px 0;">
+    </div>
+    
+    <div id="div-gpt-ad-Programizcom36795" class="pub-ad content-top-ad" style="min-height: 250px; margin: 42px 0;">
+    </div>
+    
+    
+    
+    
+    <style>#carbonads{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Helvetica,Arial,sans-serif;--width:728px;--font-size:22px}#carbonads{display:block;overflow:hidden;max-width:var(--width);position:relative;background-color:#fcfcfc;border:solid 1px #eee;font-size:var(--font-size);box-sizing:border-box;margin:36px 0 36px 0}.detail #carbonads{margin-top:12px}#carbonads a{color:inherit;text-decoration:none}#carbonads a:hover{color:inherit}.carbon-wrap{display:flex;align-items:center}carbon-img{display:block;float:left;margin:0;max-width:var(--width);line-height:1}.carbon-img img{display:block;margin:0;height:90px;width:auto}.carbon-text{display:block;float:left;padding:0 1em;line-height:1.35;max-width:calc(100% - 130px - 2em);text-align:left}.carbon-poweredby{display:block;position:absolute;bottom:0;right:0;padding:6px 10px;background:repeating-linear-gradient(-45deg,transparent,transparent 5px,hsla(0,0%,0%,.025) 5px,hsla(0,0%,0%,.025) 10px) hsla(203,11%,95%,.8);text-align:center;text-transform:uppercase;letter-spacing:.5px;font-weight:600;font-size:8px;border-top-left-radius:4px;line-height:1}@media only screen and (min-width:320px) and (max-width:759px){.carbon-text{font-size:14px}}</style>
+
+<div id="carbon-block"></div>
+                  
+              
+                                
+    
+    
+    
+    <div id="node-1661" class="node node-cpp-tutorial clearfix" about="/cpp-programming/data-types" typeof="sioc:Item foaf:Document">
+
+  
+      <span property="dc:title" content="C++ Data Types" class="rdf-meta element-hidden"></span>
+  
+  <div class="content">
+      <p>In C++, data types are declarations for variables. This determines the type and size of data associated with variables. For example,</p>
+
+<pre>
+<code>int age = 13;
+</code></pre>
+
+<p>Here, <var>age</var> is a variable of type <code>int</code>. Meaning, the variable can only store integers of either 2 or 4 bytes.</p>
+
+<hr />
+<h2 id="fundamental-types">C++ Fundamental Data Types</h2>
+
+<p>The table below shows the fundamental data types, their meaning, and their sizes (in bytes):</p>
+
+<table>
+	<tbody>
+		<tr>
+			<th>Data Type</th>
+			<th>Meaning</th>
+			<th>Size (in Bytes)</th>
+		</tr>
+		<tr>
+			<td><code>int</code></td>
+			<td>Integer</td>
+			<td>2 or 4</td>
+		</tr>
+		<tr>
+			<td><code>float</code></td>
+			<td>Floating-point</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td><code>double</code></td>
+			<td>Double Floating-point</td>
+			<td>8</td>
+		</tr>
+		<tr>
+			<td><code>char</code></td>
+			<td>Character</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td><code>wchar_t</code></td>
+			<td>Wide Character</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td><code>bool</code></td>
+			<td>Boolean</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td><code>void</code></td>
+			<td>Empty</td>
+			<td>0</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Now, let us discuss these fundamental data types in more detail.</p>
+
+<hr />
+<h3 id="int">1. C++ int</h3>
+
+<ul>
+	<li>The <code>int</code> keyword is used to indicate integers.</li>
+	<li>Its size is usually 4 bytes. Meaning, it can store values from <strong>-2147483648 to 2147483647</strong>.</li>
+	<li>For example,</li>
+</ul>
+
+<pre>
+<code>int salary = 85000;
+</code></pre>
+
+<hr />
+<h3 id="float-double">2. C++ float and double</h3>
+
+<ul>
+	<li><code>float</code> and <code>double</code> are used to store floating-point numbers (decimals and exponentials).</li>
+	<li>The size of <code>float</code> is 4 bytes and the size of <code>double</code> is 8 bytes. Hence, <code>double</code> has two times the precision of <code>float</code>. To learn more, visit C++ float and double.</li>
+	<li>For example,</li>
+</ul>
+
+<pre>
+<code>float area = 64.74;
+double volume = 134.64534;
+</code></pre>
+
+<p>As mentioned above, these two data types are also used for exponentials. For example,</p>
+
+<pre>
+<code>double distance = 45E12    // 45E12 is equal to 45*10^12
+</code></pre>
+
+<hr />
+<h3 id="character">3. C++ char</h3>
+
+<ul>
+	<li>Keyword <code>char</code> is used for characters.</li>
+	<li>Its size is 1 byte.</li>
+	<li>Characters in C++ are enclosed inside single quotes <code>&#39; &#39;</code>.</li>
+	<li>For example,</li>
+</ul>
+
+<pre>
+<code>char test = &#39;h&#39;;
+</code></pre>
+
+<p><strong>Note:</strong> In C++, an integer value is stored in a <code>char</code> variable rather than the character itself. To learn more, visit <a href="https://www.programiz.com/cpp-programming/char-type">C++ characters</a>.</p>
+
+<hr />
+<h3 id="wide-character">4. C++ wchar_t</h3>
+
+<ul>
+	<li>Wide character <code>wchar_t</code> is similar to the <code>char</code> data type, except its size is 2 bytes instead of 1.</li>
+	<li>It is used to represent characters that require more memory to represent them than a single <code>char</code>.</li>
+	<li>For example,</li>
+</ul>
+
+<pre>
+<code>wchar_t test = L&#39;ם&#39;  // storing Hebrew character;
+
+</code></pre>
+
+<p>Notice the letter L before the quotation marks.</p>
+
+<p><div  id="block-inject-1" class="block-inject block-inject-1">
+    
+    
+    
+    <style>
+    #div-gpt-ad-Programizcom37046 {display:none; }
+    #div-gpt-ad-Programizcom36796 {display: block;}
+    @media(min-width: 992px) { #div-gpt-ad-Programizcom37046 {display: block;} #div-gpt-ad-Programizcom36796 {display: none;}}
+    </style>
+    
+    <div id='div-gpt-ad-Programizcom37046' class="pub-ad" style="margin: 42px 0; min-height: 90px;">
+    </div>
+    
+    <div id='div-gpt-ad-Programizcom36796' class="pub-ad" style="margin: 42px 0; min-height: 250px;">
+    </div>
+    </div><div class="clearfix"></div><p><strong>Note:</strong> There are also two other fixed-size character types <code>char16_t</code> and <code>char32_t</code> introduced in C++11.</p>
+
+<hr />
+<h3 id="boolean">5. C++ bool</h3>
+
+<ul>
+	<li>The <code>bool</code> data type has one of two possible values: <code>true</code> or <code>false</code>.</li>
+	<li>Booleans are used in conditional statements and loops (which we will learn in later chapters).</li>
+	<li>For example,</li>
+</ul>
+
+<pre>
+<code>bool cond = false;
+</code></pre>
+
+<hr />
+<h3 id="void">6. C++ void</h3>
+
+<ul>
+	<li>The <code>void</code> keyword indicates an absence of data. It means &quot;nothing&quot; or &quot;no value&quot;.</li>
+	<li>We will use void when we learn about functions and pointers.</li>
+</ul>
+
+<p><strong>Note:</strong> We cannot declare variables of the <code>void</code> type.</p>
+
+<hr />
+<h2 id="type-modifiers">C++ Type Modifiers</h2>
+
+<p>We can further modify some of the fundamental data types by using type modifiers. There are 4 type modifiers in C++. They are:</p>
+
+<ol>
+	<li><code>signed</code></li>
+	<li><code>unsigned</code></li>
+	<li><code>short</code></li>
+	<li><code>long</code></li>
+</ol>
+
+<p>We can modify the following data types with the above modifiers:</p>
+
+<ul>
+	<li><code>int</code></li>
+	<li><code>double</code></li>
+	<li><code>char</code></li>
+</ul>
+
+<hr />
+<h3>C++ Modified Data Types List</h3>
+
+<table>
+	<tbody>
+		<tr>
+			<th>Data Type</th>
+			<th>Size (in Bytes)</th>
+			<th>Meaning</th>
+		</tr>
+		<tr>
+			<td><code>signed int</code></td>
+			<td>4</td>
+			<td>used for integers (equivalent to <code>int</code>)</td>
+		</tr>
+		<tr>
+			<td><code>unsigned int</code></td>
+			<td>4</td>
+			<td>can only store positive integers</td>
+		</tr>
+		<tr>
+			<td><code>short</code></td>
+			<td>2</td>
+			<td>used for small integers (range <strong>-32768 to 32767</strong>)</td>
+		</tr>
+		<tr>
+			<td><code>long</code></td>
+			<td>at least 4</td>
+			<td>used for large integers (equivalent to <code>long int</code>)</td>
+		</tr>
+		<tr>
+			<td><code>unsigned long</code></td>
+			<td>4</td>
+			<td>used for large positive integers or 0 (equivalent to <code>unsigned</code> <code>long int</code>)</td>
+		</tr>
+		<tr>
+			<td><code>long long</code></td>
+			<td>8</td>
+			<td>used for very large integers (equivalent to <code>long long int</code>).</td>
+		</tr>
+		<tr>
+			<td><code>unsigned long long</code></td>
+			<td>8</td>
+			<td>used for very large positive integers or 0 (equivalent to <code>unsigned long long int</code>)</td>
+		</tr>
+		<tr>
+			<td><code>long double</code></td>
+			<td>12</td>
+			<td>used for large floating-point numbers</td>
+		</tr>
+		<tr>
+			<td><code>signed char</code></td>
+			<td>1</td>
+			<td>used for characters (guaranteed range&nbsp;<strong>-127 to 127</strong>)</td>
+		</tr>
+		<tr>
+			<td><code>unsigned char</code></td>
+			<td>1</td>
+			<td>used for characters (range <strong>0 to 255</strong>)</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Let&#39;s see a few examples.</p>
+
+<pre>
+<code>long b = 4523232;
+long int c = 2345342;
+long double d = 233434.56343;
+short d = 3434233; // Error! out of range
+unsigned int a = -5;    // Error! can only store positive numbers or 0
+</code></pre>
+
+<hr />
+<h2 id="derived-types">Derived Data Types</h2>
+
+<p>Data types that are derived from fundamental data types are derived types. For example: arrays, pointers, function types, structures, etc.</p>
+
+<p>We will learn about these derived data types in later tutorials.</p>
+  </div>
+
+  
+  
+</div>
+
+                              </div>
+
+                            
+    
+    
+    
+    
+
+<div class="pagination-area">
+
+    
+        <div class="pagination-area__btn pagination-area__btn--prev">
+            <a href="/cpp-programming/variables-literals" title="C++ Variables and Literals" class="btn pagination-btn d-flex align-items-center justify-content-end">
+                <div class="btn__labels text-right">
+                    <div class="btn__sub-label">Previous Tutorial:</div>
+                    <div class="btn__label">C++ Variables and Literals</div>
+                </div>
+            </a></div>
+    
+    
+        <div class="pagination-area__btn pagination-area__btn--next">
+
+            <a href="/cpp-programming/input-output" title="C++ Basic I/O" class="btn btn--primary pagination-btn d-flex align-items-center justify-content-end">
+                <div class="btn__labels text-right">
+                    <div class="btn__sub-label">Next Tutorial:</div>
+                    <div class="btn__label">C++ Basic I/O</div>
+                </div>
+                <svg class="programiz-icon">
+                    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right" />
+                </svg>
+            </a>
+        </div>
+    </div>
+    
+    
+    
+    
+    <div class="social-area">
+    <div class="social-area__col social-area__col-1"><label class="social-area__label">Share on: </label>
+        <div class="social-icon">
+            <a class="social-icon__link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.programiz.com/cpp-programming/data-types"><svg class="programiz-icon programiz-icon--smallest"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#facebook"></use></svg></a>            <a class="social-icon__link" href="https://twitter.com/intent/tweet?text=Check this amazing article: C++ Data Types&via=programiz&url=https://www.programiz.com/cpp-programming/data-types"><svg class="programiz-icon programiz-icon--smallest"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#twitter"></use></svg></a>        </div>
+    </div>
+
+    <div class="social-area__col social-area__col-2"><label class="social-area__label">Was this article helpful? </label>
+
+        <div class="social-icon" data-nid="1661"><button class="social-icon__link social-icon__link--negetive"><svg class="programiz-icon programiz-icon--smallest">
+                    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#thumbs-down"></use>
+                </svg></button><button class="social-icon__link social-icon__link--positive"><svg class="programiz-icon programiz-icon--smallest">
+                    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#thumbs-up"></use>
+                </svg></button></div>
+    </div>
+
+    <div class="page-feedback-form" style="display: none;">
+        <form class="webform-client-form webform-client-form-1680" action="/cpp-programming/data-types" method="post" id="webform-client-form-1680" accept-charset="UTF-8"><div><div  class="form-item webform-component webform-component-markup webform-component--page-feedback-header">
+ <p class="font-weight-600" style="font-size: 18px;">Sorry about that</p>
+<label class="social-area__label" style="margin-top: 20px; font-size: 14px;">How can we improve it?</label>
+</div>
+<div class="row"><div class="col-md-12"><div class="form"><div  class="form-item webform-component webform-component-textarea webform-component--dislike-feedback">
+  <label class="element-invisible" for="edit-submitted-dislike-feedback">Feedback <span class="form-required" title="This field is required.">*</span></label>
+ <div class="form-textarea-wrapper resizable"><textarea required="required" placeholder="Enter your message..." class="form__control form__control--textarea form-textarea required" id="edit-submitted-dislike-feedback" name="submitted[dislike_feedback]" cols="60" rows="5"></textarea></div>
+</div>
+</div></div></div><input type="hidden" name="details[sid]" />
+<input type="hidden" name="details[page_num]" value="1" />
+<input type="hidden" name="details[page_count]" value="1" />
+<input type="hidden" name="details[finished]" value="0" />
+<input type="hidden" name="form_build_id" value="form-eRIAK-jWqcYbwmVTZ2OH11DhfaKABQ6vfDLCcGKQBDE" />
+<input type="hidden" name="form_id" value="webform_client_form_1680" />
+<div class="captcha"><input type="hidden" name="captcha_sid" value="116878297" />
+<input type="hidden" name="captcha_token" value="00132bd900857efaac53ec7aa893988f" />
+<input type="hidden" name="captcha_response" value="Google no captcha" />
+<div class="g-recaptcha" data-sitekey="6LcpoEsUAAAAAP2oeouHeV70m85MUNlab8UrEqyL" data-theme="light" data-type="image"></div></div><div class="form-actions"><div class="row"><div class="col-md-12 d-flex justify-content-start"><input class="webform-submit button-primary btn btn--primary btn--large btn--block-sp form-submit" type="submit" id="edit-submit" name="op" value="Submit" /></div></div></div></div></form>    </div>
+</div>
+    
+    
+    
+    
+    <style>
+    #div-gpt-ad-Programizcom36790 {display:none; }
+    #div-gpt-ad-Programizcom36794 {display: block;}
+    @media(min-width: 992px) { #div-gpt-ad-Programizcom36790 {display: block;} #div-gpt-ad-Programizcom36794 {display: none;}}
+    </style>
+    
+    <div id='div-gpt-ad-Programizcom36790' style="margin: 36px 0;"  min-height: 90px; class="pub-ad">
+    </div>
+    
+    <div id='div-gpt-ad-Programizcom36794' style="margin: 36px 0;" min-height: 250px; class="pub-ad">
+    </div>
+                
+          </div>
+        </div>
+      </div>
+      <hr />
+
+                
+    
+    
+    
+    <div class="view view-tutorials-related-articles view-id-tutorials_related_articles view-display-id-block_2 above-bottom-recommended-articles view-dom-id-c80169dfbc2055329773b7cca320e324">
+        
+  
+  
+      <div class="view-content">
+      <div class="row"><div class="col-sm-12"><h3 class="grouped-card-title">Related Tutorials</h3></div><div class="col-md-6 col-lg-3"><a href="/cpp-programming/type-modifiers"> <div class="card card--even-spaced card--examples card--examples--blue card--examples--1"><p class="card__title">C++ Tutorial</p><p class="card__description">C++ Type Modifiers</p></div></a></div><div class="col-md-6 col-lg-3"><a href="/cpp-programming/float-double"> <div class="card card--even-spaced card--examples card--examples--blue card--examples--2"><p class="card__title">C++ Tutorial</p><p class="card__description">C++ float and double</p></div></a></div><div class="col-md-6 col-lg-3"><a href="/cpp-programming/variables-literals"> <div class="card card--even-spaced card--examples card--examples--blue card--examples--3"><p class="card__title">C++ Tutorial</p><p class="card__description">C++ Variables, Literals and Constants</p></div></a></div><div class="col-md-6 col-lg-3"><a href="/cpp-programming/templates"> <div class="card card--even-spaced card--examples card--examples--blue card--examples--4"><p class="card__title">C++ Tutorial</p><p class="card__description">C++ Templates</p></div></a></div></div></div>    </div>
+  
+  
+  
+  
+  
+  
+</div>
+          
+      <!-- Get app link -->
+                    
+    </div>
+  </div>
+
+      <footer class="footer">
+        
+    
+    
+    
+    <div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div id="mauticform_wrapper_generalsubscribersformmobile"
+        class="sp-footer-form d-block d-md-none mauticform_wrapper">
+        <form autocomplete="false" role="form" method="post" action="https://email.programiz.com/form/submit?formId=9"
+          id="mauticform_generalsubscribersformmobile" data-mautic-form="generalsubscribersformmobile"
+          enctype="multipart/form-data" class="card card--even-spaced card--shadowed-up card--no-border">
+          <div class="mauticform-error" id="mauticform_generalsubscribersformmobile_error"></div>
+          <div class="mauticform-message" id="mauticform_generalsubscribersformmobile_message"></div>
+          <div class="mauticform-innerform">
+            <div class="footer__form__title">Join our newsletter for the latest updates.</div>
+
+            <div class="mauticform-page-wrapper mauticform-page-1 input-group" data-mautic-form-page="1">
+
+              <div id="mauticform_generalsubscribersformmobile_email1"
+                class="mauticform-row mauticform-email mauticform-field-1 mauticform-required input-group"
+                data-validate="email1" data-validation-type="email">
+                <input id="mauticform_input_generalsubscribersformmobile_email1" name="mauticform[email1]" value=""
+                  placeholder="Enter Email Address*" class="mauticform-input input-group__control" type="email">
+                <span class="mauticform-errormsg" style="display: none;">This is required.</span>
+              </div>
+
+              <div id="mauticform_generalsubscribersformmobile_submit"
+                class="mauticform-row mauticform-button-wrapper mauticform-field-2 input-group">
+                <button type="submit" name="mauticform[submit]"
+                  id="mauticform_input_generalsubscribersformmobile_submit" value=""
+                  class="mauticform-button input-group__action btn btn--primary">Join</button>
+              </div>
+            </div>
+          </div>
+
+          <input type="hidden" name="mauticform[formId]" id="mauticform_generalsubscribersformmobile_id" value="9">
+          <input type="hidden" name="mauticform[return]" id="mauticform_generalsubscribersformmobile_return" value="">
+          <input type="hidden" name="mauticform[formName]" id="mauticform_generalsubscribersformmobile_name"
+            value="generalsubscribersformmobile">
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xl-4 col-lg-5 col-md-6 d-none d-md-block">
+      <div class="footer__content">
+        <object
+          class="footer__logo"
+          data="/sites/all/themes/programiz/assets/logo_white.svg"
+          type="image/svg+xml"
+        ></object>
+
+        <div class="mauticform_wrapper" id="mauticform_wrapper_generalsubscribersform">
+          <form action="https://email.programiz.com/form/submit?formId=6" autocomplete="false" class="footer__form"
+            data-mautic-form="generalsubscribersform" enctype="multipart/form-data"
+            id="mauticform_generalsubscribersform" method="post" role="form">
+            <div class="mauticform-error" id="mauticform_generalsubscribersform_error"></div>
+            <div class="mauticform-message" id="mauticform_generalsubscribersform_message"></div>
+            <div class="mauticform-innerform">
+              <div class="footer__form__title">Join our newsletter for the latest updates.</div>
+              <div class="mauticform-page-wrapper mauticform-page-1 input-group" data-mautic-form-page="1">
+                <div class="mauticform-row mauticform-email mauticform-field-1 mauticform-required input-group"
+                  data-validate="email1" data-validation-type="email" id="mauticform_generalsubscribersform_email1">
+                  <input class="mauticform-input input-group__control"
+                    id="mauticform_input_generalsubscribersform_email1" name="mauticform[email1]"
+                    placeholder="Enter Email Address*" type="email" value="" />
+                  <span class="mauticform-errormsg" style="display: none;">This is required.</span>
+                </div>
+                <div class="mauticform-row mauticform-button-wrapper mauticform-field-2 input-group"
+                  id="mauticform_generalsubscribersform_submit">
+                  <button class="mauticform-button input-group__action btn btn--primary"
+                    id="mauticform_input_generalsubscribersform_submit" name="mauticform[submit]" type="submit"
+                    value="">Join</button>
+                </div>
+              </div>
+            </div>
+            <input id="mauticform_generalsubscribersform_id" name="mauticform[formId]" type="hidden" value="6" />
+            <input id="mauticform_generalsubscribersform_return" name="mauticform[return]" type="hidden" value="" />
+            <input id="mauticform_generalsubscribersform_name" name="mauticform[formName]" type="hidden"
+              value="generalsubscribersform" />
+          </form>
+        </div>
+        <div class="footer__vendor-btn">
+          <div class="footer__vendor-btn__row">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.programiz.learnpython&amp;referrer=utm_campaign%3Dprogramiz-footer%26utm_source%3Dprogramiz-website"
+              title="Learn Python: Programiz on Play Store"
+            >
+              <img
+                class="app-download-btn app-download-btn--offset"
+                src="//cdn.programiz.com/sites/all/themes/programiz/assets/playstore.svg"
+              />
+            </a>
+          </div>
+
+          <div class="footer__vendor-btn__row">
+            <a
+              href="https://apps.apple.com/app/apple-store/id1472188189?pt=120228772&amp;ct=programiz-footer&amp;mt=8"
+              title="Learn Python: Programiz on App Store"
+            >
+              <img class="app-download-btn" src="//cdn.programiz.com/sites/all/themes/programiz/assets/appstore.svg" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-2 col-md-3 col-xs-6">
+      <div class="footer__link-area">
+        <h4 class="footer__link-area__title">Tutorials</h4>
+
+        <ul class="footer__links">
+          <li class="footer__links__nodes"><a class="link-node" href="/python-programming"
+              title="Python Tutorials">Python 3 Tutorial</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/javascript"
+              title="JavaScript Tutorial">JavaScript Tutorial</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/c-programming" title="C Tutorial">C Tutorial</a>
+          </li>
+          <li class="footer__links__nodes"><a class="link-node" href="/java-programming" title="Java Tutorial">Java
+              Tutorial</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/kotlin-programming"
+              title="Kotlin Tutorial">Kotlin Tutorial</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/cpp-programming" title="C++ Tutorial">C++
+              Tutorial</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/swift-programming" title="Swift Tutorial">Swift
+              Tutorial</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/csharp-programming" title="C# Tutorial">C#
+              Tutorial</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/dsa" title="Data Structures and Algorithms">DSA
+              Tutorial</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-lg-2  col-md-3 col-xs-6">
+      <div class="footer__link-area">
+        <h4 class="footer__link-area__title">Examples</h4>
+
+        <ul class="footer__links">
+          <li class="footer__links__nodes"><a class="link-node" href="/python-programming/examples"
+              title="Python Examples">Python Examples</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/javascript/examples"
+              title="JavaScript Examples">JavaScript Examples</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/c-programming/examples" title="C Examples">C
+              Examples</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/java-programming/examples"
+              title="Java Examples">Java Examples</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/kotlin-programming/examples"
+              title="Kotlin Examples">Kotlin Examples</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/cpp-programming/examples"
+              title="C++ Examples">C++ Examples</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-lg-2 col-md-3 col-xs-6">
+      <div class="footer__link-area">
+        <h4 class="footer__link-area__title">Company</h4>
+
+        <ul class="footer__links">
+          <li class="footer__links__nodes"><a class="link-node" id='unic-gdpr'
+            onclick='__tcfapi("openunic");return false;' style='display:none;cursor:pointer;'>Change Ad Consent</a>
+          </li>
+          <li class="footer__links__nodes"><a class="link-node" id='unic-ccpa' onclick="window.__uspapi('openunic')"
+              style='display:none;cursor:pointer;'>Do not sell my data</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/about-us" title="About us">About</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/advertise" title="Advertise with us">Advertising</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/privacy-policy" title="Privacy Policy">Privacy Policy</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/terms-of-use" title="Terms &amp; Conditions">Terms &amp; Conditions</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/contact" title="Contact us">Contact</a></li>
+          <li class="footer__links__nodes"><a title="Blog" href="/blog" class="link-node">Blog</a></li>
+          <li class="footer__links__nodes"><a title="Programiz on Youtube"
+            href="https://www.youtube.com/channel/UCREFp3D_n8JfcDonlm7Mpyw" class="link-node">Youtube</a></li>
+
+      </div>
+    </div>
+
+    <div class="col-lg-2 col-md-3 col-xs-6">
+      <div class="footer__link-area">
+        <h4 class="footer__link-area__title">Apps</h4>
+
+        <ul class="footer__links">
+          <li class="footer__links__nodes"><a class="link-node" href="/learn-python"
+              title="Learn Python: Programiz">Learn Python</a></li>
+          <li class="footer__links__nodes"><a class="link-node" href="/learn-c"
+              title="Learn C Programming: Programiz">Learn C Programming</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-brand-area d-block d-md-none">
+    <div class="d-flex justify-content-center">
+      <img class="sp-brand-area__logo" src="//cdn.programiz.com/sites/all/themes/programiz/assets/logo_white.svg" />
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <div class="footer__vendor-btn__row">
+        <a
+          href="https://play.google.com/store/apps/details?id=com.programiz.learnpython&amp;referrer=utm_campaign%3Dprogramiz-footer%26utm_source%3Dprogramiz-website"
+          title="Learn Python: Programiz on Play Store"
+        >
+          <img
+            class="app-download-btn app-download-btn--offset"
+            src="//cdn.programiz.com/sites/all/themes/programiz/assets/playstore.svg"
+          />
+        </a>
+      </div>
+
+      <div class="footer__vendor-btn__row">
+        <a
+          href="https://apps.apple.com/app/apple-store/id1472188189?pt=120228772&amp;ct=programiz-footer&amp;mt=8"
+          title="Learn Python: Programiz on App Store"
+        >
+          <img class="app-download-btn" src="//cdn.programiz.com/sites/all/themes/programiz/assets/appstore.svg" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__end">
+    <p class="copyright-text">&copy; Parewa Labs Pvt. Ltd. All rights reserved.</p>
+
+    <div class="social-icons">
+      <a class="social-icons__links" href="https://www.facebook.com/programiz" title="Programiz on Facebook"
+        ><svg class="programiz-icon programiz-icon--small">
+          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#facebook"></use>
+        </svg>
+      </a>
+      <a class="social-icons__links" href="https://www.instagram.com/_programiz/" title="Programiz on Instagram">
+        <svg class="programiz-icon programiz-icon--small">
+          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#instagram"></use>
+        </svg>
+      </a>
+      <a class="social-icons__links" href="https://www.linkedin.com/company/programiz" title="Programiz on Linkedin">
+        <svg class="programiz-icon programiz-icon--small">
+          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#linkedin"></use>
+        </svg>
+      </a>
+      <a class="social-icons__links" href="https://twitter.com/programiz" title="Programiz on Twitter">
+        <svg class="programiz-icon programiz-icon--small">
+          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#twitter"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function waitGEO() {
+    var readyGEO;
+    if (window['UnicI'] && window['UnicI'].geo && window['UnicI'].geo !== '-') {
+      readyGEO = true;
+      console.log(window['UnicI'].geo);
+      if (window['UnicI'].geo === 'EU') {
+        if (document.getElementById("unic-gdpr")) {
+          document.getElementById("unic-gdpr").style.display = 'block';
+        }
+      }
+      if (window['UnicI'].geo === 'CA') {
+        if (document.getElementById("unic-ccpa")) {
+          document.getElementById("unic-ccpa").style.display = 'block';
+        }
+      }
+    }
+    if (!readyGEO) {
+      setTimeout(waitGEO, 200);
+    }
+  })();
+</script>
+        </footer>
+  </main>
+  </body>
+
+</html>

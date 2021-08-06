@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<style>
+p[class="p1"]{
+
+   text-shadow: 15px -16px 2px  red ;
+   
+   /* these two are  for position of shadow ,it could be negative   */
+    /* third px is for blur  over shadow */
+   /* color for shadow color  */
+/* display: none; */
+
+
+}
+
+p[class="p2"]{
+
+color: white;
+text-shadow: 1px -1px 2px  black;
+
+/* these two are  for position of shadow ,it could be negative   */
+ /* third px is for blur  over shadow */
+/* color for shadow color  */
+/* display: none; */
+
+
+}
+
+h1 {
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+
+div.card {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+div.header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 40px;
+}
+
+div.container {
+  padding: 10px;
+}
+</style>
+
+</style>
+
+<body>
+<!--  text shadow is used for applying shadow over  text  -->
+<!-- it has three 1 : shadow ,2: color,3: blur  -->
+<!--  first thing is required for position of shadow  -->
+
+<p class="p1" >AJAY KUMAR VERMA </p>
+<p class="p2">Ajay kumar verma</p>
+
+
+
+<h1>Ajay KUMAR verma</h1>
+<hr>
+<hr><hr>
+
+<!-- box shadow prperty is for applying shadow over element   -->
+<p>The box-shadow property can be used to create paper-like cards:</p>
+
+<div class="card">
+  <div class="header">
+    <h1>1</h1>
+  </div>
+
+  <div class="container">
+    <p>January 1, 2016</p>
+  </div>
+</div>
+
+</body>
+
+
+<script>
+
+document.title=" Text shadow and box shadow ";
+
+
+</script>
+
+
+</html>

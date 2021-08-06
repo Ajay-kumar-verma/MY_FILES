@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><!-- saved from url=(0049)http://www.w3schools.com/htmldom/dom_nodetree.asp -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>HTML DOM Node Tree</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="xml,tutorial,html,dhtml,css,xsl,xhtml,javascript,asp,ado,vbscript,dom,sql,colors,soap,php,authoring,programming,training,learning,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript DHTML XML DOM XSL XSLT RSS AJAX ASP ADO PHP SQL tutorials, references, examples for web building." />
+
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "../../https@ssl.\default.htm" : "../../www./default.htm");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+</head>
+<body>
+
+<center>
+<table class="container" style="width:904px;margin-bottom:4px;" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">
+
+<a name="top"></a>
+<table width="890px" border="0" cellpadding="0" cellspacing="0"
+style="margin-top:4px;background-color:#606060;border-bottom:1px solid black">
+<tr>
+<td width="20px">&nbsp;</td>
+<td width="500px" valign="middle" style="height:50px;text-align:left">
+<a href="../default.htm"><img border="0" src="../images/h_logo.gif" width="203" height="20" alt="w3schools" title="w3schools" /></a>
+&nbsp;&nbsp;
+<a href="../default.htm">
+<img border="0" src="../images/h_logo2.gif" width="214" height="20" alt="w3Schools" title="w3schools" />
+</a>
+</td>
+<td align="right" valign="bottom" style="color:white;font-size:10px;font-weight:bold">
+<form style="margin:0px;padding:0px;" method="get" name="searchform" action="https://www.google.com/search" target="_blank">
+Search W3Schools : <input type="hidden" name="sitesearch" value="www.w3schools.com" />
+<input alt="search" type="text" style="width:128px;" name="as_q" size="20" value="" />
+<input style="margin-bottom:10px" type="image" align="middle" src="../images/search.gif" />
+</form>
+</td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<table width="890px" border="0" cellpadding="0" cellspacing="0"
+style="background-color:#606060">
+<tr>
+<td class="blacknav" style="border-left:none" width="50px"><a class="m_item" href="../default.asp.htm">HOME</a></td>
+<td class="blacknav" width="50px"><a class="m_item" href="../html/default.asp.htm">HTML</a></td>
+<td class="blacknav" width="40px"><a class="m_item" href="../css/default.asp.htm">CSS</a></td>
+<td class="blacknav" width="40px"><a class="m_item" href="../xml/default.asp.htm">XML</a></td>
+<td class="blacknav" width="90px"><a class="m_item" href="../js/default.asp.htm">JAVASCRIPT</a></td>
+<td class="blacknav" width="40px"><a class="m_item" href="../asp/default.asp.htm">ASP</a></td>
+<td class="blacknav" width="40px"><a class="m_item" href="../php/default.asp.htm">PHP</a></td>
+<td class="blacknav" width="40px"><a class="m_item" href="../sql/default.asp.htm">SQL</a></td>
+<td class="blacknav" width="60px"><a class="m_item" href="../sitemap.asp.htm">MORE...</a></td>
+<td class="blacknav">&nbsp;</td>
+<td class="blacknav" width="80px"><a class="m_item" href="../sitemap.asp.htm">References</a></td>
+<td class="blacknav" width="70px"><a class="m_item" href="../sitemap.asp.htm">Examples</a></td>
+<td class="blacknav" width="50px"><a class="m_item" target="_blank" href="../forum/default.asp.htm">Forum</a></td>
+<td class="blacknav" style="border-right:none" width="50px"><a class="m_item" href="../about/default.asp.htm">About</a></td>
+</tr>
+</table>
+
+<table class="topad" width="890px" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top" width="155px" style="padding-top:5px;border:1px solid #c3c3c3;color:#606060;text-align:center">
+<b>ADVERTISEMENTS</b><br /><br />
+<a class="left" target="_blank" href="../cert/default.asp.htm">XML Certification</a><br />
+<a class="left" target="_blank" rel="nofollow" href="../../www.altova.com/ref/@s=w3s_text&q=xmlspy">Download XML editor</a><br />
+<a class="left" target="_blank" rel="nofollow" href="../../www.getafreelancer.com/default.htm">Custom Programming</a>
+</td>
+<td width="7px">&nbsp;</td>
+<td width="728px" align="center" valign="top" style="height:90px;background-color:#ffffff">
+
+<iframe style="background-color:#ffffff" src="../banners/bannerframe.asp@adpartner=aspall2.htm" height="90" width="728"
+marginwidth="0" marginheight="0" frameborder="0" scrolling="no">
+Your browser does not support inline frames or is currently configured not to display inline frames.
+</iframe>
+
+</td>
+</tr>
+</table>
+
+<table width="890px" border="0" cellpadding="0" cellspacing="0">
+<tr><td class="left_container" width="155px" align="left" valign="top">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><th class="left" align="center">Table of contents</th></tr>
+<tr><td class="left" align="left" valign="top">
+<b>HTML DOM</b>
+<br />
+<a class="left" target="_top" href="default.asp.htm" >DOM HOME</a><br />
+<a class="left" target="_top" href="dom_intro.asp.htm" >DOM Intro</a><br />
+<a class="left" target="_top" href="dom_nodes.asp.htm" >DOM Nodes</a><br />
+<a class="left" target="_top" href="dom_nodetree.asp.htm" style='font-weight:bold;'>DOM Node Tree</a><br />
+<a class="left" target="_top" href="dom_methods.asp.htm" >DOM Methods</a><br />
+<a class="left" target="_top" href="dom_nodes_access.asp.htm" >DOM Node Access</a><br />
+<a class="left" target="_top" href="dom_nodes_info.asp.htm" >DOM Node Info</a><br />
+<a class="left" target="_top" href="dom_using.asp.htm" >DOM How To</a><br />
+<a class="left" target="_top" href="dom_events.asp.htm" >DOM Events</a><br />
+<a class="left" target="_top" href="dom_reference.asp.htm" >DOM Reference</a><br />
+<a class="left" target="_top" href="dom_summary.asp.htm" >DOM Summary</a><br />
+<br />
+<b>DOM Examples</b>
+<br />
+<a class="left" target="_top" href="dom_examples.asp.htm" >DOM Examples</a><br />
+<br />
+<b>DOM Objects</b>
+<br />
+<a class="left" target="_top" href="dom_obj_window.asp.htm" >DOM Window</a><br />
+<a class="left" target="_top" href="dom_obj_navigator.asp.htm" >DOM Navigator</a><br />
+<a class="left" target="_top" href="dom_obj_screen.asp.htm" >DOM Screen</a><br />
+<a class="left" target="_top" href="dom_obj_history.asp.htm" >DOM History</a><br />
+<a class="left" target="_top" href="dom_obj_location.asp.htm" >DOM Location</a><br />
+<br />
+<a class="left" target="_top" href="dom_obj_document.asp.htm" >DOM Document</a><br />
+<br />
+<a class="left" target="_top" href="dom_obj_anchor.asp.htm" >DOM Anchor</a><br />
+<a class="left" target="_top" href="dom_obj_area.asp.htm" >DOM Area</a><br />
+<a class="left" target="_top" href="dom_obj_base.asp.htm" >DOM Base</a><br />
+<a class="left" target="_top" href="dom_obj_body.asp.htm" >DOM Body</a><br />
+<a class="left" target="_top" href="dom_obj_pushbutton.asp.htm" >DOM Button</a><br />
+<a class="left" target="_top" href="dom_obj_event.asp.htm" >DOM Event</a><br />
+<a class="left" target="_top" href="dom_obj_form.asp.htm" >DOM Form</a><br />
+<a class="left" target="_top" href="dom_obj_frame.asp.htm" >DOM Frame</a><br />
+<a class="left" target="_top" href="dom_obj_frameset.asp.htm" >DOM Frameset</a><br />
+<a class="left" target="_top" href="dom_obj_iframe.asp.htm" >DOM IFrame</a><br />
+<a class="left" target="_top" href="dom_obj_image.asp.htm" >DOM Image</a><br />
+<a class="left" target="_top" href="dom_obj_button.asp.htm" >DOM Input Button</a><br />
+<a class="left" target="_top" href="dom_obj_checkbox.asp.htm" >DOM Input Checkbox</a><br />
+<a class="left" target="_top" href="dom_obj_fileupload.asp.htm" >DOM Input File</a><br />
+<a class="left" target="_top" href="dom_obj_hidden.asp.htm" >DOM Input Hidden</a><br />
+<a class="left" target="_top" href="dom_obj_password.asp.htm" >DOM Input Password</a><br />
+<a class="left" target="_top" href="dom_obj_radio.asp.htm" >DOM Input Radio</a><br />
+<a class="left" target="_top" href="dom_obj_reset.asp.htm" >DOM Input Reset</a><br />
+<a class="left" target="_top" href="dom_obj_submit.asp.htm" >DOM Input Submit</a><br />
+<a class="left" target="_top" href="dom_obj_text.asp.htm" >DOM Input Text</a><br />
+<a class="left" target="_top" href="dom_obj_link.asp.htm" >DOM Link</a><br />
+<a class="left" target="_top" href="dom_obj_meta.asp.htm" >DOM Meta</a><br />
+<a class="left" target="_top" href="dom_obj_object.asp.htm" >DOM Object</a><br />
+<a class="left" target="_top" href="dom_obj_option.asp.htm" >DOM Option</a><br />
+<a class="left" target="_top" href="dom_obj_select.asp.htm" >DOM Select</a><br />
+<a class="left" target="_top" href="dom_obj_style.asp.htm" >DOM Style</a><br />
+<a class="left" target="_top" href="dom_obj_table.asp.htm" >DOM Table</a><br />
+<a class="left" target="_top" href="dom_obj_tabledata.asp.htm" >DOM TableCell</a><br />
+<a class="left" target="_top" href="dom_obj_tablerow.asp.htm" >DOM TableRow</a><br />
+<a class="left" target="_top" href="dom_obj_textarea.asp.htm" >DOM Textarea</a><br />
+
+
+<br />
+</td></tr></table>
+
+<table width="100%" class="left" cellpadding="0" cellspacing="0" style="margin-top:6px">
+<tr><th class="left" align="center">Selected Reading</th></tr>
+<tr><td class="left">
+<a class="left" target="_top" href="../browsers/browsers_stats.asp.htm">Web Statistics</a><br />
+<a class="left" target="_top" href="../site/site_glossary.asp.htm">Web Glossary</a><br />
+<a class="left" target="_top" href="../hosting/default.asp.htm">Web Hosting</a><br />
+<a class="left" target="_top" href="../quality/default.asp.htm">Web Quality</a><br /><br />
+<a class="left" target="_top" href="../default.asp.htm">W3Schools Tutorials</a><br />
+<a class="left" target="_blank" href="../forum/default.asp.htm">W3Schools Forum</a><br /><br />
+<a class="left" target="_top" href="../about/about_helping.asp.htm">Helping W3Schools</a><br /><br />
+</td></tr></table>
+
+</td>
+<td width="6px">&nbsp;</td>
+<td align="left" valign="top">
+<table class="page" width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td>
+
+<h1>HTML DOM Node Tree</h1><a href="dom_nodes.asp.htm"><img border="0" alt="previous" src="../images/btn_previous.gif" /></a>
+<a href="dom_methods.asp.htm"><img border="0" alt="next" src="../images/btn_next.gif" width="100" height="20" /></a>
+<hr />
+
+<p class="intro">The HTML DOM views a HTML document as a node-tree.</p>
+<p class="intro">All the nodes in a node tree have relationships to each other.</p>
+
+<hr />
+
+<h2>The HTML DOM Node Tree (Document Tree)</h2>
+<p>The HTML DOM views a HTML document as a tree-structure. The tree structure is 
+called a <b>node-tree.</b></p>
+<p>All nodes can be accessed through the tree. Their contents can be modified or 
+deleted, and new elements can be created.</p>
+<p>The node tree below shows the set of nodes, and the connections between them. 
+The tree starts at the root node and branches out to the text nodes at the 
+lowest level of the tree:</p>
+<p>
+<img border="0" src="htmltree.gif" alt="DOM HTML tree" width="486" height="266" />
+</p><hr  />
+<h2>Node Parents, Children, and Siblings</h2>
+<p>The nodes in the node tree have a hierarchical relationship to each other.</p>
+<p>The terms parent, child, and sibling are used to describe the relationships. 
+Parent nodes have children. Children on the same level are called siblings 
+(brothers or sisters). </p>
+<ul>
+	<li>In a node tree, the top node is called the root</li>
+	<li>Every node, except the root, has exactly one parent node</li>
+	<li>A node can have any number of children</li>
+	<li>A leaf is a node with no children</li>
+	<li>Siblings are nodes with the same parent</li>
+</ul>
+<p>Look at the following HTML fragment:</p>
+<table class="ex" id="table2" cellspacing="0" width="100%" border="1">
+<tr>
+<td valign="top">
+<pre>&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;DOM Tutorial&lt;/title&gt; 
+  &lt;/head&gt;
+  &lt;body&gt; 
+    &lt;h1&gt;DOM Lesson one&lt;/h1&gt; 
+    &lt;p&gt;Hello world!&lt;/p&gt; 
+  &lt;/body&gt; 
+&lt;/html&gt;</pre>
+</td>
+</tr>
+</table>
+
+<p>In the HTML above, every 
+node except for the document node has a parent node:</p>
+<ul>
+	<li>The &lt;html&gt; node has no parent node; the root node</li>
+	<li>The parent node of 
+the &lt;head&gt; and &lt;body&gt; nodes is the &lt;html&gt; node</li>
+	<li>The parent node of the &quot;Hello world!&quot; text node is the &lt;p&gt; node</li>
+</ul>
+<p>Most element nodes have child nodes:</p>
+<ul>
+	<li>The &lt;html&gt; node has two child nodes; &lt;head&gt; and &lt;body&gt;</li>
+	<li>The &lt;head&gt; node has one 
+child node; the &lt;title&gt; node</li>
+	<li>The &lt;title&gt; node also has one child 
+node; the text node &quot;DOM Tutorial&quot;</li>
+	<li>The &lt;h1&gt; and &lt;p&gt; nodes are siblings, and both child nodes of &lt;body&gt;</li>
+</ul>
+
+<hr />
+<a href="dom_nodes.asp.htm"><img border="0" alt="previous" src="../images/btn_previous.gif" width="100" height="20" /></a>
+<a href="dom_methods.asp.htm"><img border="0" alt="next" src="../images/btn_next.gif" width="100" height="20" /></a>
+<hr />
+
+<!-- **** SPOTLIGHTS 1 **** -->
+<iframe src="../banners/aspallframe.asp.htm" height="120" width="100%"
+marginwidth="0" marginheight="0" frameborder="0" scrolling="no">
+Your browser does not support inline frames or is currently configured not to display inline frames.
+</iframe>
+<hr />
+<!-- **** SPOTLIGHTS 2 **** -->
+
+<h2>Reliable, affordable, feature-rich web hosting!</h2>
+<a target="_blank" rel="nofollow" href="../../www.godaddy.com/gdshop/hosting/landing.asp@isc=w3tenoff">
+<img alt="GoDaddy.com" src="../images/godaddy.gif" style="margin-right:10px;float:left" border="0" /></a>
+<p>
+Take the uncertainty out of Web hosting and let
+<a target="_blank" rel="nofollow" href="../../www.godaddy.com/gdshop/hosting/landing.asp@isc=w3tenoff">
+<b>GoDaddy.com</b></a>
+put service, performance and value back in. No matter which
+hosting type or plan you choose, your site receives 24/7
+maintenance and protection in our world-class data center. Plus,
+you get the expert, friendly service you deserve, from the
+world's largest hostname provider.
+</p>
+<p>
+With three plans to choose from and
+<a target="_blank" rel="nofollow" href="../../www.godaddy.com/gdshop/hosting/landing.asp@isc=w3tenoff">
+<b>prices starting at just $4.99 per month</b></a>, GoDaddy.com is sure to have a plan that's
+right-sized and right-priced just for you!
+</p>
+<p>
+All plans feature FREE 24x7 setup, FREE 24x7 monitoring, best-
+of-breed routers, firewalls and servers, 24x7 onsite physical security
+and access to our exclusive Go Daddy Hosting Connection, THE place
+to install over 30 FREE applications. Virtual Dedicated and Dedicated
+Server plans also available.
+<a target="_blank" rel="nofollow" href="../../www.godaddy.com/gdshop/hosting/landing.asp@isc=w3tenoff">
+<b>Visit GoDaddy.com today</b></a>.
+</p>
+<p>
+Virtual Dedicated, Dedicated Server and unlimited plans also available.
+</p>
+<p>
+<a target="_blank" rel="nofollow" href="../../www.godaddy.com/gdshop/hosting/landing.asp@isc=w3tenoff">
+Save 10% on web hosting - Enter code <b>w3tenoff</b> at checkout</a>
+</p>
+<hr />
+
+
+<!-- **** SPOTLIGHTS 3 **** -->
+<script type="text/javascript"><!--
+document.write('<table cellpadding="0" cellspacing="0"><tr><td width="100">&nbsp;</td><td>');
+google_ad_client = "pub-3440800076797949";
+/*txt*/
+google_ad_slot = "1699448869";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript"
+src="../../.">
+</script>
+<script type="text/javascript">
+<!--
+document.write("</td></tr></table>");
+//-->
+</script>
+
+
+<center>
+<hr />
+<iframe style="background-color:#ffffff" src="../banners/aspallbannerframe.asp.htm" height="60" width="468" marginwidth="0" marginheight="0" frameborder="0" scrolling="no">
+Your browser does not support inline frames or is currently configured not to display inline frames.
+</iframe>
+</center>
+
+<hr />
+<table>
+<tr>
+<td><img src="../images/diploma.jpg" alt="diploma" /></td>
+<td>&nbsp;&nbsp;</td>
+<td valign="top">
+<h2>Get Your Diploma!</h2>
+<p>W3Schools' Online Certification Program is the perfect solution for busy 
+professionals who need to balance work, family, and career building.</p>
+<p>The <a href="../cert/default.asp.htm">HTML Certificate</a> is for developers who want to document their knowledge of HTML, XHTML, and CSS.</p>
+<p>The <a href="../cert/default.asp.htm">JavaScript Certificate</a> is for developers who want to document their knowledge of JavaScript and the HTML DOM.</p>
+<p>The <a href="../cert/default.asp.htm">XML Certificate</a> is for developers who want to document their knowledge of XML, XML DOM and XSLT.</p>
+<p>The <a href="../cert/default.asp.htm">ASP Certificate</a> is for developers who want to document their knowledge of ASP, SQL, and ADO.</p>
+<p>The <a href="../cert/default.asp.htm">PHP Certificate</a> is for developers who want to document their knowledge of PHP and SQL (MySQL).</p>
+</td>
+</tr>
+</table>
+<br />
+
+
+</td></tr>
+</table>
+
+</td>
+<td width="6px">&nbsp;</td>
+
+<td class="right_container" width="155px" align="center" valign="top">
+<table class="right" style="margin-top:0px" width="100%" cellpadding="0" cellspacing="0">
+<tr><th class="right">WEB HOSTING</th></tr>
+<tr>
+<td align="center" class="right">
+
+<a class="aright" target="_blank" rel="nofollow" href="../../www.dotnetcharting.com/default.htm"><img src="../images/dnc-icon.gif" alt="Web charting" border="0" width="100" height="30" /></a>
+<br />
+<a class="aright" target="_blank" rel="nofollow" href="../../www.dotnetcharting.com/default.htm">Web based charting<br />for ASP.NET</a>
+
+</td></tr>
+<tr><td align="center" class="right">
+<a class="aright" target="_blank" rel="nofollow" href="../../www.dotdnr.com/default.htm">$15 Domain Name<br />Registration<br />Save $20 / year!</a>
+</td></tr>
+<tr><td align="center" class="right">
+<a class="aright" target="_blank" rel="nofollow" href="../../www.net2.co.uk/default.htm">Buy UK Domain Names</a><br />
+<a class="aright" target="_blank" rel="nofollow" href="../../www.123domainnames.co.uk/default.htm">Register Domain Names</a>
+</td></tr>
+<tr>
+<td align="center" class="right">
+<a class="aright" target="_blank" rel="nofollow" href="../../www.names.co.uk/default.htm">Cheap Domain Names</a><br />
+<a class="aright" target="_blank" rel="nofollow" href="../../www.cheapnames.co.uk/default.htm">Cheap Web Hosting</a>
+</td></tr>
+<tr>
+<td align="center" class="right">
+<a class="aright" target="_blank" rel="nofollow" href="../../www.lunarpages.com/default.htm">Best Web Hosting</a>
+</td></tr>
+<tr>
+<td align="center" class="right">
+<a class="aright" target="_blank" rel="nofollow" href="../../www.eukhost.com/default.htm">PHP MySQL Hosting</a>
+</td></tr>
+<tr>
+<td align="center" class="right">
+<a class="aright" target="_blank" rel="nofollow" href="../../www.web-hosting-top.com/default.htm">Top 10 Web Hosting</a>
+</td></tr>
+<tr>
+<td align="center" class="right">
+<a class="aright" target="_blank" rel="nofollow" href="../../www.heartinternet.co.uk/index.shtml">UK Reseller Hosting</a>
+</td></tr>
+<tr>
+<td align="center" class="right">
+<a class="aright" target="_blank" rel="nofollow" href="../../www.webhosting.uk.com/default.htm">Web Hosting</a>
+</td></tr>
+<tr>
+<td align="center" class="right">
+<a class="aright" target="_blank" rel="nofollow" href="../../www.imhosted.com/default.htm">FREE Web Hosting</a><br/>
+</td></tr>
+</table>
+
+<table class="right" width="100%" cellpadding="0" cellspacing="0">
+<tr><th class="right">WEB BUILDING</th></tr>
+<tr><td align="center" class="right">
+<a class="aright" target="_blank" rel="nofollow" href="../../www.trendytemplates.com/default.htm">Website Templates</a><br />
+<a class="aright" target="_blank" rel="nofollow" href="../../www.trendyflash.com/default.htm">Flash Templates</a><br />
+<a class="aright" target="_blank" rel="nofollow" href="../../www.designer360.com/default.htm">Website Builder</a><br />
+<a class="aright" target="_blank" rel="nofollow" href="../../www.sitecubeplus.com/default.htm">Internet Business Opportunity</a>
+</td></tr>
+<tr><td align="center" class="right">
+<a class="aright" target="_blank" rel="nofollow" href="../../www.getafreelancer.com/default.htm">Custom Programming</a>
+</td></tr>
+<tr><td align="center" class="right">
+<a class="aright" target="_blank" rel="nofollow" href="../../www.ektron.com/web-content-management-solutions.aspx@cpid=bac-2105&campaignid=2105">
+FREE Trial or Demo<br />
+Web Content Manager<br />
+Forms,Web Alerts,RSS</a>
+</td></tr>
+<tr>
+<td align="center" class="right">
+<a class="aright" target="_blank" rel="nofollow" href="../../www.altova.com/ref/@s=w3s_text&q=xmlspy">Download XML editor</a><br/>
+</td></tr>
+<tr>
+<td align="center" class="right">
+<a class="aright" target="_blank" rel="nofollow" href="../../www.wix.com/@utm_campaign=w3&experiment_id=w3">
+FREE Flash Website</a><br/>
+</td></tr>
+<tr>
+<td align="center" class="right">
+<a class="aright" target="_blank" rel="nofollow" href="../../www.dreamtemplate.com/default.htm">FREE Web Templates</a><br/>
+</td></tr>
+</table>
+
+<table class="right" width="100%" cellpadding="0" cellspacing="0">
+<tr><th class="right">EDUCATION</th></tr>
+<tr><td align="center" class="right">
+<a class="aright" target="_blank" rel="nofollow" href="../../www.all-computer-schools.com/featured/web-design-development-programs@src=asd_acom_062007_00000001">US Web Design Schools</a>
+</td></tr>
+<tr><td align="center" class="right">
+<a class="aright" target="_blank" href="../cert/default.asp.htm">HTML Certification</a><br />
+</td></tr>
+<tr><td align="center" class="right">
+<a class="aright" target="_blank" href="../cert/default.asp.htm">JavaScript Certification</a>
+</td></tr>
+<tr><td align="center" class="right">
+<a class="aright" target="_blank" href="../cert/default.asp.htm">XML Certification</a><br />
+</td></tr>
+<tr><td align="center" class="right">
+<a class="aright" target="_blank" href="../cert/default.asp.htm">PHP Certification</a>
+</td></tr>
+<tr><td align="center" class="right">
+<a class="aright" target="_blank" href="../cert/default.asp.htm">ASP Certification</a>
+</td></tr>
+</table>
+
+
+</td>
+</tr></table>
+
+<table width="100%" cellpadding="5" style="margin-top:2px;border-top:1px solid #c3c3c3;border-bottom:1px solid #c3c3c3" border="0">
+<tr>
+<td width="30%" align="left">
+<img src="../images/home_icon.gif" width="30" height="30" align="middle" alt="Home" border="0" />
+<a href="../default.asp.htm" target="_top"><b>HOME</b></a> or
+<a href="#top" target="_top"><b>Top of Page</b></a>
+</td>
+<td width="40%" align="center">
+<a rel="nofollow" href="../../validator.w3.org/check@uri=referer" target="_blank">
+<img src="../images/valid-xhtml10.png" alt="Validate" width="88" height="31" border="0" /></a>&nbsp;&nbsp;
+<a rel="nofollow" href="../../jigsaw.w3.org/css-validator/check@uri=referer" target="_blank">
+<img src="../images/valid-css2.png" alt="Validate" width="88" height="31" border="0" /></a>&nbsp;&nbsp;
+<a rel="nofollow" href="../../www.w3.org/wai/wcag1a-conformance" title="Explanation of Level A Conformance" target="_blank">
+<img src="../images/wai.gif" alt="W3C-WAI level A conformance icon" width="88" height="31" border="0" /></a>
+</td>
+<td width="30%" align="right">
+<a href='dom_nodetree.asp@output=print.htm' target="_blank"><b>Printer Friendly</b></a>
+&nbsp;<img src="../images/printer_icon.gif" width="36" height="36" align="middle" alt="Printer Friendly" border="0" />
+</td>
+</tr>
+<tr>
+<td colspan="3">
+<p>W3Schools is for training only. We do not warrant the correctness of its content.
+The risk from using it lies entirely with the user.<br />
+While using this site, you agree to have read and accepted our
+<a class="black" href="../about/about_copyright.asp.htm">terms of use</a> and
+<a class="black" href="../about/about_privacy.asp.htm">privacy policy</a>.<br />
+<a class="black" href="../about/about_copyright.asp.htm">Copyright 1999-2009</a> by Refsnes Data. All Rights Reserved.</p>
+</td>
+</tr>
+</table>
+
+</td>
+</tr></table>
+</center>
+
+</body>
+</html>

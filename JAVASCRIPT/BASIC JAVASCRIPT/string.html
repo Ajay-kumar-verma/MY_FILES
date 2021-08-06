@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String in javascript </title>
+</head>
+<body>
+    <script>
+
+// JavaScript strings are used for storing and manipulating text
+// A JavaScript string is zero or more characters written inside quotes.
+
+ 
+
+ str="Ajay kumar verma "
+ uppr=str.toUpperCase()
+ document.write(uppr)
+
+ lwr=str.toLowerCase()
+ document.write(lwr)
+
+str1=" ajay kumar    verma  " 
+
+document.write("<br/>",str1.trim())
+
+
+
+// String padding 
+
+num="2"
+
+newnum=num.padEnd(4,1) //it adds four times 1 in end 
+
+document.write("<br/>",newnum)
+
+
+newnum=num.padStart(6,3) //it adds six times 3 in Start 
+
+document.write("<br/>",newnum)
+
+
+
+
+// Extracting String Characters
+document.write("<br/>");
+
+
+str2="AJAYBKIKEOIUQNMSE"
+
+document.write(str2.charAt(2),"<br/>") // it return char at specific character 
+document.write(str2.charCodeAt(2),"<br/>") // it return ASCII value 
+document.write(str2[2],"<br/>")     // Here String is treated as a Array 
+
+// it beahve like an Array but it is not an array 
+//  Using this [] we can get the element cant assign
+// If one who want to works string as array 
+//converts into an Array
+
+
+//It makes strings look like arrays (but they are not)
+// If no character is found, [ ] returns undefined, while charAt() returns an empty string.
+// It is read only. str[0] = "A" gives no error (but does not work!)
+
+
+arr_frm_str=str2.split("")// it split string into an Array
+
+document.write("<br/>",arr_frm_str)
+
+document.write(str2.indexOf("I"))
+
+
+
+// Converting Array into an String 
+
+marks=[23,56,34,89]
+document.write("<br/>",marks)
+document.write("<br/>",marks.join(" "))// it return String with include space 
+document.write("<br/>",marks.join(""))// it return String 
+document.write("<br/>",marks.join("").split(""))
+
+
+
+
+    </script>
+</body>
+</html>

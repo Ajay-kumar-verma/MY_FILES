@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="txt"></h1>
+
+
+<script>
+class ${
+// In javascript . inside class no need to declare variabe 
+// and need to menton function keyword
+// so value directly assign to variable to variable 
+  constructor(name ,number,address){
+      this.name =name;
+      this.number=number;
+      this.address=address;
+ }
+ 
+static  fun(){// it can be access with class name
+     return "Hello world";
+ }
+
+static age=98;
+
+
+detail(){
+    return " Name "+this.name+" Number "+this.number+" Address "+this.address;
+}
+
+
+}
+
+var x=document.getElementById("txt");
+x.innerHTML=$.fun();
+
+
+
+
+</script>
+
+</body>
+</html>

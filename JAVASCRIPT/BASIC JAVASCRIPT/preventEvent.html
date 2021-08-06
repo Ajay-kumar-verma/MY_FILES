@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<a id="myAnchor" href="https://w3schools.com/">Go to W3Schools.com</a>
+
+<p></p>
+
+
+
+<form action="https://w3schools.com/" method="get">
+
+<input type="email" name="" id="">
+<input type="submit" value="SUBMIT">
+
+</form>
+
+<script>
+document.getElementById("myAnchor").addEventListener("click", function(event){
+  event.preventDefault()
+});
+
+document.getElementsByTagName("input")[1].addEventListener("click",(event)=>{
+event.preventDefault();
+console.log("btn pressed ")
+
+console.log(event.target) // It will get that elements 
+
+
+
+});
+
+
+</script>
+
+</body>
+</html>

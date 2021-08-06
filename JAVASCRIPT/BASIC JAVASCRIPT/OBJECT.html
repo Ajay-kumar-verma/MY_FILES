@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects in javascript </title>
+</head>
+<body>
+    <script>
+
+const obj1={
+
+    name:"Ajay",
+    mob:997,
+    addr:"Patna"
+}
+
+// delete obj.name; // it is used for deleting the objects member 
+
+console.log("Object one 1",obj1);
+obj1.lang="hindi" //if member there it gets updated or added new elements 
+console.log("Object one 1",obj1);
+delete obj1.lang;
+console.log("Object one 1",obj1);
+
+
+
+
+const person = {
+  fname:" John",
+  lname:" Doe",
+  age: 25,
+  detail:{
+    fname:" John",
+  lname:" Doe",
+  age: 25
+      
+  }
+
+}
+
+console.log("Person details",person);
+
+person.lang="Urdu"
+
+console.log("Person details",person);
+
+delete person.detail;
+
+console.log("Person details",person);
+
+// for in loop is used for iterating an object and it return key 
+for (let x in person) {
+ console.log(person[x]);
+}
+
+
+// Another way to access keys
+// Object.keys(person) will return An array of keys  
+console.log(Object.keys(person));
+
+// Another ways to printing their values 
+// OObject.values(person) will return An array of values  
+console.log(Object.values(person));
+
+
+// These above 2 method never return any function and function defination 
+
+
+// Way of getting all keys 
+Object.keys(person).map((key,i)=>console.log(key))
+
+
+// ways of getting all values 
+Object.values(person).map((val)=>console.log(val))
+
+// we can use any other method also to print these all things 
+
+
+
+
+
+    </script>
+</body>
+</html>
