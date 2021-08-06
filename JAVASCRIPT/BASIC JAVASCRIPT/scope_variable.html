@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope in variable  </title>
+</head>
+<body>
+    
+<script>
+// Scope determines the accessibility (visibility) of variables.
+
+
+// JavaScript has 3 types of scope:
+
+// Block scope
+// Function scope
+// Global scope
+
+
+// Block scope 
+
+{
+
+    let a=90;  // this makes variable locally or block scope  
+    const b=80; // Even this
+    // const is const in this block whereas let can be changed
+    var c=98; // here c is globall variable 
+
+}
+
+console.log(c)
+// console.log(a)
+// console.log(b)
+
+
+
+
+
+// Local scope 
+
+// Since local variables are only recognized inside their functions, variables with the same name can be used in different functions.
+
+// Local variables are created when a function starts, and deleted when the function is completed
+
+
+
+// JavaScript has function scope: Each function creates a new scope.
+
+// Variables defined inside a function are not accessible (visible) from outside the function.
+
+// Variables declared with var, let and const are quite similar when declared inside a function.
+
+
+
+function x(){
+  let x=90;
+  const y=987;
+  var z=98;
+   p="Ajay"  
+//    when this function called it become global variable
+//Oter wise not 
+}
+x();
+console.log(p)
+// No any variabale are accessed from out side 
+
+
+
+
+// Global Scope
+// Variables declared Globally (outside any function) have Global Scope.
+
+// Global variables can be accessed from anywhere in a JavaScript program.
+
+// Variables declared with var, let and const are quite similar when declared outside a block
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
