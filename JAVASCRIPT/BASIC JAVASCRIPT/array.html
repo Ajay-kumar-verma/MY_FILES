@@ -16,7 +16,7 @@ console.log(ar1,ar2)
 
 // ar1.forEach(val=>console.log(typeof(val)))
 
-ar2.forEach(val=>console.table(typeof(val)))
+ar2.forEach(val=>console.table(typeof val ))
 
 let emtyar=[]
  emtyar[1]="Engineering "
@@ -231,15 +231,81 @@ console.log(" ")
 
 console.log("Method of an array");
 
+// Merging two Array 
+console.log("Mersging two Array into one Array ");
+
+let  mrg_ar1=[4,5,78]
+let  mrg_ar2=[34,22,98]
+// It never change an Array it return New Array 
+console.log(mrg_ar1.concat(mrg_ar2))
+// concat can take any number of arguments
+let mrg_ar3=[12,34,56,78,90]
+console.log(mrg_ar1.concat(mrg_ar2,mrg_ar3))
+
+
+// All javascript Object has toString() method 
 
 
 
+// Slicing an Array 
+
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus = fruits.slice(2);
+// Slice method takes two argument first argumet is from where to star slicing 
+// second arg is optional not there means it will takes whole 
+// it means till where to stop 
+console.log(citrus)
+
+
+// entire()
+console.log("Entire method in javascript ")
+
+// it return OBJECT WITH VALUE 
+
+const fruitss = ["Banana", "Orange", "Apple", "Mango"];
+const f = fruitss.entries();
+
+console.log(typeof f)
+for (let x of f) {
+  console.log(x);
+}
+
+
+console.log("every method ")
+// evry method return boolean val ,
+// it check given conditon to all ele
+
+const ages = [32, 33, 16, 40];
+
+   console.log(ages.every(checkAge))    // Returns false
+
+function checkAge(age) {
+  return age > 18;
+}
+
+
+// thses type iteration method has two more optional argment
+// 1 is crt val ,2 is index ,  3 is array
+
+
+
+// fill()  method 
+
+//Filter method return new array that satisfied given condition 
+
+ agess = [32, 33, 16, 40];
+
+console.log(agess.filter(checkAdult))    // Returns [32, 33, 40]
+
+function checkAdult(age) {
+  return age >= 18;
+}
 
 
 
 
 </script>
-
+<a href="https://www.w3schools.com/jsref/jsref_from.asp">  Array method  </a>
 
 </body>
 </html>
