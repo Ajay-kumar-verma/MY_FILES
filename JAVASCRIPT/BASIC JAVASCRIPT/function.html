@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java script function </title>
+</head>
+<body>
+    
+
+<script>
+
+// javascript does not upport method overloading 
+// It support nested function 
+
+
+
+// Self invoking function 
+
+// IIEF 
+(()=>{
+  alert("Hello!!");  // I will invoke myself
+})();
+
+
+// It will make a values locally here 
+// It cant be acces from outside of function 
+((a,b)=>{
+  const  c=90
+  console.log(a+b+c)
+})(2,4);
+
+console.log(a)
+
+
+// USES 
+// avoiding creating global variable and function 
+
+
+
+// closure function 
+
+
+
+</script>
+
+
+</body>
+</html>
