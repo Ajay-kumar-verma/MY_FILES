@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo in javascript </title>
+</head>
+<style>
+
+div{
+margin-bottom: 20px;
+}
+input{
+    margin-bottom: .5%;
+    
+}
+.todos div{
+  border: 1px solid blue;
+  padding-bottom: .2px;
+  margin-bottom: 2px;
+  /* max-width: 300px; */
+  position: relative;
+}
+
+
+.todos div{
+  
+animation-name: todos;
+
+animation-duration:.5s;
+
+animation-timing-function: ease-in;
+
+}
+
+@keyframes todos{
+  0%   {background: white; left: 0px; top: 0px; box-shadow: 3px 3px 1px black; }
+  25%  {background: yellow; left: 2px; top: 0px; box-shadow: 3px 3px 1px black;}
+  50%  {background: blue; left: 2px; top: 2px; box-shadow: 3px 3px 1px black; }
+  75%  {background: green; left: 0px; top: 2px;}
+  100% {background: red; left: 0px; top: 0px;}
+/* percentage is used for diving part of works  */
+}
+
+
+
+div, form{
+width: 50%;
+margin: auto;
+    
+}
+
+h2{
+color: navy;
+text-align: center;
+}
+
+p {
+    color: rgb(65, 177, 31);
+    text-align: center;
+}
+.spn1{
+ color: red;
+ padding: 2%;
+ position: absolute;
+top: 1px;
+right: 1px;
+cursor: pointer;
+}
+
+.spn2{
+ color:darkorange ;
+ padding: 2%;
+ position: absolute;
+bottom: 1px;
+right: 1px;
+cursor: pointer;
+}
+
+
+input , text{
+  border-style: none;
+  border: 2px solid green;
+}
+
+
+</style>
+
+<body>
+
+    <div><h1 style="text-align: center;" >Todos lists</h2>
+    </div>
+
+<div class="addTodo">
+<form  onsubmit=" return false">
+<input type="text" class="todo" placeholder="Todos name "  />
+<br/>
+<textarea class="desc" cols="30" rows="3" placeholder="Description " ></textarea>
+<br/>
+<input type="submit" value="ADD TODO">
+
+</form>
+
+</div>
+
+<hr>
+
+<div class="todos">
+</div>
+
+
+
+<script>
+    
+inputs=document.getElementsByTagName("input");
+todo=inputs[0];
+desc=document.getElementsByTagName("textarea")[0];
+inputs[1].setAttribute("onclick","add()");
+
+add=()=>{
+    addTodo(todo.value, desc.value);
+    todo.value="";desc.value="";
+
+
+}
+
+todos=document.getElementsByClassName("todos")[0];
+
+addTodo=(h2,p)=>{
+
+  if(h2==="" || p===""){
+    alert("Please complete the heading and description !")
+    return ;
+  }  
+
+
+heading =document.createElement("H2");
+heading.innerText=h2;
+para= document.createElement("P"); 
+para.innerText=p
+
+div=document.createElement("DIV");
+
+spn1=document.createElement("span");
+spn1.innerText="Dlt";
+spn1.setAttribute("onclick", "dlt(this)");
+spn1.setAttribute("class", "spn1");
+
+
+
+spn2=document.createElement("span");
+spn2.innerText="Edit";
+spn2.setAttribute("onclick", "edit(this)");
+spn2.setAttribute("class", "spn2");
+
+
+div.appendChild(spn1);
+div.appendChild(heading);
+div.appendChild(para);
+div.appendChild(spn2);
+todos.appendChild(div);
+
+}
+
+// This function is for deleting the todos 
+dlt=(dtodo)=>todos.removeChild(dtodo.parentElement);
+
+
+edit=(etodo)=>{
+// console.log("edit clicked ",etodo.length);
+// console.log(todo.parentElement.childNodes[1].innerText)
+nodes=etodo.parentElement.childNodes;
+
+heading=nodes[1].innerText;
+para=nodes[2].innerText;
+// console.log(heading,para);
+
+todo.value=heading;
+desc.value=para;
+inputs[1].removeAttribute("onclick");
+inputs[1].setAttribute("onclick","updateTodo(nodes)");
+inputs[1].value="EDIT TODO";
+}
+
+updateTodo=(unode)=>{
+
+unode[1].innerText=todo.value;
+unode[2].innerText= desc.value;
+
+inputs[1].value="ADD TODO "
+// console.log(unode)
+todo.value="";desc.value="";
+
+inputs[1].setAttribute("onclick","add()");
+
+}
+
+
+
+
+</script>
+
+</body>
+</html>
