@@ -31,15 +31,67 @@
   console.log(a+b+c)
 })(2,4);
 
-console.log(a)
-
-
-// USES 
-// avoiding creating global variable and function 
+// it will throw an error and stop execution 
+// console.log(c)
 
 
 
-// closure function 
+
+// We know about variable  scope 
+// if variable declared as let coant and var 
+// it has local scope only  
+// It execute when function start execution
+//and destroy when when function complete 
+
+
+//Uses  
+// it is uses for debugging purpose 
+//it came variable local so that 
+// cant acces from outside 
+//and it will not reset when function 
+
+function fun(){
+  let x=1;
+  var y=2;
+ const z =3;
+  p=12;
+ console.log(x++,y++,z,p++)
+}
+
+fun();
+
+// console.log(x,y,z) no any variable are accessible from outside 
+//Only p is accessible bcs it is global
+
+console.log(p)
+// its good not accessible from outside 
+//but when ever we call it reset all vavriable it self 
+
+
+const fun2=(()=>{
+
+  let x=5;
+  var y=7;
+  const z =9;
+  p=12;
+return  (()=>{
+  
+  console.log(x++,y++,z,p++)
+ }
+ )
+  
+})()
+
+fun2();
+fun2();
+p=098 // p decalre as gloabl that it is accessible from outside 
+
+fun2();
+//Here we can use self invoking function 
+
+
+
+
 
 
 
