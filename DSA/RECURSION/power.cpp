@@ -31,6 +31,25 @@ long power_L(int a,int n){
 }
 
 
+long power_w(int a,int n){
+   long result=1;
+   
+   if(n==0){return 1;}
+
+   while(n>0){
+    if(n%2==0){
+        a=a*a;
+        n=n/2;
+    }else{
+      result=a*result;
+        n--;
+    }
+  
+   }
+  return result;  
+
+}
+
 int main(){
 
 while (true)
@@ -44,6 +63,8 @@ while (true)
  cout<<" Result by using recursive algorithm "<<power_A(a,n);
  
  cout<<" Result by using for loop  "<<power_L(a,n);
+
+ cout<<" Result by using while loop  "<<power_w(a,n);
 
 
  }
