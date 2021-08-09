@@ -7,27 +7,174 @@
     <title>Oops in javascript </title>
 </head>
 <body>
-
 <script>
-// Function execute when we call it 
-function fun(){
-   console.log("I am okay ")
+// What is an Object 
+// Object is a instance of a class 
+// Instance means  using same class we can create any number of object 
+// with same member and method 
+
+// all class has some properties and method
+
+// Using keyword we can perform  some task 
+// but class is more simple
+
+//Declaration 
+
+// All member of class has instantiat scope
+// Cant access from outside 
+
+
+class Person{
+   
+  hi(){
+      return "Hello i am Ajay kumar verma !" ;
+  }
+
+ static x=34;
+static sum=(a,b)=>a+b;
 }
 
-fun();
+
+//We can access static member using  (.) Operator 
+// and non static member making thier Object
 
 
-// It will execute immediatly 
-(()=>console.log("I am okay "))();
+console.log(Person.x);
+console.log(Person.sum(34,56)); // Static method can be called from without making its object only 
+const  obj=new Person(); //non static member can cal only using its objects
+// we can call method wihtout parathesis 
+console.log(obj.hi());
+
+// When we create object of any class 
+//constructor by default get called whether we define or not
+//if we dont define it called default constructor 
 
 
- class cls_{
-    
+
+
+// If we want to pass somedata while creating  objects
+// we can pass using constructor 
+
+class Student{
+    name; age;sec; //It is not neceesarry    
+    constructor(Name,Age,Sec){
+        this.name=Name;
+        this.age=Age;
+        this.sec=Sec;
+    }
+ 
+    // it must not be declraed with variable type 
+    title="verma"
+      
+bioData(){ // its behaviour is like common function 
+    let addr="patna"; //it must be declared with variable type
+    return `My name is ${this.name} ${this.title} ,Age is ${this.age} `+
+     `and i am in sectioc ${this.sec} and address is ${addr}.`;
+}
+
+getName(){
+    return this.name;
+}
+
 
 
 }
 
-obj=new cls_();
+
+stud=new Student("Ajay",34,"A");
+console.log(stud.name,stud.age,stud.sec)
+
+console.log(stud.bioData())
+console.log(stud.getName())
+
+
+
+//HOISTIN means you cant use a  clas before declration 
+// you must to declare class before   
+
+
+//where as in function it could be anywhere 
+
+
+// Inheritance 
+console.log("Inheritance \n");
+
+
+
+
+class A{
+static name="Ajay";
+static sum=(a,b)=>a+b
+ addr="Patna"
+ mob=997354
+ Sec="F"
+
+  Detail(){// we cant use static variable  inside function 
+    return `My number is `+this.mob;
+  }
+
+}
+
+class B extends A{
+    static mob=9973541431;
+    static mul=a=>2*a
+     Sec="D"
+ 
+    Detail(){ //If data present is present class it used other wise it use from super class
+        return  `My number is ${this.mob} and sec is ${this.Sec}`;
+    }
+  
+}
+
+
+console.log(B.mob,B.mul(45)) // accessing member of class B
+console.log(A.name,A.sum(4,5)) // accessing member of class A
+
+console.log("accessing member of  class B using class A")
+console.log(A.name,A.sum(3,5))
+
+
+console.log("Accesing memeber by using its member  ");
+
+objB=new B();
+
+console.log(objB.Sec,objB.addr,objB.Detail())
+
+
+
+console.log("Using member of class inside class ?");
+
+
+class  cls_ {
+x=90;
+static y=9;
+
+sum(){
+    console.log("Sum is executed !");
+   return 45+4;
+}
+
+mul(){
+ console.log("MUl is executed !");    
+  return 2*3;
+
+}
+
+
+fun(){
+console.log(this.x,this.mul());
+}   
+
+
+
+}
+ 
+
+obj_cls=new cls_();
+
+obj_cls.fun();
+
+
 
 
 
