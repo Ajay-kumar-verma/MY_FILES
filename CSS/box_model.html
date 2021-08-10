@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box model </title>
+<style>
+*{
+    /* it is a universal selector  */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+
+}
+
+.d1{
+width: 110px;
+height: 110px;
+background-color: black;
+/* for margin:auto div will come in center brower width    */
+margin: auto; 
+/* but we specify in number it takes in all for direction  */
+/* position fixed means float above of all HTML ele
+allhtml ele ignore it 
+*/
+/* position: fixed; */
+position: relative;
+/* Fixed means we canfixed any where in document  */
+}
+.d1d1{
+height: 20px;
+width: 20px;
+background-color: rgb(130, 53, 202);
+/* If div inside  div is there 
+ than it takes only 
+*/position:absolute;
+  left: 101%;
+}
+
+
+.d2{
+   width: 300px;
+   height:300px;
+   background-color: red;
+   margin: auto;
+  /* padding:auto;  Auto margin work but auto padding does not work  */
+}
+.d2d2{
+height: 50px;
+width: 50px;
+background-color: rgb(211, 20, 131);
+/* margin:auto; */
+}
+
+
+.container{
+ height: 200px;
+ width: 200px;
+ background-color: rgb(82, 26, 134);
+ color: white;
+ padding: 2%;
+ margin:1%;
+ float: left;
+ border: 4px dotted red;
+ border-radius:20px;
+  position: relative;
+  /* it means it has fixed widht 
+   padding will chang ebut width will not chnage 
+    */
+ box-sizing: border-box; 
+}
+
+h6{
+color:red;
+/* position: absolute; */ 
+text-align: center;
+}
+</style>
+
+</head>
+<body>
+<!-- div is a block element  -->
+<div class="d1">
+  
+    <div class="d1d1"></div>
+
+</div>
+
+<hr>
+
+<div class="d2">
+<div class="d2d2"></div>
+
+</div>
+
+
+<br>
+<hr>
+
+<div class="container">
+  <h6>About me </h6>
+  <p>This is about me i gonna tell you every thing abou tme only  </p>
+</div>
+
+
+
+<div class="container">
+    <h6>About me </h6>
+    <p>This is about me i gonna tell you every thing abou tme only  </p>
+  </div>
+  
+
+  <div class="container">
+    <h6>About me </h6>
+    <p>This is about me i gonna tell you every thing abou tme only  </p>
+  </div>
+  
+
+  <div class="container">
+    <h6>About me </h6>
+    <p>This is about me i gonna tell you every thing abou tme only  </p>
+  </div>
+  
+
+  <div class="container">
+    <h6>About me </h6>
+    <p>This is about me i gonna tell you every thing abou tme only  </p>
+  </div>
+  
+        
+    
+</body>
+</html>
