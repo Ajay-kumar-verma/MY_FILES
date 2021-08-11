@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"  content="IE=edge"  >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer </title>
+</head>
+<body>
+
+<form>
+<input type="tel"   placeholder="Time format h:m:s"   autofocus  required/>
+<input type="submit" value="START NOW ">
+</form>
+
+<p class="timer"></p>
+ 
+  <script>
+
+const data=document.getElementsByTagName("INPUT")
+const show_time=document.getElementsByClassName("timer")[0];
+ 
+data[1].addEventListener("click",(e)=>{
+e.preventDefault();
+let time=(data[0].value).split(":");
+const show_time=document.getElementsByClassName("timer")[0];
+  h=time[0];
+  m=time[1] ; 
+  s=time[2]
+if(h>24 || m>59 || s>59){
+    alert("Hello ")
+}else{
+ stop_time= setInterval(count_down, 1000);
+}
+
+})
+
+
+const  count_down=()=>{
+
+if(s>0){
+    s=s-1;
+
+ s =s<=9?"0"+s:s;
+
+ }
+else{
+s=59
+
+if(m>0){
+    m=m-1
+    m= m<10?"0"+m:m
+}else{
+    m=59
+    if(h>0){
+        h=h-1
+      h=h<10?"0"+h:h 
+    }
+    else{
+     clearInterval(stop_time);
+     s="00";m="00";
+    }
+   
+}
+
+}
+
+show_time.innerHTML= `${h}:${m}:${s}`
+
+//    show_time.innerHTML=`${time[0]}:${time[1]}:${time[2]}}`
+// count_down(time)
+
+}
+
+
+
+  </script>  
+
+
+
+
+</body>
+</html>
