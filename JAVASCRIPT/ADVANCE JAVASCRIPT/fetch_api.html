@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Api</title>
+</head>
+<body>
+
+<script>
+//Synchronous means that you call a web service
+// (or function or whatever) and wait until it returns
+// - all other code execution and user interaction is 
+//stopped until the call returns.
+
+
+
+//Asynchronous means that you do not halt 
+//all other operations while waiting for
+// the web service call to return.
+
+
+
+(async function api(){
+console.log("start fetching ")
+// This block of cocde run synchronousouly  
+  
+    let data= await fetch ('https://dummy.restapiexample.com/api/v1/employees')
+    console.log("fetched api  ")
+    data= await data.json(); 
+    console.log("converting  into json ")
+    console.log(data)
+    console.log("Priting ")
+    document.write(JSON.stringify(data))
+
+}
+)()
+
+
+
+// without await it will cause an error 
+// if we use await . it is invalid 
+// it must be inside async functioon
+// if we declare async function 
+//it will only execute only if it get call 
+//In This case we use IIFE function 
+
+
+
+// let data=  fetch ('https://dummy.restapiexample.com/api/v1/employees')
+// //  data=  data.json(); 
+// console.log(data)
+
+
+</script>
+
+</body>
+</html>
