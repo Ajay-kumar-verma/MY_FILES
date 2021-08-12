@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> immediatly executable function  </title>
+</head>
+<body>
+<button onclick="inc_no()" > click me </button>
+    
+<script>
+
+// case 1
+// if we declare x outside for function then it will
+// work fine   
+// variable may get change by change 
+
+
+// case 2
+//  if we declare x inside function as a local varibale 
+// it get reset all time when it get called 
+
+
+
+// javascript support nested function 
+// thats why it possible 
+
+// or we can use class that not good 
+
+const inc_no=(()=>{
+    let x=0;
+      
+ return  ()=>{
+      x++
+      console.log(x); 
+ }
+
+}
+)();
+
+
+
+</script>
+
+</body>
+</html>
