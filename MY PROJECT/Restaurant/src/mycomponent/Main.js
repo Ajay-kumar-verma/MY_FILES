@@ -1,22 +1,27 @@
 import React from 'react'
-import SideBar from './SideBar'
-import ListImage from './ListImage'
+// import SideBar from './SideBar'
+// import ListImage from './ListImage' 
+import Graphs  from './Graphs'
 const Main=()=>{
 
-const mstyle={
-    marginTop:"10px",
-    width:"100%",
-    backgroundColor:"purple",
-    padding:"1px"
+// const mstyle={
+//     marginTop:"10px",
+//     width:"100%",
+// ,
+//     padding:"1px"
     
-}
+// }
 
 
 return (
     <>
-    <div style={mstyle} >
-     <SideBar />
-     <ListImage />
+    <div>
+
+ 
+      <Graphs />
+ 
+     {/* <SideBar /> */}
+     {/* <ListImage /> */}
   </div>
 
     </>

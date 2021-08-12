@@ -7,15 +7,16 @@ const hstyle={
   height:"60px",
   backgroundColor:"green",
   width:"100%",
-  padding:"auto"
-
+  padding:"auto",
+  paddingTop:"10px"
 }
 
 
 
    return(
-<header style={hstyle} > 
-{
+      // Here header is HTML tag so it started with small letter 
+<header style={hstyle} >   
+{         
    list.default.map(ele=>{
     return <Hbtn btn={ele} />    
    })

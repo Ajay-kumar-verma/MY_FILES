@@ -40,26 +40,23 @@ const  count_down=()=>{
 
 if(s>0){
     s=s-1;
-
- s =s<=9?"0"+s:s;
-
+s =s<=9?"0"+s:s;
  }
 else{
 s=59
-
 if(m>0){
     m=m-1
     m= m<10?"0"+m:m
 }else{
     m=59
-    if(h>0){
-        h=h-1
-      h=h<10?"0"+h:h 
-    }
+  if(h>0){
+      h=h-1
+    h=h<10?"0"+h:h 
+   }
     else{
-     clearInterval(stop_time);
-     s="00";m="00";
-    }
+   clearInterval(stop_time);
+    s="00";m="00";
+  }
    
 }
 

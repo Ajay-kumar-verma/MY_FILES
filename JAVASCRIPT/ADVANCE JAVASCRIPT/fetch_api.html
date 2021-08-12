@@ -22,7 +22,10 @@
 
 
 
-(async function api(){
+
+// we can use both
+// (async  function (){
+(async  ()=>{
 console.log("start fetching ")
 // This block of cocde run synchronousouly  
   
@@ -51,6 +54,40 @@ console.log("start fetching ")
 // let data=  fetch ('https://dummy.restapiexample.com/api/v1/employees')
 // //  data=  data.json(); 
 // console.log(data)
+
+
+
+
+
+const api= async function (){
+console.log("start fetching ")
+// This block of cocde run synchronousouly  
+  
+    let data= await fetch ('https://dummy.restapiexample.com/api/v1/employees')
+    console.log("fetched api  ")
+    data= await data.json(); 
+    console.log("converting  into json ")
+     return data; 
+   
+}
+
+
+api().then(val=>{
+    console.log(val) 
+    // console.log("Priting ")
+    document.write(JSON.stringify(val))
+
+
+})
+
+
+
+
+
+
+
+
+
 
 
 </script>
