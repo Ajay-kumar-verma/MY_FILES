@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+
+
+<script>
+// A promising is an objects the  eventually compeletion or failure
+// of an Asynchronouse operation 
+
+// There are three stage in promise 
+//  1 pending //inbetween resolve and rejected //Not yet Fullfilled 
+//  2 resolve // means succesfull
+//  3 rejected  // promises failled 
+ 
+
+
+// A promise is said to be settled if it resolved and rejected 
+
+//Creation prmises 
+// using constructor and new keyword 
+
+
+//Syntax 
+
+const prom1=new Promise((resolve,reject)=>{
+
+     let succ=false; 
+  if(succ==true)
+  {
+ 
+setTimeout(() => {
+    resolve(10);
+ 
+}, 2000);
+ 
+    }
+  else
+  {
+   reject(20);
+  }
+  
+})
+
+// When promise get resolve than only it executed
+
+
+
+prom1.then(
+  (succ)=>{console.log(succ+1)}, //it will execute when promise resolve 
+//   (err)=>{console.log(err+2)},   //it  will execute  when promise rejected  or fail 
+ ).catch(e=>{  //it  will execute  when promise rejected  or fail 
+    
+// We can make chain to call function one after other 
+    console.log(e)
+      return e+10
+
+    }).then(e=>{
+        console.log(e)
+        return e+10
+    }).then(e=>{
+        console.log(e)
+    }).finally(()=>{
+        console.log("Execution completed");
+    })
+
+
+</script>    
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asyn and await </title>
+</head>
+<body>
+    
+
+
+    <script>
+// Javascript is Synchronous language 
+// it execute first part then it go for next part 
+
+// First this will exexcute 
+
+
+
+
+//     for(let i=0;i<1000;i++){
+//         console.log(i)
+//     }
+   
+
+// // setTimeout(,1000);
+
+// // Than this 
+// console.log("End1")
+
+
+
+
+
+
+
+// In javascript whenever it meet to timer function 
+//it will not block code of execution 
+// it keep this parrelly  here
+//  this execute after time set
+
+
+
+
+
+// setTimeout(() => {
+//     for(let i=0;i<1000;i++){
+//         console.log(i)
+//     }
+   
+// },10);
+
+// // setTimeout(,1000);
+
+// // Than this 
+// console.log("End2")
+
+
+
+
+// console.log("Start ")
+
+
+
+
+
+// This is a function it execute if and only if 
+// it gets call 
+// here  compiler will never wait to finish it 
+// its execution start from where it gets call 
+// const getName=(name)=>{
+
+// // If any timer function is there in javascript 
+// // it will be asynchronous
+//  setTimeout(() => {
+//     console.log("Inside block ")
+// return name; 
+// }, 2000);
+
+// If interpreter has some work than it will execute 
+//and go to next line 
+
+// But if it has to wait for some time 
+// its execution will never stop 
+
+// for(let i=0;i<1000;i++){
+//     console.log(i)
+// }
+
+// return name
+
+// }
+
+
+
+
+
+
+
+// const getName=(name,clbk)=>{
+
+// // We can overcome this using cal back function 
+//     setTimeout(() => {
+//     console.log("Inside block ")
+//    X=5+6
+//    clbk(name+X); 
+    
+// }, 2000);
+// }
+
+// getName("Ajay",(nm=>{
+//     console.log(nm)
+// }))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Asyn and await 
+
+
+
+// asyn means do not return value return promise only +
+
+
+// async function fun(){
+// }
+
+// const fun= async ()=>{}
+
+// const fun=async function (){}
+
+
+const datas= new Promise((res,rej)=>{
+    let name="ravi singh";
+    setTimeout(() => {
+    res(`My name is ${name}.`) ;
+}, 5000);
+
+})
+
+
+
+
+const getBio= async (name)=>{
+ let data= await  datas; // it will make code synchronous
+// one may think like 
+// it wait when any javascript is there 
+// if we use await it wait to receive the data from 
+//  Promises
+ 
+
+
+console.log(data)
+return data;
+}
+
+getBio("Ravi").then(val=>{console.log(val)});
+
+
+
+// console.log(getBio("Ajay kumar verma"))
+// getBio("Vikash")
+// .then(val=>{console.log(val)})
+
+
+
+
+
+
+</script>
+</body>
+</html>
