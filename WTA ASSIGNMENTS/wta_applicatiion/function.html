@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+const fm = document.createElement("form");
+const inpt1=document.createElement("input");
+const inpt2=document.createElement("input");
+const inpt3=document.createElement("input");
+
+inpt1.setAttribute("type","tel");
+
+inpt2.setAttribute("type","button");
+
+inpt2.setAttribute("value","Reverse number");
+
+inpt3.setAttribute("type","button");
+
+inpt3.setAttribute("value","Position of vowel at leftmost position");
+
+
+
+fm.appendChild(inpt1);
+fm.appendChild(inpt2);
+fm.appendChild(inpt3);
+
+document.body.appendChild(fm);
+
+const para = document.createElement("p");
+
+document.body.appendChild(para);
+
+const inpt= document.getElementsByTagName("input");
+
+inpt[1].onclick=()=>{
+   
+    document.getElementsByTagName("p")[0].innerHTML="Reverse of "+inpt[0].value+" is "+fun.rvs(inpt[0].value);
+
+}
+
+
+inpt[2].onclick=()=>{
+    document.getElementsByTagName("p")[0].innerHTML=" The position of the left most vowel is "+fun.pos(inpt[0].value);    
+}
+
+
+
+
+
+class fun{
+
+static  rvs(no){
+var  no = parseInt(no);
+var  revers=0;
+
+while(no!=0){
+let rmd= no%10;
+no =parseInt(no/10);
+revers=revers*10+rmd;
+}
+
+return  revers;
+
+}
+
+static pos(str){
+
+if(isNaN(str))
+{
+str = str.toUpperCase();
+for(var i = 0; i < str.length; i++) {
+var chr = str.charAt(i);
+if(chr == 'A' || chr == 'E' || chr == 'I' || chr == 'O' || chr == 'U')break;
+}
+
+if( i < str.length )
+return (i+1);
+else
+alert("No vowel found in the entered string");
+}else{
+    alert("It is a Number ");
+}
+
+}
+
+
+
+
+}
+
+
+
+</script>
+
+
+
+</html>

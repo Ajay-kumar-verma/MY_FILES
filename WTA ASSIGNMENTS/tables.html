@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABLES</title>
+</head>
+<style>
+    *{
+  margin: 0;
+  padding: 0;
+    }
+table,th,td{
+    border :2px;
+    border-style: dashed;
+    border-color: blue;
+    text-align: center;
+    font-size: 30px;
+    border-collapse: collapse;
+    /* color:tomato; */
+}
+
+thead{
+ color: saddlebrown;
+ text-transform: uppercase; /*this is for text transform  */
+}
+
+tbody{
+    color:steelblue;
+   text-transform:capitalize ;
+}
+
+
+
+
+
+
+/* 
+thead{
+ color:red; 
+
+}
+
+
+
+tbody{
+ color:blueviolet;
+ border-color: red;
+} */
+
+select{
+    border-style:dashed;
+    margin-bottom: 1rem;
+}
+table{
+    margin-right: 20px;;
+}
+</style>
+
+<body>
+    
+<table>
+<!-- It is table header  -->
+<caption> Time and Table </caption>
+
+<thead>
+
+
+    <tr>
+        <th colspan="2" >Time Day </th>
+        <th>9:00 am to 1:15pm </th>
+        <th>2:0 pm to 5:00pm </th>
+     </tr>
+     
+</thead>
+
+
+
+<tbody>
+    <tr><td rowspan="2">Mon to Fri</td>
+        <td>sub </td>
+         <td>Theory Class</td>
+        <td>ML/WTA Lab </td>
+     </tr>
+     
+     <tr>
+     <td>FI </td>
+     <td>ABC/EFG/XYZ</td>
+     <td>AD block 1st Floor </td>
+     </tr>
+     
+     <tr>
+     <td rowspan="2">  Sat </td>
+     <td>Sub</td>
+     <td  rowspan="2" colspan="2">  Extra curricular Activity </td>
+     </tr>
+     
+     <tr><td>FI</td></tr>
+     
+    
+</tbody>
+
+
+
+<!-- 
+<tfoot>
+
+
+    <tr> <td  >
+        <select >
+         <option value="" disabled selected>BRDR-CLR</option> 
+         <option value="red">RED</option>
+         <option value="blue">BLUE</option>
+         <option value="green">GREEN</option>
+         </select>
+        </td>
+        
+        
+        <td>
+            <select>
+                <option value="" selected disabled>BRDR-STYL</option>
+            <option value="solid">solid</option>
+            <option value="dashed">DASHED</option>
+            <option value="double">DOUBLE</option>
+        </select>
+         
+            </td>
+            
+          
+        
+        
+        
+        <td >
+            <select>
+             <option value="" disabled selected>TEXT-COLOR</option> 
+             <option value="red">RED</option>
+             <option value="blue">BLUE</option>
+             <option value="green">GREEN</option>
+              </select>
+            </td>
+        
+        
+            
+        <td >
+            <select>
+             <option value="" disabled selected>CLSP-SPRT</option> 
+             <option value="collapse">BORDER-COLLAPSE</option>
+             <option value="separate">BORDER-SEPARATE</option>
+             </select>
+            </td>
+        
+        
+        
+        </tr>
+        
+
+
+
+
+
+</tfoot> -->
+
+
+</table>
+<!-- <script>
+
+const tbl= document.getElementsByTagName("table")[0];
+// tbl.style.color="pink";  //font color
+// tbl.style.borderCollapse="collapse";//for border collapse
+tbl.style.borderColor="blue";
+// tbl.style.borderCollapse="separate";
+const txtclr=document.getElementsByTagName("td");
+
+const slct=document.getElementsByTagName("select");
+
+
+slct[0].onchange=()=>{
+    tbl.style.borderColor=slct[0].value;
+
+};
+
+
+slct[1].onchange=()=>{
+ 
+    tbl.style.borderStyle=slct[1].value;
+
+};
+
+slct[2].onchange=()=>{
+ 
+    var tds = document.getElementsByTagName("td");
+
+for(var i = 0, j = tds.length; i < j; ++i)
+   tds[i].style.color = slct[2].value;
+
+};
+
+
+slct[3].onchange=()=>{
+
+    tbl.style.borderCollapse=slct[3].value;
+};
+
+
+
+
+</script> -->
+
+</body>
+</html>

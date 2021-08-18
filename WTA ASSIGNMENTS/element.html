@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Elements </title>
+</head>
+<!-- Here background color is attribute is of body 
+Attribute can be changed using javascript
+-->
+<body style="background-color: red;" >
+
+    <!-- Here html , head , body ,  title , meta are also Elements  -->
+
+    <!-- Heading Elements -->
+    <h1>Ajay kumar verma</h1>
+    <h2>Ajay kumar verma</h2>
+    <h3>Ajay kumar verma</h3>
+    <h4>Ajay kumar verma</h4>
+    <h5>Ajay kumar verma</h5>
+    <h6>Ajay kumar verma</h6>
+
+    <!-- Placeholder is attribute of input -->
+    <input type="text" placeholder="Enter any color Name ">
+<!-- h tag is used for writing heading of paragraph   -->
+<!-- Each h tag has different size -->
+
+
+
+
+<!--  hr tag is used for horizontal line  -->
+<hr>
+
+<!-- p tag is used for writing the paragrph  -->
+<!-- it has fixed font-size  -->
+<p>Ajay kumar verma  </p>
+
+<!--  br tag is used for line break  -->
+<br>
+
+<!--  div tag is used for division or for block  -->
+<!--  div has bydefault 0 height ,0 width and no backgroung-color -->
+ <!-- we have to specify height ,width and border atleast  -->
+<div  style="height: 150px; width: 200px;  background-color: brown; "> Ajay kumar verma   </div>
+
+<hr>
+
+<!-- Two types of Elements are there  -->
+<!-- 1 inline Element -->
+<!-- 2 block  Element -->
+
+
+<!-- This is inline Element -->
+<input type="text" placeholder="Don't Enter Anything">
+<input type="text" placeholder="Enter any key">
+
+
+
+
+
+
+<!--  These all are block Elementd -->
+<p>Ajay kumar verma</p>
+<p>Ajay kumar verma</p>
+
+<button>Click  me :)</button>
+<button> change background-color </button>
+
+<h4>Ajay kumar verma</h4>
+<h6>Ajay kumar verma</h6>
+
+
+<header>Ajay kumar verma </header>
+<header>Ajay kumar verma</header>
+
+
+
+<!-- Attribute is a properties of Elements  -->
+<!-- It is specify in opening tag itself ,  -->
+ 
+<!-- Anchar tag is used for link -->
+<!--  it will redirect to google.com -->
+<a href="https://www.google.com"> Seach Any this here</a>
+  <!-- here href is attribute -->
+  
+<p style="color:blue;font-weight:bold; background-color: #123">Ajay kumar verma</p>
+<!-- Here color , font-weight , bckgrd-clr are attribute of p element -->
+
+
+
+
+
+</body>
+
+<script>
+
+var  x= document.getElementsByTagName("input");
+ 
+
+x[0].addEventListener('input',()=>{
+   
+document.body.style.backgroundColor=x[0].value;
+
+});
+
+
+
+
+x[1].addEventListener('input',()=>{
+   
+alert("I told you not to Enter Anything \n:( ")
+
+   });
+   
+  
+x[2].addEventListener('input',()=>{
+alert("Good :)") 
+
+   });
+    
+const btn=document.getElementsByTagName("button");
+
+btn[0].addEventListener("click",()=>{
+
+const name = prompt("Enter your name ")
+ document.title=name;
+ alert("see  in  Title")
+
+});
+
+btn[1].addEventListener("click",()=>{
+
+const clr = prompt("Enter Any color name ")
+
+document.body.style.backgroundColor=clr;
+
+
+});
+
+
+
+
+</script>
+
+
+
+</html>

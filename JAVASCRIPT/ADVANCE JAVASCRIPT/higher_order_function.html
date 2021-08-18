@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher order function </title>
+</head>
+<body>
+    
+<script>
+// Function can return function 
+// function can be assign to a variable 
+//function can pass to an arguments
+
+
+// its about nested function 
+//and returning function 
+
+const interview=(name)=>{
+     Explain="Explain in detail";
+  if(name==="Ajay"){
+          return (topic)=>{
+              return `${ Explain} ${topic}`;
+          }
+
+  }
+
+  if(name==="Vikash"){
+          return (topic)=>{
+              return `${ Explain} ${topic}`;
+          }
+
+  }
+
+  if(name==="rahul"){
+          return (topic)=>{
+              return `${ Explain} ${topic}`;
+          }
+
+  }
+  else{
+
+      return (topic)=>{
+           return `${topic}`;
+      }
+  }
+
+
+}
+
+
+console.log(interview("Ajay")("HTML"))
+
+
+// Javascript support nested function 
+//passing two or different argument same timelike above one is call higher order function 
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<style>
+table, tr, td{
+align-items: center;
+border: 2px;
+border-style: double;
+border-color: red;
+
+border-collapse: collapse;
+
+}
+
+
+</style>
+
+<body>
+   
+
+
+</body>
+<script>
+
+const tbl= document.createElement("table");
+ 
+document.body.appendChild(tbl);
+
+let row= tbl.insertRow(document.getElementsByTagName("tr").length);
+let c1= row.insertCell(0);
+let c2= row.insertCell(1);
+let c3= row.insertCell(2);
+c1.innerText="NUMBER";
+c2.innerText="SQUARE";
+c3.innerText="CUBE";
+
+
+const inser_tdata=(n)=>{
+   
+let row= tbl.insertRow(document.getElementsByTagName("tr").length);
+let c1= row.insertCell(0);
+let c2= row.insertCell(1);
+let c3= row.insertCell(2);
+c1.innerText=n;
+c2.innerText=sqr(n);
+c3.innerText=cub(n);
+
+}
+
+
+const sqr=val=>val*val;
+
+const cub=val=>val*val*val;
+
+const no = parseInt(prompt("Enter last  number :"));
+
+
+for(var i=1;i<=no;i++){
+    
+inser_tdata(i);
+
+}
+
+
+
+</script>
+
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <script>
+
+log num1 = '550';
+ log num2 = '990';
+ log num3 = '800';
+ 
+ log sumOfNumbers = num1 + num2 + num3;
+ console.log(sumOfNumbers);
+
+
+   </script> 
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional programming </title>
+</head>
+<body>
+    
+<script>
+//A programming language is said to have First class function when function 
+// in that language are treated like any other variable 
+
+// In javasccript we can assign a function to a varaible 
+
+
+// Assigning function in a variable 
+const name=()=>{
+    return "Ajay kumar verma ";
+}
+
+console.log(name());
+
+
+
+//declaraing function in a objects
+const youtube={
+   name:"Ajay kumar verma",
+   qualify:()=>{
+       return "Hi i am Ajay kumar verma ";
+   }
+
+}
+
+console.log(youtube.qualify());
+
+
+// passing function is an arguments 
+// it is like callback function 
+const greete=()=>{
+  return "Good evening "
+}
+
+const say=(grt,name)=>{
+  console.log(grt()+name)
+}
+
+
+say(greete,"Ajay");
+
+
+
+// function is returning function 
+
+const hi=(()=>{
+
+    
+   return (name)=>{
+          return `hello ${name}`;       
+   }
+
+
+})()
+
+
+console.log(hi("Raju"));
+
+</script>
+
+</body>
+</html>

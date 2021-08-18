@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My form</title>
+</head>
+<body>
+    
+
+<!-- form is a block type element whereas input is inline type element  -->
+<!-- para is block element -->
+
+
+<form action="">
+    <fieldset >
+
+<input type="text" placeholder="Enter your Name "/>
+<br>
+<input type="email" placeholder="Enter your Email" />
+<br>
+<input type="number" placeholder="Enter your NUmber" />
+
+<p>Area of interest:</p> 
+
+
+<span>AI </span>
+<input type="checkbox" value="">
+
+<span>ML </span>
+<input type="checkbox" value="">
+
+
+<span>ROBOTICS </span>
+<input type="checkbox" value="">
+
+
+<span>DATA MINING </span>
+<input type="checkbox" value="">
+
+
+<br>
+<br>
+ Male
+ <input type="radio" value="Male" name="gender" />
+ Female 
+ <input type="radio" value="female" name="gender" />
+ 
+<br>
+<p>You Favourate color </p>
+<input type="color"  />
+
+
+<br>
+<p>Enter your birthday</p>
+<input type="date"  placeholder="Enter Your Date" />
+
+<br>
+<p>Upload your resume</p>
+<input type="file" />
+
+<br><br>
+<p>Enter year and month</p>
+<input type="month" />
+
+<br>
+<br>
+<input type="password" placeholder="Enter password">
+
+<br>
+<p>Enter Range </p>
+<input type="range"  min="30" max="120" value="120" />
+<br>
+<!-- This is for search -->
+<input type="search" name="" id="">
+<br>
+<br>
+
+<!-- it is for telephone number -->
+<input type="tel" name="" id="">
+
+<br> <br>
+<input type="time" name="" id="">
+
+<br>
+<br>
+<!--  this element is for Week -->
+
+<input type="week" name="" id="">
+<br><br>
+
+<input type="url" name="" id="">
+
+<!-- <ins>Ajay kumar verma</ins> -->
+
+<br><br>
+<input type="reset" value="RESET">
+
+<input type="submit" value="SUBMIT">
+
+
+</fieldset>
+</form>
+<script>
+
+const x=document.getElementsByTagName("input");
+
+x[21].addEventListener("click",()=>{
+var str;
+
+for(var i=0;i<x.length-2;i++){
+str+=" "+x[i].value;
+}
+alert(str);
+
+});
+
+
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

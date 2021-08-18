@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+
+class  empolyee{
+
+constructor(Name,Mob,Addr){
+    this.name=Name;
+    this.mob=Mob;
+    this.addr=Addr;
+}
+
+  slogan(){
+ return `Hello i am ${this.name} . Thi scompany is best .`;
+}
+
+// If we are not using any class member in that case 
+// we can use static method 
+
+static add(a,b){
+    return a+b;
+}
+
+}
+
+let  obj=new  empolyee("AJAY",9973541431,"Patna");
+console.log(obj);
+
+console.log(empolyee.add(23,45));
+
+
+// Inheritance
+console.log(`Inheritance `);
+
+
+class programmer extends empolyee{
+
+    constructor(Name,Mob,Addr,Lang){
+        super(Name,Mob,Addr);
+        this.lang=Lang;
+    }
+    
+
+}
+
+const  pgr=new programmer("Ajay ",9973541431,"Patna","java");
+ 
+console.log(pgr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

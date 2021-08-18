@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+
+</body>
+<Script>
+
+document.title="Fibonacci number :Ajay kumar verma";
+
+const fun=()=>{
+    
+const no=parseInt(prompt("Enter size of fibonocci "));
+document.write("Fibonocca Number is :");
+
+
+var n1=0,n2=1;
+
+for(var i=0;i<no;i++){
+document.write(n1+" ");
+let temp=n2;
+n2=n1+n2;
+n1=temp;
+
+}
+
+document.write("<br>");
+
+}
+
+fun();
+
+setInterval(fun,3000);
+
+
+</Script>
+
+
+</html>

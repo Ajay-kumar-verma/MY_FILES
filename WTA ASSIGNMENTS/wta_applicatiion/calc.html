@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+<style>
+ input[type="button"]{
+background-color: blue;
+color: white;
+margin-right: 15px;
+margin-left: 15px;
+margin-top: 5px;
+
+} 
+div{
+    background-color:black;
+    padding-bottom: 20px;
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+    <div>
+        <form action="" onsubmit="return false"></form>
+        <input type="tel"  autofocus="true" >
+        <p></p>
+        <input type="button" onclick="add(this.value)"   value=" 1 ">
+        <input type="button" onclick="add(this.value)" value=" 2 ">
+        <input type="button"  onclick="add(this.value)" value=" 3 ">
+        <input type="button" onclick="add(this.value)" value=" 4 ">
+        <input type="button"  onclick="add(this.value)" value=" 5 ">
+        <input type="button" onclick="add(this.value)" value=" 6 ">
+        <input type="button" onclick="add(this.value)" value=" 7 ">
+        <input type="button" onclick="add(this.value)" value=" 8 ">
+        <input type="button" onclick="add(this.value)" value=" 9 ">
+        <input type="button" onclick="add(this.value)" value=" 0 ">
+        <input type="button"  onclick="add(this.value)"value=" .  ">
+        <input type="button"  onclick="add(this.value)"value=" + ">
+        <input type="button" onclick="add(this.value)"  value=" -  ">
+        <input type="button" onclick="add(this.value)" value=" * ">
+        <input type="button" onclick="add(this.value)" value="  / ">
+        <input type="button" onclick="add(this.value)"  value="% ">
+        <input type="button" onclick="add(this.value)" value=" C">
+        <input type="button"  onclick="add(this.value)" value=" = ">
+       
+         
+    </div>
+
+<script>
+ document.title="Ajay kumar verma :CalC";
+
+const div= document.getElementsByTagName("div")[0];
+div.style.width="200px";
+
+const btn= document
+
+const fm=document.getElementsByTagName("input");
+fm[0].placeholder="Enter simple Expression ";
+fm[0].style.height="30px";
+fm[0].style.width="192px";
+var para= document.getElementsByTagName("p")[0];
+function add(val){
+    para.innerText="";
+    fm[0].value+=val.trim();
+  
+
+}
+
+fm[fm.length-2].onclick=()=>{
+    fm[0].value="";
+}
+
+
+fm[fm.length-1].onclick=()=>{
+var val= fm[0].value;
+var result ;
+var flag=1;
+
+
+if(val.indexOf("*")!=-1){
+  var val1= parseFloat(val.split("*")[0]);
+  var val2= parseFloat(val.split("*")[1]);        
+  result=val1*val2;
+}
+ else if(val.indexOf("+")!=-1){
+    var val1= parseFloat(val.split("+")[0]);
+  var val2= parseFloat(val.split("+")[1]);        
+  result=val1+val2;
+ }
+else if(val.indexOf("-")!=-1){
+    var val1= parseFloat(val.split("-")[0]);
+  var val2= parseFloat(val.split("-")[1]);        
+  result=val1-val2;
+}
+else if(val.indexOf("/")!=-1){
+    var val1= parseFloat(val.split("/")[0]);
+  var val2= parseFloat(val.split("/")[1]);        
+  result=val1/val2;
+}
+
+else if(val.indexOf("%")!=-1){
+  var val1= parseFloat(val.split("%")[0]);
+  var val2= parseFloat(val.split("%")[1]);        
+  result=val1%val2;
+}
+else{
+flag=0;
+para.innerHTML="Error :"+val;
+para.style.color="red";
+fm[0].value="";
+
+}
+
+if(flag){
+para.innerHTML="Answer is : "+result;
+para.style.color="white";
+fm[0].value="";
+}
+
+
+
+}
+
+
+
+
+
+
+</script>
+
+
+</body>
+
+</html>
+
+<!-- 
+<html>
+<head>
+<title> Fibonacci Series in JavaScript </title>
+</head>
+<body>
+<script>
+// declaration of the variables
+var n1 = 0, n2 = 1, next_num, i;var num = parseInt (prompt (" Enter the limit for Fibonacci Series "));
+document.write( "Fibonacci Series: ");
+document.write("");
+for ( i = 1; i <= num; i++)
+{ 
+document.write (" "+n1); // print the n1
+ next_num = n1 + n2; // sum of n1 and n2 into the next_num
+ n1 = n2; // assign the n2 value into n2
+ n2 = next_num; // assign the next_num into n2
+}
+
+document.write("");
+</script>
+</body>
+</html> -->

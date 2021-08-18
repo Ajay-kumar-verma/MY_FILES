@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABLES</title>
+</head>
+<style>
+    *{
+  margin: 0;
+  padding: 0;
+    }
+table,th,td{
+    border :2px;
+    border-style: dashed;
+    border-color: blue;
+    text-align: center;
+    font-size: 30px;
+    border-collapse: collapse;
+    /* color:tomato; */
+}
+
+thead{
+ color: saddlebrown;
+ text-transform: uppercase; /*this is for text transform  */
+}
+
+tbody{
+    color:steelblue;
+   text-transform:capitalize ;
+}
+
+
+</style>
+
+<body>
+    
+<table>
+<!-- It is table header  -->
+<caption> Time and Table </caption>
+
+<thead>
+
+
+    <tr>
+        <th colspan="2" >Time Day </th>
+        <th>9:00 am to 1:15pm </th>
+        <th>2:0 pm to 5:00pm </th>
+     </tr>
+     
+</thead>
+
+
+
+<tbody>
+    <tr><td rowspan="2">Mon to Fri</td>
+        <td>sub </td>
+         <td>Theory Class</td>
+        <td>ML/WTA Lab </td>
+     </tr>
+     
+     <tr>
+     <td>FI </td>
+     <td>ABC/EFG/XYZ</td>
+     <td>AD block 1st Floor </td>
+     </tr>
+     
+     <tr>
+     <td rowspan="2">  Sat </td>
+     <td>Sub</td>
+     <td  rowspan="2" colspan="2">  Extra curricular Activity </td>
+     </tr>
+     
+     <tr><td>FI</td></tr>
+     
+    
+</tbody>
+
+
+
+
+</table>
+
+
+</body>
+</html>

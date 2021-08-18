@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>My list</title>
+</head>
+<style>
+    /* Initially body or document takes some margin or padding */
+     *{
+        padding: 0;
+        margin: 0;
+    }
+
+/* 
+li:nth-child(odd){
+    background-color: beige;
+} */
+
+
+ul {
+  list-style-type: none;/* it makes list-style none*/
+  margin: 0;
+  padding: 0;
+  width: 200px; 
+  background-color: #f1f1f1;
+
+  /* margin: 5px; it makes space from outside  */
+padding: 5px; /* it makes space from inside */
+
+}
+
+li a {
+  display: block;/*After giving as block wqe can give as margin and padding */
+  /* display: inline;
+   */
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+</style>
+
+
+
+
+<body>
+<!-- list are two types , one ordered list (ol) another one is unordered list (ul) -->
+<!-- li is block type element -->
+
+<ul >
+    <li><a href="#">Ram</a></li>
+    <li><a href="#">Shyam</a></li>
+    <li><a href="#">Mohan</a></li>
+    <li><a href="#">Ram</a></li>
+    <li><a href="#">Shyam</a></li>
+    <li><a href="#">Mohan</a></li>
+    <li><a href="#">Ram</a></li>
+    <li><a href="#">Shyam</a></li>
+    <li><a href="#">Mohan</a> </li>
+    <li><a href="#">Ram</a></li>
+    <li><a href="#">Shyam</a></li>
+    <li><a href="#">Mohan</a> </li>
+    
+
+</ul>
+
+
+
+</body>
+</html>

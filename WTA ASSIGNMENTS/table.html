@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My table </title>
+
+<style>
+/* WE can provide border for table and thier child elements  */
+
+/* for border we must have to specify three thing
+1 width or border 
+2 border-style
+3 border-color
+ */
+table{
+    font-size: larger;
+}
+/*  for border collapsing  */
+table{
+border-collapse:collapse;
+/* border-spacing:5px; */
+}
+
+/* for text-align  */
+
+th{
+    text-align: left;
+}
+
+/* for padding  */
+th,td{
+    padding: 10px;
+}
+
+
+table {
+ border: 1px;
+ border-style:dashed;
+ border-color:red;
+/*   border: 1px solid black;  this is short   */
+}
+
+
+th{
+
+ border: 2px;
+ border-style:double;
+ border-color:red;
+
+}
+
+td{
+    border: 1px;
+    border-style: dotted;
+    border-color: pink;
+
+}
+
+tr:nth-child(even){
+/* it is for coloring nth row or alternative rows */
+    background-color: lightblue;
+}
+
+td:nth-child(even){
+    background-color:burlywood;
+
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+    <!-- table1 -->
+    <!-- table tag is used for defining table -->
+    <!-- tr tag is for row of table  -->
+    <!-- td is for table data . it could be anything ,image ,text div ,another table -->
+    <!-- table and tr is block type element ,whereas td and th is inline type element -->
+    
+    <table>
+     <caption>Student's information </caption>
+     <!-- It is meta tag of table -->
+        <tr>
+            <th>Name  </th>
+            <th>Number</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th colspan="3">degree</th>
+            <!-- Here one colspan is equal to 3 colums -->
+            <!-- we can also use rowspan for different purpose   -->
+        </tr>
+
+        <tr>
+            <td>Ajay </td>
+            <td>9973541431</td>
+            <td>araj08@gmail.com</td>
+            <td>banglore</td>
+            <td>BCA</td>
+            <td>MBA</td>
+            <td>PHD</td>
+        </tr>
+        <tr>
+            <td>Vikash</td>
+            <td>8789724143</td>
+            <td>vikash@gmail.com</td>
+            <td>Patna</td>
+            <td>BTECH</td>
+            <td>MTECH</td>
+            <td>PHD</td>
+        
+        
+        </tr>
+
+        <tr>
+            <td>Sachin</td>
+            <td>8283744564</td>
+            <td>vikash@gmail.com</td>
+            <td>Patna</td>
+            <td>BA</td>
+            <td>MA</td>
+            <td>PHD</td>
+        
+        </tr>
+
+
+
+
+        <tr>
+            <td>Ajay </td>
+            <td>9973541431</td>
+            <td>araj08@gmail.com</td>
+            <td>banglore</td>
+            <td>BCA</td>
+            <td>MBA</td>
+            <td>PHD</td>
+        </tr>
+        <tr>
+            <td>Vikash</td>
+            <td>8789724143</td>
+            <td>vikash@gmail.com</td>
+            <td>Patna</td>
+            <td>BTECH</td>
+            <td>MTECH</td>
+            <td>PHD</td>
+        
+        
+        </tr>
+
+        <tr>
+            <td>Sachin</td>
+            <td>8283744564</td>
+            <td>vikash@gmail.com</td>
+            <td>Patna</td>
+            <td>BA</td>
+            <td>MA</td>
+            <td>PHD</td>
+        
+        </tr>
+
+
+
+
+
+
+    </table>
+   
+    <hr>
+
+    
+</body>
+
+</html>
