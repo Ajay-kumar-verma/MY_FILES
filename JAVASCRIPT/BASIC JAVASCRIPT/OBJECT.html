@@ -52,13 +52,13 @@ console.log("Person details",person);
 
 // for in loop is used for iterating an object and it return key 
 for (let x in person) {
- console.log(person[x]);
+ console.log(person[x]);  // This is for iteration not return  
 }
 
 
 // Another way to access keys
 // Object.keys(person) will return An array of keys  
-console.log(Object.keys(person));
+console.log(Object.keys(person));     
 
 // Another ways to printing their values 
 // OObject.values(person) will return An array of values  
@@ -70,7 +70,7 @@ console.log(Object.values(person));
 
 
 
-// Way of getting all keys 
+// Way of getting all keys  i return index 
 Object.keys(person).map((key,i)=>console.log(key))
 
 
