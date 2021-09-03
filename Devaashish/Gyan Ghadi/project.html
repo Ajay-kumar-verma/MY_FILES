@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <title>GYAN GAADI</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+      
+        .div{
+        height: 300px;
+        width: 1200px;
+        margin: auto;
+
+        border:1px solid  green ;
+        border-radius: 25px;
+        box-shadow: 10px 10px 15px  ;
+        }
+        
+        th,td{
+            padding: 10px;
+            }
+        
+        th{
+            color: green;
+        }
+        
+      
+     .header{
+         height:80px;
+         width: 100%;
+         background-color: rgb(211, 206, 206);
+     }
+     
+
+dt{
+    float: left;
+    margin-left: 20px;
+ 
+}
+ul{
+margin-left: 800px;
+font-size: large;
+position: absolute;
+margin-top: 20px;
+
+    
+}
+
+.img{
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    margin: .5%;
+    border-radius: 20px;
+
+}
+
+span{
+    position: absolute;
+   margin-top:20px;
+    margin-left: 120px;
+font-weight: bolder;
+
+}
+
+
+
+
+/*  
+.si  table ,td{
+border-style: dashed;
+border-color: green;
+border-width: 2px;
+} */
+.tab {  
+  
+  /* background-color:  red; */
+  padding: 20px;
+  width: fit-content;
+  margin: auto;
+  }
+
+ 
+ .tab button {
+  background-color: rgb(235, 219, 219);
+  text-align: center; 
+  float: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 13px;
+ 
+  height: 50px;
+  width: 250px;
+  margin: auto;
+ 
+} 
+
+.tab button:hover {
+background-color: rgb(29, 228, 29);
+border-radius:10px ;
+}
+
+.leftdivd {
+  height: 250px;
+  width: 300px;
+  float: left;
+  margin: 2%;
+  margin-left: 150px;
+  border-radius: 25px;
+  border-style: solid;
+  border-color: rgb(28, 175, 28);
+  border-width:1px ;
+  padding: 10px;
+}
+
+.rightdiv{
+  height: 250px;
+  width: 700px;
+  float: left;
+  margin: 2%;
+  border-radius: 25px;
+  border-style: solid;
+  border-color: rgb(28, 175, 28);
+  border-width:1px ;
+padding: 5px;
+}
+
+
+.inerDiv{
+  /* background-color: pink; */
+  border-style: solid;
+  border-color: green;
+  border-width: 1px;
+  padding: 5px;
+  border-radius: 10px;
+
+}
+.iner2div{
+  /* background-color: blueviolet; */
+  border-style: solid;
+  border-color: rgb(1, 0, 7);
+  border-width: 2px;
+  padding: 5px;
+  border-radius: 10px;
+  height: 50px;
+ 
+}
+
+</style>
+      
+
+     
+</head>
+<body> 
+    
+
+
+<header class="header">
+
+
+
+<div class="logo"  style="margin-left: 70px;" >
+
+<img class="img"  src="htts://surce.unsplash.com/collection/190727/1600x900" alt="LOGO"   >
+ <span>Gyan Gaadi</span>
+ 
+</div>
+
+
+
+
+
+<ul>
+<dt>Archieve</dt>
+<dt>Previour year paper </dt>
+<dt>Analyticsa</dt> 
+<dt>Log out </dt>
+<dt>My profile </dt>
+</ul>   
+
+</header>
+
+
+
+
+<div style="color: green;text-align: center; font-size:60px" >Report Card</div>
+
+
+<div>
+  
+<div class="leftdivd">
+
+<table style="margin-top: 15px; font-family: sans-serif;" >
+<tr>
+ <td style="color: white; background-color: rgb(46, 189, 46); border-radius: 10px; text-align: center;  "    >Section-A</td>
+ <td style="padding-left: 50px;    " >03/092021</td>
+</tr>
+<tr>
+  <td style="color: rgb(27, 206, 27);"  >Student Name </td>
+ <td style="padding-left: 50px; font-weight: bolder; "  >Student Code </td>
+</tr>
+
+</table>
+
+
+<div class="inerDiv"   >
+    <p style="color: green; font-weight: bold; text-align: center;" >Select an Institute</p>
+   
+  <div class="iner2div" ></div>
+
+
+</div>
+
+
+
+</div>
+<div class="rightdiv"></div>
+
+
+</div>
+
+
+
+
+
+
+<br/>  <br/> <br/>  <br/>  <br/> <br/> <br/> <br/>  <br/>   <br/>  <br/>  <br/> <br/> <br/> <br/>  <br/> <br/>
+
+<br/> <br/> <br/> <br/> <br/>
+
+
+
+
+
+
+
+
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Subject Wise Report')">Subject Wise Report</button>
+    <button class="tablinks" onclick="openCity(event, 'Question List')">Question List</button>
+    <button class="tablinks" onclick="openCity(event, 'Question wise details')">Question Wise details</button>
+  </div>
+
+  
+
+
+
+
+
+    <div  class="div"  style="margin-top: 50px;" >
+      <table>
+         <thead>
+             <th style="text-align: left;" > Subject</th>
+             <th style="width: 50px;" >Questions attempted</th>
+             <th style="width: 50px;"  >Incorrect Answer </th>
+             <th style="width: 50px;"  >Marks Obtained </th>
+             <th style="width: 50px;"  >Overall Strength </th>
+              </thead>
+      
+    <tbody>
+    <tr>
+        <td>Art Forms</td>
+         <td style="text-align: center;" > 0 </td>
+         <td style="text-align: center;"> 0 </td>
+         <td style="text-align: center;" > 0 </td>
+         <td>
+       <div style="height: 20px; width: 12px; background-color: green;"   ></div>
+    
+         </td>
+    
+       
+        </tr>
+    
+    
+    
+        <tr>
+            <td>Aspects of Organic and Inorganic Checmistry </td>
+            <td style="text-align: center;" > 0 </td>
+            <td style="text-align: center;"> 0 </td>
+            <td style="text-align: center;" > 0 </td>
+             <td>
+           <div style="height: 20px; width: 20px; background-color: green;"   ></div>
+        
+             </td>
+        
+           
+            </tr>
+            <tr>
+                <td>Fundamental Rights</td>
+                <td style="text-align: center;" > 0 </td>
+                <td style="text-align: center;"> 0 </td>
+                <td style="text-align: center;" > 0 </td>
+                 <td>
+               <div style="height: 20px; width: 34px; background-color: green;"   ></div>
+            
+                 </td>
+            
+               
+                </tr>
+                <tr>
+                    <td>Indian Agriculture </td>
+                    <td style="text-align: center;" > 0 </td>
+                    <td style="text-align: center;"> 0 </td>
+                    <td style="text-align: center;" > 0 </td>
+                     <td>
+                   <div style="height: 20px; width: 24px; background-color: green;"   ></div>
+                
+                     </td>
+                
+                   
+                    </tr>
+                    <tr>
+                        <td>Inadian Classical Dance </td>
+                        <td style="text-align: center;" > 0 </td>
+                        <td style="text-align: center;"> 0 </td>
+                        <td style="text-align: center;" > 0 </td>
+                         <td>
+                       <div style="height: 20px; width: 48px; background-color: green;"   ></div>
+                    
+                         </td>
+                    
+                       
+                        </tr>
+                        <tr>
+                            <td>Indian Festival</td>
+                            <td style="text-align: center;" > 0 </td>
+                            <td style="text-align: center;"> 0 </td>
+                            <td style="text-align: center;" > 0 </td>
+                             <td>
+                           <div style="height: 20px; width: 50px; background-color: green;"   ></div>
+                        
+                             </td>
+                        
+                           
+                            </tr>
+                                                                
+    
+    
+    </tbody>
+    
+    
+      </table>
+    
+
+    
+   <!-- Tab links -->
+
+    <div><iframe src="" frameborder="0" width="100%"name="photo" height="400px"margin="30px"></iframe></div>
+
+</body>
+
+</html>
