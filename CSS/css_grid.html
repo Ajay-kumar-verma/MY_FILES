@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS GRID</title>
+<style>
+.container{
+ /* width: 500px; */
+ height: 500px;
+ margin: auto;
+ background-color:tomato ;
+ padding: 1vh; 
+ display: grid;   
+ /* grid-template-rows: 100px 100px 100px 100px 100px;
+ grid-template-columns:100px 100px 100px 100px 100px  ;
+  */
+  row-gap: 10px;
+  column-gap: 10px;
+  grid-template-rows: 60px repeat(4,1fr);
+ grid-template-columns:repeat(4,1fr) 30px ;
+ 
+}
+
+.item{
+      background-color: teal;
+     display: grid;
+     /* display grid and display flex 
+      justify-content :center 
+      align-items: center;
+       
+      */
+
+     justify-content: center;
+     align-items: center;
+ 
+   
+  
+  /* place-self: center;    */
+
+}
+.item1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.item12{
+    grid-column-start: 3;
+    grid-column-end: 5;
+
+}
+.item15{
+   grid-column: 2 / span 2;
+}
+
+</style>
+</head>
+<body>
+    
+
+    <div class="container">
+
+  <div class="item item1"><button>1</button></div>
+  <div class="item item2">2</div>
+  <div class="item item3">3</div>
+  <div class="item item3">4</div>
+  <div class="item item4">5</div>
+  <div class="item item5">6</div>
+  <div class="item">7</div>
+  <div class="item">8</div>
+  <div class="item">9</div>
+  <div class="item">10</div>  
+  <div class="item">11</div>
+  <div class="item item12">  <form action="">
+<input type="text">
+
+  </form>    </div>
+  <div class="item">13</div>
+  <div class="item">14</div>
+  <div class="item item15">15</div>
+  <div class="item item16">16</div>
+  <div class="item">17</div>
+  <div class="item">18</div>
+   <div class="item">21</div>
+  <div class="item">22</div>
+  <div class="item item23">23</div>
+  
+   
+
+</div>
+
+</body>
+</html>

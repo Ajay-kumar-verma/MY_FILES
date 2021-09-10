@@ -9,23 +9,21 @@
     <title>GYAN GAADI</title>
 
     <style>
-        *{
+    *{
             margin: 0;
             padding: 0;
-        }
-
-      
-        .div{
-        height: 300px;
-        width: 1200px;
-        margin: auto;
-
-        border:1px solid  green ;
-        border-radius: 25px;
-        box-shadow: 10px 10px 15px  ;
-        }
+   }
+     
+    .div{
+      height: 300px;
+      width: 1200px;
+      margin: auto;
+      border:1px solid  green ;
+      border-radius: 25px;
+      box-shadow: 10px 10px 15px  ;
+       }
         
-        th,td{
+    th,td{
             padding: 10px;
             }
         
@@ -75,16 +73,8 @@ font-weight: bolder;
 
 
 
-/*  
-.si  table ,td{
-border-style: dashed;
-border-color: green;
-border-width: 2px;
-} */
 .tab {  
-  
-  /* background-color:  red; */
-  padding: 20px;
+   padding: 20px;
   width: fit-content;
   margin: auto;
   }
@@ -155,15 +145,64 @@ padding: 5px;
   height: 50px;
  
 }
+.rightdiv{
+display: flex;
+
+}
+.pieChart{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  flex: .35;
+}
+.data{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: .65;
+}
+
+.div1{
+  display: flex;
+  justify-content: center;
+align-items: center;
+}
+
+.div1 div{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+   width: fit-content;
+  align-items: center;
+  border: 1px solid green;
+  border-radius: 10px;
+  margin: 1%;  
+}
+.headerr{
+ justify-content: flex-end;
+}
+.div2{
+border: 1px solid green;
+border-radius: 10px;
+margin: 1%;  
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
+width: 280px;
+font-size: xx-large;
+}
+
+.iner2div{
+ display: flex;
+ justify-content: end;
+}
 
 </style>
-      
-
-     
 </head>
 <body> 
-    
-
 
 <header class="header">
 
@@ -190,11 +229,7 @@ padding: 5px;
 
 </header>
 
-
-
-
 <div style="color: green;text-align: center; font-size:60px" >Report Card</div>
-
 
 <div>
   
@@ -203,7 +238,7 @@ padding: 5px;
 <table style="margin-top: 15px; font-family: sans-serif;" >
 <tr>
  <td style="color: white; background-color: rgb(46, 189, 46); border-radius: 10px; text-align: center;  "    >Section-A</td>
- <td style="padding-left: 50px;    " >03/092021</td>
+ <td style="padding-left: 50px;" >03/092021</td>
 </tr>
 <tr>
   <td style="color: rgb(27, 206, 27);"  >Student Name </td>
@@ -216,7 +251,19 @@ padding: 5px;
 <div class="inerDiv"   >
     <p style="color: green; font-weight: bold; text-align: center;" >Select an Institute</p>
    
-  <div class="iner2div" ></div>
+  <div class="iner2div">
+   <p>Ajay pandey</p>
+    <select>
+      <option value="">A</option>
+      <option value="">B</option>
+      <option value="">C</option>
+      <option value="">D</option>
+      <option value="">E</option>
+
+    </select>
+
+
+  </div>
 
 
 </div>
@@ -224,8 +271,53 @@ padding: 5px;
 
 
 </div>
-<div class="rightdiv"></div>
 
+<div class="rightdiv">
+   
+  <div class="pieChart">
+    pieChart
+  </div>
+
+
+  <div class="data" >
+   <div class="headerr"><p style="color: green;" >Question Analysis</p></div>
+    
+  <div  class="div1" >
+  
+    <div style="width: 100px;"  class="num1"> 
+     <p style="color: rgb(135, 228, 135);">Correct</p>
+     <p style="color:rgb(76, 238, 62);"> 45</p>
+     <p style="color: gray;" >45 x 2 = 90 </p>  
+
+    </div>
+
+    <div style="width: 120px;" class="num2"> 
+      <p style="color: rgb(238, 128, 101);">Incoorect</p>
+      <p style="color:rgb(228, 61, 20);"> 25 </p>
+      <p style="color: gray;" >25x0.66 =16.5</p>  
+     </div>
+ 
+
+     <div style="width: 100px;"  class="num3"> 
+      <p style="color: rgb(226, 133, 46);">Skipped</p> 
+      <p style="color:rgb(238, 111, 27);"> 30</p>
+       <p style="color: gray;" >30 x 0 = 0 </p>  
+     </div>
+ 
+
+
+
+  </div>
+
+  <div class="div2">
+    <p> <div  style="color:rgb(124, 231, 124)"> 90 </div>&nbsp;-&nbsp;<div style="color: rgb(243, 152, 152);" >&nbsp;16.5&nbsp;</div>&nbsp;+&nbsp;<div  style="color:brown">&nbsp;0&nbsp;</div>&nbsp;=&nbsp;73.5</p>
+  </div>
+  </div>
+ 
+
+
+
+</div>
 
 </div>
 
@@ -246,9 +338,12 @@ padding: 5px;
 
 
 <div class="tab">
-    <button class="tablinks" onclick="openCity(event, 'Subject Wise Report')">Subject Wise Report</button>
-    <button class="tablinks" onclick="openCity(event, 'Question List')">Question List</button>
-    <button class="tablinks" onclick="openCity(event, 'Question wise details')">Question Wise details</button>
+
+    <a href="/Gyan ghadi/project.html">  <button class="tablinks" >Subject Wise Report</button></a>
+    <a href="/Question List.html"><button class="tablinks" >Question List</button></a>
+    <a href="/Question_wise_details.html"><button class="tablinks" >Question Wise details</button></a>
+ 
+ 
   </div>
 
   
@@ -257,7 +352,7 @@ padding: 5px;
 
 
 
-    <div  class="div"  style="margin-top: 50px;" >
+    <div  class="div"  style="margin-top: 50px; margin-bottom: 20px;" >
       <table>
          <thead>
              <th style="text-align: left;" > Subject</th>
@@ -348,15 +443,12 @@ padding: 5px;
     
     </tbody>
     
-    
+      
       </table>
     
+    </div>
 
     
-   <!-- Tab links -->
-
-    <div><iframe src="" frameborder="0" width="100%"name="photo" height="400px"margin="30px"></iframe></div>
-
 </body>
 
 </html>

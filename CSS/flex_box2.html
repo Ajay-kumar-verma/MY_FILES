@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-box 2 By Ajay kumar verma </title>
+
+   <style>
+*{margin: 0;padding: 0;}
+
+.container{
+    background-color: rgb(110, 180, 241); 
+    display: flex;
+    /* it apply all over div inside in one direction only  */
+   /* Whatever given width for div  */
+
+height: 50vh;
+  /* text-align: center;  */
+  /* Text alignment is for all text inside div  */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* flex-wrap is used for  making responsive web  */
+  /*  It works when flex ratio is not defined  */
+
+
+}
+
+.container div{
+    background-color: tomato;
+    margin: 1vh;
+    height: 100px;
+    color: white;
+    /* Flex  is applicable for width only not height
+    equal width is applied for all inside div 
+    */
+    /* flex: 1;  */
+    width: 400px;
+  /* instead of using width we can use fles-basic */
+ 
+   display: flex;
+  justify-content: center;
+  align-items: center;
+ font-style: oblique;
+ /* font-style: italic; */
+}
+
+ 
+ .item1{
+    /* flex: 1; */
+     /* flex means dynamics  */
+    flex-shrink: 2;
+    flex-grow: 2;
+
+  /* grow and shink is used of adjustable  */
+
+
+} 
+ 
+ /*
+ .item2{
+     flex: 2;
+ }
+ .item3{
+     flex: 3;
+ }
+ .item4{
+     flex: 4;
+ }
+ .item5{
+     flex: 5;
+ } */
+
+@media(min-width:800px){
+body{
+    background-color: yellowgreen;
+}
+    
+}
+
+
+   </style> 
+
+
+
+</head>
+<body>
+    
+
+
+<div class="container">
+
+<div class="item1"> Ajay </div>
+<div class="item2"> kumar  </div>
+<div class="item3"> Verma </div>
+<div class="item4"> Devaashsish </div>
+<div class="item5"> pandey </div>
+
+
+<!-- <div class="item6"></div>
+<div class="item7"></div>
+<div class="item8"></div>
+<div class="item9"></div>
+<div class="item10"></div>
+ -->
+
+
+</div>
+
+
+</body>
+</html>

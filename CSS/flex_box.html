@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-box</title>
+
+ <style>
+ *{
+  margin: 0;
+  padding: 0;
+ }
+.flex-container{
+    background-color: rgb(32, 133, 221);
+    height: 50vh;
+    /* width: 70vh; */
+   padding: .1vh;
+   display: flex;
+   /* flex-direction: column; */
+   /* flex-direction: column-reverse; */
+
+   /* margin: auto; */
+ /*Bydefault direction is row   */
+  /* flex-direction: row;  */
+  /* flex-direction: row-reverse; */
+  /* flex-direction:inherit ; */
+  
+  /* justify-content: center;  */
+  /* It makes inner content at center by width */
+ /* justify-content: flex-end; */
+   /* justify-content: flex-start; */
+ /* justify-content:baseline;  */
+
+  align-items:flex-end;
+  /* This is accouding to y  */
+  justify-content: center;
+/*  this is ccording to x */
+
+
+
+/* justify-content: space-evenly; */
+/* justify-content: space-between; */
+/* justify-content: space-around; */
+/* justify-content:end; */
+/* justify-content: start; */
+/* it is used for changing horizontal to vertical direction depend on situaton  */
+ /* flex-wrap: wrap; */
+ flex-wrap: wrap-reverse;
+
+}
+
+.flex-container div{
+   background-color: blueviolet;
+   /* width: fit-content; 
+   height: fit-content; */
+   height: 100px;
+   width: 100px;
+   padding: 1vh;
+   margin: .5vh;
+   /* text-align: center; */
+
+   /* margin: auto; it makes the content center   */  
+}
+ .item1{
+  order: 6;
+  /* flex-grow: 2; */
+   align-self: center; 
+flex: 1;
+
+
+}
+.item2{
+    order:1;
+    /* flex-grow: 4; */
+    align-self: flex-start;
+  
+    flex: 1;
+}
+.item3{
+    order:2 ;
+    /* flex-shrink: 4; */
+    flex: 1;
+}
+.item4{
+    order:3 ;
+    flex: 1;
+}
+.item5{
+    order:4 ;
+    flex: 1;
+}
+.item6{
+    order:5 ;
+    flex: 1;
+}
+
+
+
+
+ </style>
+
+</head>
+<body>
+    <!-- Most popular  -->
+
+ <!-- Flex box means flexiable layout  -->
+
+
+<div class="flex-container">
+
+<div class="item1">A</div>
+<div class="item2">B</div>
+<div class="item3">C</div>
+<div class="item4">D</div>
+<div class="item5">E</div>
+<div class="item6">F</div>
+</div>
+
+
+</body>
+</html>
