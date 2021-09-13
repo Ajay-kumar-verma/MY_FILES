@@ -16,8 +16,6 @@ const peer = ExpressPeerServer(server , {
   debug:true
 });
 
-const url= require('url');
-
 app.use('/peerjs', peer);
 
 app.set('view engine', 'ejs')
@@ -35,21 +33,55 @@ app.get('/:room' , (req,res)=>{
 
 let i=1;
 let usersData={};
-
+let adminData={};
+let waitingUserData={};
 io.on("connection" , (socket)=>{
-
     // console.log(i++,")New user joined with socketId:\n " +socket.id);
+
+   socket.on('broad_cast',(userData)=>{
+    let {roomId}=JSON.parse(userData);
+    console.log(i++,")broadCasting  socketId:"+socket.id+"\n\tuser Details:\n\t",userData);
+    usersData[socket.id]={...JSON.parse(userData)};
+    socket.join(roomId);
+    // socket.to(roomId).broadcast.emit('userJoined', userData);//it broadcast user joined 
+    // socket.to(roomId).emit('userJoined', userData);
+    socket.broadcast.emit('userJoined', userData);
+  })
+
+
    
-    socket.on('newUser', (userData)=>
-    {       
-      let {roomId}=JSON.parse(userData);
-      console.log(i++,")New user joined socketId:"+socket.id+"\n\tuser Details:\n\t",userData);
-      usersData[socket.id]={...JSON.parse(userData)};
-      socket.join(roomId);
-      socket.to(roomId).broadcast.emit('userJoined', userData);//it broadcast user joined 
+  //When admin allowed 
+   socket.on('admin_allowed',userData=>{
+       let {peerId}=JSON.parse(userData);
+       let socketId=waitingUserData[peerId];
+       socket.broadcast.to(socketId).emit('allowed',userData);
+    })
+
+
+
+   //When user ask for joing the  meeting    to Admin  
+    socket.on('ask_admin', (userData)=>
+    {
+      let {roomId,peerId}=JSON.parse(userData);
+      if(adminData[roomId])
+      {
+        let adminSocketId=adminData[roomId];
+        console.log(i++,")User Waiting for join: \n\tuser Details:\n\t",userData);
+        waitingUserData[peerId]=socket.id;
+        socket.broadcast.to(adminSocketId).emit('userWaiting', userData);//it broadcast user joined 
+       }else{
+          usersData[socket.id]={...JSON.parse(userData)};
+          console.log(i++,")Admin details :\n\t"+userData);
+        adminData[roomId]=socket.id;
+       }
+
     })
   
+
+ 
    
+
+  //this is when user disconnet  
    socket.on('disconnect', ()=>
    { let LeftUserData=usersData[socket.id];
        if(LeftUserData){

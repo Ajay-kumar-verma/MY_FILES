@@ -63,7 +63,7 @@ const api= async function (){
 console.log("start fetching ")
 // This block of cocde run synchronousouly  
   
-    let data= await fetch ('https://dummy.restapiexample.com/api/v1/employees')
+    let data= await fetch('https://dummy.restapiexample.com/api/v1/employees')
     console.log("fetched api  ")
     data= await data.json(); 
     console.log("converting  into json ")
@@ -74,7 +74,7 @@ console.log("start fetching ")
 
 api().then(val=>{
     console.log(val) 
-    // console.log("Priting ")
+    console.log("Priting ")
     document.write(JSON.stringify(val))
 
 

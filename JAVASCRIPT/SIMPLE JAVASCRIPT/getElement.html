@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#xyz{
+    color:darkblue;
+}
+
+</style>
+<body>
+    
+<p id="para1"> AJAY </p>
+<p id="para2">VIJAY</p>
+
+<p>AJAY KUMAR VERMA</p>
+
+<p class="pr1">RAVI</p>
+<p class="pr1"> RAHUL</p>
+<button  href="horm"  style="color: red;"   > submit</button>
+
+ <input type="text" >
+
+<button>hello world </button>
+
+
+
+
+</body>
+<script>
+//  for accessing value
+  var x= document.getElementById("para1"); //it returns particular element 
+
+ alert(x.innerHTML+x.innerText);
+ 
+ x.innerText="HELLO BOY";
+
+var a= document.getElementsByClassName("pr1");//it returns   array of object
+
+alert(a[0].innerText+":"+a[1].innerText);
+
+var b= document.getElementsByTagName("p"); //it returns   array of object
+alert(b.length+" -="+b[3].innerText);
+
+var btn= document.getElementsByTagName("button");//it returns   array of object
+
+alert(btn.length+"-="+btn[0].innerText+" "+btn[1].innerText);
+
+btn[1].innerText="reset";
+
+var d= document.querySelector("p.pr1"); //getting Element by css selector 
+alert(d.innerText);
+d.innerHTML=" helloooo";
+
+
+
+//for attribute
+alert(btn[0].style.color);
+btn[0].style.color="yellow";
+alert(btn[0].style.color);
+
+document.body.style.color="purple";// we can set and get the style attribute
+
+//we can set and get value of elements also
+
+b[2].setAttribute("id","xyz");// setting attribute
+ alert(b[2].id);                  
+b[2].removeAttribute("id");  // removing attribute 
+alert(b[2].id);           
+b[2].setAttribute("id","xyz");// setting attribute
+
+
+
+btn[1].style.backgroundColor="yellow";    
+
+
+btn[1].onclick=()=>{
+var input= document.getElementsByTagName("input");
+alert(input[0].value);
+input[0].value="hahahahaha";
+input[0].style.outline="none";
+input[0].style.border="3px dotted green";
+
+}
+
+
+
+</script>
+
+
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <h1 id="txt"></h1>
+    
+</body>
+<script>
+
+function sum(x, y,fun2){
+ let z= x+y;
+ fun2(z,(result)=>{
+    document.getElementById("txt").innerText+="Result is = "+result;     
+ });
+}
+
+function mul(p,fun3){
+let z= p*3;
+fun3(z);
+}
+
+sum(3,6,mul)
+
+</script>
+
+
+</html>

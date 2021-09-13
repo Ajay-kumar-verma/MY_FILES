@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread operator </title>
+</head>
+<body>
+
+   
+
+<script>
+
+
+// spread operator is  used to copy entire iteraable data 
+//like String ,Array Object and many more 
+
+
+let   ar1=[2,3,5,4,6]
+let  ar2=[12,45,67]
+console.log(ar1.concat(ar2))
+console.log([...ar1,...ar2])
+console.log([ar1,ar2]);
+console.log(Math.max(ar1)) 
+
+
+
+obj1={
+    name:"Ajay",
+    usn:"1tj18vs003"
+}
+obj2={
+    name:"Sachin",
+    usn:"1tj18d096"
+}
+
+console.log(obj1,obj2)
+// it is an object that override ,and generate objects containg unique value 
+obj3={...obj1,...obj2};
+
+console.log({...obj3, name:"vikash"})
+// content will update by last name or key 
+
+// ... three dot operator is used for copying the content only 
+
+ 
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html_ object</title>
+</head>
+<body>
+    
+ <div>
+
+    <p class="id"> how are you ?    </p>
+ </div>
+
+
+ <div>
+
+    <p class="id"> i am good</p>
+ </div>
+
+
+ <form action="#" id="f1">
+
+<input type="text">
+<input type="text">
+ </form>
+
+ <form action="#" id="f2">
+
+    <input type="text">
+    <input type="text"> <input type="text"> <button>RESET  </button>  
+     </form>
+    
+
+ <hr><hr>
+<div id="show"></div>
+<script>
+const show=document.getElementById("show");
+
+const div= document.getElementsByTagName("Div")[0];
+
+show.innerText=div.innerHTML;
+// innerHTML get ineer HTML code of that element
+//innerTEXT get only text of that element
+
+var x= document.documentElement;//it returns code inside html
+x= document.body; // it return code inside body
+show.innerText =x.innerHTML 
+
+
+const cookie=document.cookie;//it return cookie
+
+show.innerText=cookie;
+
+const domain=document.domain; //its return domain
+
+show.innerText=domain;
+
+const input=document.getElementsByTagName("input");// it return all input tag in array of object
+
+show.innerText=input.length;
+
+const form= document.getElementsByTagName("form"); //it return array of form
+//   form=document.forms;  //it return array of form 
+ firstForm=form[0];
+ secondForm=form[1];
+show.innerText=secondForm.length;//it returns Elements  in the second form; 
+
+secondForm[3].onclick=()=>{
+    alert(secondForm[2].value);
+}
+
+
+show.innerText=document.head.innerText;
+show.innerText=document.readyState;
+
+ 
+</script>
+
+</body>
+</html>

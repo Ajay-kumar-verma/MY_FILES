@@ -5,13 +5,14 @@ const app = express();
 const http=require('http');
 const server=http.createServer(app);
 
-server.listen(3000,()=>{
-    console.log("Server is running !");
-})
+
 
 // const io=require('socket.io')(server.listen(3000),{cors:{orgin:'*'}});
 
 const io=require('socket.io')(server,{cors:{orgin:'*'}});
+// cors could be for specific domain also 
+// {cors:{orgin:"http://127.0.0.1:3001"}}
+
 
 
 // app.get('/home',(req,res)=>{
@@ -76,3 +77,8 @@ io.on('connection',(socket)=>{
   
 
 });
+
+
+server.listen(3000,()=>{
+  console.log("Server is running !");
+})

@@ -1,6 +1,11 @@
+// window.addEventListener('online', ()=>{alert("you are online !")} );
+//   window.addEventListener('offline', ()=>{alert("you are offline !")});
+
+alert(window.offline);
+
+
 const socket= io('http://localhost:3000');
 // This is socket 
-
 
 const  names =prompt("Enter your name :\n");
 const room_id=(new String(window.location)).split('=')[1];
@@ -25,6 +30,7 @@ const append=(msg,pos)=>
   msg_div.classList.add('message');
   msg_div.classList.add(pos);
   msgDiv.appendChild(msg_div);
+  msgDiv.scrollTop=msgDiv.scrollHeight; // this will scroll top 
 }
 
 const msg=document.getElementsByTagName("input");

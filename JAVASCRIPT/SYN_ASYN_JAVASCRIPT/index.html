@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <button onclick="data()"  > fetch data</button>
+
+
+</body>
+
+<script>
+
+const data=()=>{
+      
+    // fetch api metho or handling promises //it return always promises
+    fetch('https://api.covid19api.com/summary')
+   .then(data=>{
+    //    console.log(data);
+       return data.json(); //it will return after resolving 
+    // return data;
+       
+    }
+    )
+   .then(actualData=>{
+    // document.write(actualData)
+    console.log(actualData.Countries[76])
+})
+.catch(err=>{
+    console.error("Error: " +err);
+})
+
+}  
+
+
+
+</script>
+    </html>

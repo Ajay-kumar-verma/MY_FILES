@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<div id="video-grid1" ></div>
+<br><hr>
+<!-- <div id="video-grid2"> <video  src=""   id="saveVideo" controls ></video>  </div> -->
+<video id="div2" src=""   controls download> </video>
+ <button>Start</button> 
+ <button>Stop</button> 
+<body>
+    
+<script>
+
+const videoGrid1=document.getElementById('video-grid1');
+const videoGrid2=document.getElementById('video-grid2');
+const vidSave=document.getElementById("div2");
+const vid=  document.getElementById('div');
+const myVideo=document.createElement('video');
+myVideo.video=true;
+
+// this is for getting permission of mice and camera from brower 
+navigator.mediaDevices.getUserMedia({
+    video:true, //this is for video 
+    audio:false, // this is for audio
+    video: {//this is for video specification 
+            width: { ideal: 300 },
+            height: { ideal: 300 },
+            facingMode: "environment"
+        }
+
+   })
+  .then(stream=>{
+    addVideoStream(myVideo, stream);
+
+    const btn=document.getElementsByTagName('button');
+    const start=btn[0];
+    const stop=btn[1];
+
+    let mediaRecorder= new MediaRecorder(stream);
+    
+
+   start.addEventListener('click',(e)=>{ // start recording 
+    mediaRecorder.start();//it will start recording 
+    console.log(mediaRecorder.state,e);
+  });
+
+
+  stop.addEventListener('click',(e)=>{ //stop recordings
+    mediaRecorder.stop();
+    console.log(mediaRecorder.state);
+
+  });
+  let chunks=[];  
+  mediaRecorder.ondataavailable=(video)=>{
+       chunks.push(video.data);
+       console.log(video,'pushed into a chunks',video.data);
+  }
+
+
+  mediaRecorder.onstop=(ev)=>{
+    let blob =new Blob(chunks,{'type':'video/mp4'});
+    console.log(chunks); 
+    // chunks=[];
+    let videoUrl=window.URL.createObjectURL(blob);
+    vidSave.src=videoUrl;
+   
+}
+
+
+
+
+
+
+
+  }) 
+
+
+
+// thi sis for streaming video 
+function addVideoStream(video,stream){
+    video.srcObject=stream;
+    video.addEventListener('loadedmetadata', ()=>{
+    //   console.log(stream);
+        video.play();
+       })
+       videoGrid1.append(video);
+    //    videoGrid2.append("<p>Ajay </p>")
+    // videoGrid2.append(video)   
+       
+     }
+// end 
+
+
+</script>
+
+
+</body>
+</html>

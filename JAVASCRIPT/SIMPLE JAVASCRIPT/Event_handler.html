@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<p onclick="this.innerHTML='Not Good'" >HOW ARE YOU ?</p>
+<!-- here this means its unique ID  -->
+
+<button style="outline: none;"  onclick="fun()"   > HELLO</button>
+
+<button style="outline: none;"  onclick="changeColr(this)"> A</button>
+<button style="outline: none;"  onclick="changeColr(this)"> B</button>
+<button style="outline: none;"  onclick="changeColr(this)"> C</button>
+<button style="outline: none;"  onclick="document.getElementById('aa').innerHTML=5+7">
+C</button>
+
+<!-- here this means its unique ID  -->
+ 
+<p id="aa"></p>
+
+
+
+</body>
+ <script>
+    function fun(){ // simply calling function
+
+        alert(" Button is clicked ")
+     }
+
+
+ function changeColr(id){//calling function with  and pased unique ID or ele 
+ id.style.color="red";
+id.style.height="30px";
+id.style.width="40px";
+ }
+
+const x= document.getElementsByTagName("button");
+
+x[3].onclick=(e)=>{//here we are ovverride the onclick method 
+alert("hello");
+console.log(e.target)
+}
+
+
+x[2].addEventListener("dblclick",(e)=>{// its Events listener bit add the listen it coul dbe more than one 
+x[2].style.color="green";
+console.log(e.target)
+
+});
+</script>
+
+</html>

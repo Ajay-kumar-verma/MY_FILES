@@ -2,8 +2,8 @@
 <html>
 <body>
 
-<a id="myAnchor" href="https://w3schools.com/">Go to W3Schools.com</a>
-
+<a id="myAnchor"  onclick="noredir(this)" href="https://w3schools.com/" >Go to W3Schools.com</a>
+               <!--  here this will send ele   -->
 <p></p>
 
 
@@ -16,9 +16,19 @@
 </form>
 
 <script>
+// const noredir=(e)=>{ // here e will return a ele
+// e.preventDefault();
+// console.log(e)
+// }
+
+
 document.getElementById("myAnchor").addEventListener("click", function(event){
-  event.preventDefault()
-});
+  event.preventDefault(); // it wont redirect 
+  console.log(event.target);//
+}); //here link will not work 
+
+
+
 
 document.getElementsByTagName("input")[1].addEventListener("click",(event)=>{
 event.preventDefault();

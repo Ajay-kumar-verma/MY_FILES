@@ -40,3 +40,20 @@ cursor: pointer;
 .options__button:hover{
 color: rgb(235, 103, 103);
 }
+
+#userwaiting{
+display: flex;
+background-color:rgb(22, 104, 175) ;
+width: 300px;
+height: fit-content;
+flex-direction: column-reverse;
+color: rgb(201, 201, 231);
+margin: 1px;
+justify-content: center;
+align-items: center;
+}
+#userwaiting p{
+    margin: 1px;
+cursor: pointer;
+}
+
