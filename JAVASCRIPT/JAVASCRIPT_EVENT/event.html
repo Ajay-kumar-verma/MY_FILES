@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- <body ononline="onFunction()" onmousedown="WhichButton(event)" onoffline="offFunction()"> -->
+ <body   onmousedown="WhichButton(event)" >
+    <!-- this event will be valid to whole document  -->
+
+<div onmousedown="WhichButton(event)">Click this text with one of your mouse buttons to return a number.
+    <p>1 = The left mouse button</p>
+    <p>2 = The middle mouse button</p>
+    <p>3 = The right mouse button</p>
+  </div>
+
+  <hr>
+<br><br><br><br><br>
+<input type="text" size="40" onkeypress="myFunction(event)">
+
+<p id="demo"></p>
+
+<input type="text" size="40" onkeydown="myFunctionkey(event)">
+
+<p id="demo"></p>
+</body>
+
+
+<script>
+
+function onFunction(){
+    alert("You are online !")
+}
+function offFunction(){
+alert("You are offLine !")
+}
+
+function WhichButton(event) {
+  alert("You pressed button: " + event.which)
+}
+
+
+
+function myFunction(event) {
+  var x = event.which || event.keyCode;
+  document.getElementById("demo").innerHTML = "The Unicode value is: " + x;
+
+  }
+
+  function myFunctionkey(event) {
+  var x = event.key;
+  document.getElementById("demo").innerHTML +=x;
+}
+
+    </script>
+
+</html>

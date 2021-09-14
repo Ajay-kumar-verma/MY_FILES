@@ -120,14 +120,20 @@ startMeeting.addEventListener('click',Metting);
 
 // it is ,When user got disconnect 
 socket.on('userDisconnect' , userData=>{
-  let LeftUserData= JSON.parse(userData); 
+  let LeftUserData= userData; 
   let {peerId}=LeftUserData;
   console.log("User got disconnected !",LeftUserData);
   document.getElementById(peerId).remove();
   })
 
+const leaveMe = document.getElementById('Lme');
+leaveMe.addEventListener('click',()=>{
+  console.log("i am leaving th emeeting !");
+  let {roomId}=myData; 
+ socket.leave(roomId);
+//  socket.emit('leaveMe',r);
 
-
+})
 
 
 // it i son error
@@ -146,6 +152,7 @@ peer.on('error' , (err)=>{
 var videoGrid = document.getElementById('videoDiv')
 function addVideo(video , stream){
   video.srcObject = stream;
+  video.controls=true;
    video.addEventListener('loadedmetadata', () => {
     video.play()
   })
