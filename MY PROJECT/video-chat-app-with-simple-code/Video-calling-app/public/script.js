@@ -10,8 +10,8 @@ const peer = new Peer();
 const userData={};
 
 let myVideoStream;
-const userName=prompt("Enter you name :\n");
-
+// const userName=prompt("Enter you name :\n");
+const userName="ajay";
 const constraint={video:true, audio:true}
 const permision=  navigator.mediaDevices.getUserMedia(constraint); 
 
@@ -185,6 +185,7 @@ muteButton.addEventListener("click", () => {
 });
 
 stopVideo.addEventListener("click", () => {
+  
   const enabled = myVideoStream.getVideoTracks()[0].enabled;
   if (enabled) {
     myVideoStream.getVideoTracks()[0].enabled = false;
@@ -215,14 +216,29 @@ const constraint={video:true, audio:true}
 const permision=  navigator.mediaDevices.getDisplayMedia(constraint); 
 
 permision.then(stream=>{
+  console.log("video stream",stream);
+  
   let chunks=[];  
-  let mediaRecorder = new MediaRecorder(stream);
 
+  let mediaRecorder =  new MediaRecorder(stream);
+  
 
  mediaRecorder.start();
-  console.log(mediaRecorder.state);
+  console.log("Video state", mediaRecorder.state);
 
+  // setTimeout(()=>{
+  //   console.log("settime out",mediaRecorder);
+  //   console.log(mediaRecorder.ondataavailable)
+  //   // socket.emit('recording',mediaRecorder.);
 
+  //   mediaRecorder.onstart((data)=>{
+  //     socket.emit('recording','mediaRecorder.');
+  //     console.log(data,'ajay');
+      
+  //   })
+  
+  // },4000)
+    
 
 stop.addEventListener('click',()=>{
   mediaRecorder.stop();
@@ -233,19 +249,23 @@ stop.addEventListener('click',()=>{
 
 mediaRecorder.ondataavailable=(ev)=>{
    chunks.push(ev.data); 
+   console.log("chunks on loaded data", chunks);
+   console.log(JSON.stringify(chunks[0].stream()));
 }
+
+//  setTimeout(()=>{
+//   console.log("chunks",chunks);
+
+// },15000)
 
 
 mediaRecorder.onstop=(ev)=>{
   let blob =new Blob(chunks,{'type':'video/mp4'});
-  chunks=[];
+  // chunks=[];
   let videoUrl=window.URL.createObjectURL(blob);
   vidSave.src=videoUrl;
   
-  var object = new ActiveXObject("Scripting.FileSystemObject");
-      var file = object.GetFile(videoUrl);
-    file.Move("./Docus/");
-      console.log("File is moved successfully");
+
 }
 
 

@@ -1,15 +1,25 @@
 import './App.css';
+// import './script/script.js'
+import Controls from './vidComponenet/Option.js';
 
 function App() {
+  
   return (
     <div className="App"> 
 
       <div className="Main" > 
              
-          <div  className="videoDiv"> Video  </div>
-          <div className="userDetail" > User details </div>
+          <div  className="videoDiv">  <video   id='MyVideo'    controls> </video> 
+            </div>
+        
+            <div className="control_option">
+            <Controls  stream={'myVideoStream'} />
+            </div>
 
-      </div>
+         <div className="userDetail"> User details </div>
+       </div>
+
+
           <div className="chatBox">
           <div className="WaitingList" >  Waiting list    </div> 
              <div  className="messageDiv"> chat </div>
@@ -19,5 +29,6 @@ function App() {
    </div>
   );
 }
+
 
 export default App;

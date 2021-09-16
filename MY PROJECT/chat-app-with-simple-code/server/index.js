@@ -82,3 +82,5 @@ io.on('connection',(socket)=>{
 server.listen(3000,()=>{
   console.log("Server is running !");
 })
+
+// app.listen(3000);

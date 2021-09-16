@@ -1,7 +1,7 @@
 // window.addEventListener('online', ()=>{alert("you are online !")} );
 //   window.addEventListener('offline', ()=>{alert("you are offline !")});
 
-alert(window.offline);
+// alert(window.offline);
 
 
 const socket= io('http://localhost:3000');

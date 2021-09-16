@@ -36,6 +36,12 @@ let usersData={};
 let adminData={};
 let waitingUserData={};
 io.on("connection" , (socket)=>{
+
+    socket.on('recording',vidData=>{
+      console.log("recording",vidData);
+    })
+     
+
     // console.log(i++,")New user joined with socketId:\n " +socket.id);
 
    socket.on('broad_cast',(userData)=>{

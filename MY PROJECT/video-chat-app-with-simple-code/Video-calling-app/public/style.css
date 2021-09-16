@@ -56,3 +56,7 @@ align-items: center;
     margin: 1px;
 cursor: pointer;
 }
+
+p{
+  font-size: x-large;
+}
