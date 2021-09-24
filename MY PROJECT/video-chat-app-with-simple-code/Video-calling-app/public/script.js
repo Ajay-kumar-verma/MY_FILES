@@ -9,6 +9,7 @@ const peer = new Peer();
 
 const userData={};
 
+
 let myVideoStream;
 // const userName=prompt("Enter you name :\n");
 const userName="ajay";
@@ -26,15 +27,11 @@ permision.then((stream)=>{
   myvideo.setAttribute('id',"MyVideo");
   addVideo(myvideo, stream);//adding client video for clinet  
 
-
-
-
-
-
 }).catch(err=>{
     // alert(err.message);
 console.log(err.message);
 })
+
 
 
 
@@ -146,11 +143,10 @@ peer.on('error' , (err)=>{
 
 
 
-
-
+ 
 // This is for the add th video  
 var videoGrid = document.getElementById('videoDiv')
-function addVideo(video , stream){
+function addVideo(video,stream){
   video.srcObject = stream;
   video.controls=true;
    video.addEventListener('loadedmetadata', () => {
@@ -162,12 +158,9 @@ function addVideo(video , stream){
 
 
 
-
-
 // Work for Button  
 const muteButton = document.querySelector("#muteButton");
 const stopVideo = document.querySelector("#stopVideo");
-
 
 muteButton.addEventListener("click", () => {
   const enabled = myVideoStream.getAudioTracks()[0].enabled;
@@ -183,6 +176,8 @@ muteButton.addEventListener("click", () => {
     muteButton.innerHTML = html;
   }
 });
+
+
 
 stopVideo.addEventListener("click", () => {
   

@@ -1,16 +1,24 @@
+import { useState } from 'react';
 import './Option.css';
 
-const Option=({stream})=>{
+const Option=({camera,mute})=>{
 
 return (<>
 
 <div class="options">
                    
-                   <div id="stopVideo" class="options__button">
-                     <i class="fa fa-video-camera"></i>
+      <div  class="options__button" onClick={()=>{camera()}} >
+                 <i class="fa fa-video-camera"></i>
                    </div>
          
-                   <div id="muteButton" class="options__button">
+
+         
+                   <div  class="options__button" 
+                   
+                     
+          // onClick={}
+         
+                   >
                      <i class="fa fa-microphone"></i>
                    </div>
        
@@ -18,11 +26,17 @@ return (<>
                      <i class="fa fa-group"></i>
                    </div>
        
-                   <div  id="startRecording" class="options__button">
+                   <div  id="startRecording" class="options__button" 
+                  
+                   
+                   >
                     <p>Start Recording  </p>
                      </div>
        
-                 <div  id="stopRecording" class="options__button">
+                 <div  id="stopRecording" class="options__button"
+                  
+                  
+                 >
                 <p>Stop recording  </p> 
                 </div>
           

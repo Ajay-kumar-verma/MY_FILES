@@ -1,16 +1,43 @@
 const exp= require('express');
 const app= exp();
 
-// const server= require('http').Server(app);
+// const cors=require('cors');
+// app.use({cors:{orgin:'*'}})
+// app.use(cors({cors:{orgin:'*'}}))
+
 const ht=require('http');
 const server=ht.createServer(app);
-const cors=require('cors');
-const io=require('socket.io')(server,{cors:{orgin:'*'}})
+// const server= require('http').Server(app);
+
+
+// const cors=require('cors');
+// const io=require('socket.io')(server)
 // For ROUTING ONLY app will handle 
 
-io.on('connection',socket=>{
-console.log("connected !");
 
+const socketIo = require("socket.io");
+const io = socketIo(server,{cors:{orgin:'*'}});
+
+
+const users={};
+
+
+io.on('connection',socket=>
+{ let socketId=socket.id;
+  console.log("connected !",socketId);
+
+ socket.on('join',(nm)=>{
+   console.log("new user join ");     
+})
+
+socket.on('Msg',msg=>
+{ socket.broadcast.emit('BroadCastMsg',msg);
+    console.log(msg);
+    let {roomId}=msg;
+    let socketlist=users[roomId];
+   socketlist?(users[roomId]=[...socketlist,socketId]):users[roomId]=[socketId];
+  console.log(socketlist);
+})
 
 socket.on('disconnect',()=>{
 
@@ -35,9 +62,9 @@ res.send("Invalid link !\n\t"+req.url);
 
 
 
-// What ever the case only server will listen  not app
-server.listen("3000",()=>{
-    console.log("Server is running at port 3000 .");
+// What ever the case only server will listen only  not app
+server.listen("80",()=>{
+    console.log("Server is running at port 80 .");
 })
 
 

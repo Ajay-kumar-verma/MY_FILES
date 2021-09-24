@@ -1,0 +1,24 @@
+.container{
+width: 100%;
+height: 390px;
+background-color: rgb(205, 228, 228);
+overflow-wrap: break-word;
+font-family: "Trirong", serif;
+overflow-y:auto;
+padding:5px;
+color: rgb(39, 39, 202);
+}
+
+.message{
+    border-radius: 5px;
+    padding:.1%; 
+    max-width: 45%;
+    margin-top: 1vh;
+    font-size:xx-large ;
+    overflow-wrap: break-word;
+    font-family: "Trirong", serif; 
+}
+
+
+::-webkit-scrollbar{width:0;}
+ 

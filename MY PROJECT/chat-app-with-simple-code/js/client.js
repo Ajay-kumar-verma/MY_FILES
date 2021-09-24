@@ -23,6 +23,7 @@ socket.on(room_id,data=>{
 
 
 const msgDiv=document.getElementsByClassName("container")[0];
+
 const append=(msg,pos)=>
 {
   let msg_div=document.createElement("div");
@@ -32,6 +33,7 @@ const append=(msg,pos)=>
   msgDiv.appendChild(msg_div);
   msgDiv.scrollTop=msgDiv.scrollHeight; // this will scroll top 
 }
+
 
 const msg=document.getElementsByTagName("input");
 const para=document.getElementsByTagName("p");
