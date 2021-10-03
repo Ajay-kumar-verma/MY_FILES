@@ -12,9 +12,12 @@ function RefForm() {
 
  const input1=(e)=>{
     //  console.log(e.target.value);
-     console.log(inputRef.current);
-     inputRef.current="p";
- } 
+
+      setInterval(() => {
+      console.log(inputRef.current.value);
+       },1000);
+     
+    } 
  
   return <input ref={inputRef} type="text"
   

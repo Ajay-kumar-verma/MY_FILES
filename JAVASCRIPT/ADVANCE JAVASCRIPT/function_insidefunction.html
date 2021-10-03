@@ -6,22 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body   >
     
 
 <script>
-
-
 const  A=()=>{
+ console.log("printed  :) ...!");
 
- let   B=()=>{
-      return "hello "
-  }
+//  let B=()=>{
+//       return "hello "
+//   }
+ 
+ return ()=>{
+       console.log("Me printed ..!");
+   }
+
 
 }
 
+A();
 
-console.log(A().B());
+
+
+// console.log(A().B());
+
+// document.getElementsByTagName("body")[0].addEventListener('keypress',(e)=>{
+//   console.log(e.key);  
+// })
+
+// document.getElementsByTagName("body")[0].addEventListener('mousedown',(e)=>{
+//   console.log(e.which);  
+// })
+
+
+
+
+
+// window.oncontextmenu = function () {
+//   alert('Right Click')
+// }
+
+
+
+
+
+
+// document.body.onclick = function (e) {
+//     var isRightMB;
+//     e = e || window.event;
+
+//     if ("which" in e)  // Gecko (Firefox), WebKit (Safari/Chrome) & Opera
+//         isRightMB = e.which == 3; 
+//     else if ("button" in e)  // IE, Opera 
+//         isRightMB = e.button == 2; 
+
+//     alert("Right mouse button " + (isRightMB ? "" : " was not") + "clicked!");
+// }
+
+
+
+
+
+
+
+
+
+
 
 </script>
 

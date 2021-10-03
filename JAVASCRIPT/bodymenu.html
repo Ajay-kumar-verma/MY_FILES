@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body onclick="showCoords(event)"  >
+<p style="position:fixed" id="demo"></p>
+
+<br><br>
+<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+
+<br><br>
+
+<script>
+function showCoords(event) {
+  var x = event.clientX;
+  var y = event.clientY;
+  var coords = "X coords: " + x + ", Y coords: " + y;
+  document.getElementById("demo").innerHTML = coords;
+  document.getElementById("demo").style.marginTop= y+"px";
+   document.getElementById("demo").style.marginLeft= x+"px";
+  
+}
+</script>
+
+</body>
+</html>

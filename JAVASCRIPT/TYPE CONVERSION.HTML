@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TYPE CONVERSION IN JAVASCRIPT </title>
+</head>
+<body>
+<!-- 
+  Only three types of conversion are possible  
+Number 
+String
+Boolean 
+ 
+
+Converting Strings to Numbers
+Converting Numbers to Strings
+Converting Dates to Numbers
+Converting Numbers to Dates
+Converting Booleans to Numbers
+Converting Numbers to Booleans
+
+
+JavaScript variables can be converted to a new variable and another data type:
+
+By the use of a JavaScript function
+Automatically by JavaScript itself
+-->
+
+
+<script>
+
+console.log(Number("12.34"));
+console.log(Number("12e2"));
+console.log(Number(".12"));
+console.log(Number("-3.4"));
+
+console.log(Number("34 s"));
+console.log(Number(true));
+
+
+console.log(Number.parseInt(23.45))
+console.log(parseInt(23.45))
+console.log(parseFloat(4.5))
+
+
+// The Unary + Operator
+// The unary + operator can be used to convert a variable to a number
+let x="5";
+
+let y=+x;
+console.log(typeof x);
+console.log(typeof y);
+
+let str="ajay";
+   let no =+str;
+console.log(typeof no,no);   
+// Not a number is a type of Number NaN
+
+//CONVERTING from nUmber to String 
+
+console.log(typeof String(23),String(23));
+console.log(typeof String(2+3),String(2+3));
+
+console.log(typeof (20).toString(),(20).toString())
+
+console.log(typeof (345+""))
+console.log()
+
+
+console.log(Number(new Date()))
+console.log((new Date()).getTime())
+
+console.log(String(new Date()))
+
+console.log((new Date()).getMinutes())
+
+
+
+5 + null    // returns 5         
+"5" + null  // returns "5null"  
+"5" + 2     // returns "52"     
+"5" - 2     // returns 3        
+"5" * "2"   // returns 10 
+
+
+</script>
+
+
+
+</body>
+</html>

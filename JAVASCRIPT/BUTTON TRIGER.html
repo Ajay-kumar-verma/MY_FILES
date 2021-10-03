@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIGGERING EVENYT AND BUTTON CLICK </title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+ <button >
+click me 
+ </button>
+
+ <button >
+    click 1 
+ </button>
+ 
+ <button>
+  click 2 
+ </button>
+ 
+ <button >
+   click 3 
+  </button>
+
+
+  <div >Click this text with one of your mouse buttons to return a number.
+    <p>1 = The left mouse button</p>
+    <p>2 = The middle mouse button</p>
+    <p>3 = The right mouse button</p>
+  </div>
+
+
+
+
+
+
+    <script>
+ 
+$('button')[0].onclick=()=>{
+    alert("hello world ....me");
+}
+    
+$('button')[1].onmouseup=()=>{// it is when click leave
+    alert("hello world ....1");
+}
+
+
+$('button')[2].onmouseenter=()=>{// it is when click leave
+    alert("hello world ....2");
+}
+
+
+// $('button')[0].click();
+
+
+
+$('body')[0].style.backgroundColor="green";
+
+
+// $('body')[0].addEventListener('keydown',(e)=>{
+//     console.log(e);
+// })
+// this is fopr key listen 
+
+let keys=[];
+
+// $('body')[0].addEventListener('keypress',(e)=>{ // it could keyup ,keydown and keypress
+
+//   // $('button')[0].click();
+
+//   keys.push(e.code);
+  
+//   console.log(keys,e);
+// })
+
+
+// $('body')[0].addEventListener('mousedown',(e)=>{ // it could keyup ,keydown and keypress
+
+// // $('button')[0].click();
+
+// keys.push(e.code);
+// console.log(keys,e);
+// })
+
+
+//let button = document.querySelector("button");
+//query selectre is used for selecting  all similar tag 
+  
+  let button=$('body')[0];
+ 
+   button.addEventListener("mousedown", event => {
+    if (event.button == 0) {
+      console.log("Left button");
+    } else if (event.button == 1) {
+      console.log("Middle button");
+    } else if (event.button == 2) {
+      console.log("Right button");
+    }
+  });
+
+
+
+
+
+
+// var e = $.Event('keypress');
+//     e.which = 65; // Character 'A'
+//     $('body')[0].trigger(e);
+
+</script>
+
+</body>
+</html>

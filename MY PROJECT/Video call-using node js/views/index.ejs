@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Video App</title>
+     <link rel="stylesheet" href="style.css"/>
+    <script type="text/javascript">
+      var roomID = "<%= RoomId %>";
+
+    //document.write(roomID);
+    //  console.log("Room id is: "+roomID);
+
+
+</script>
+<script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+        <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js" defer></script>
+    <script src="socket.io/socket.io.js" defer></script>
+    <script src="script.js" charset="utf-8" defer></script>
+  </head>
+  <body>
+    <div id="videoDiv"></div>
+
+       <div class="options">
+                   
+            <div id="stopVideo" class="options__button">
+              <i class="fa fa-video-camera"></i>
+            </div>
+  
+            <div id="muteButton" class="options__button">
+              <i class="fa fa-microphone"></i>
+            </div>
+
+            <div  id="startMeeting" class="options__button">
+              <i class="fa fa-group"></i>
+            </div>
+
+            <div  id="startRecording" class="options__button">
+              start
+              </div>
+
+          <div  id="stopRecording" class="options__button">
+         stop </div>
+   
+   <div id="Lme" class="options__button" >Leave</div>
+
+           </div>
+     
+  <div id="userwaiting"></div>
+
+
+
+<div style="height:400px;  width:400px;">
+  <video id="div2" src=""   controls download> </video>
+   
+</div>
+
+
+  </body>
+</html>
