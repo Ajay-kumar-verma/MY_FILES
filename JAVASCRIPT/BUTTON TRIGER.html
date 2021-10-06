@@ -9,79 +9,42 @@
 
 </head>
 <body>
+ <button>click me</button>
+ <button>click 1</button>
+ <button>click 2 </button>
+ <button>click 3</button>
 
- <button >
-click me 
- </button>
-
- <button >
-    click 1 
- </button>
- 
- <button>
-  click 2 
- </button>
- 
- <button >
-   click 3 
-  </button>
-
-
-  <div >Click this text with one of your mouse buttons to return a number.
+  <div>Click this text with one of your mouse buttons to return a number.
     <p>1 = The left mouse button</p>
     <p>2 = The middle mouse button</p>
     <p>3 = The right mouse button</p>
   </div>
-
-
-
-
-
-
-    <script>
- 
-$('button')[0].onclick=()=>{
-    alert("hello world ....me");
-}
-    
-$('button')[1].onmouseup=()=>{// it is when click leave
-    alert("hello world ....1");
-}
-
-
-$('button')[2].onmouseenter=()=>{// it is when click leave
-    alert("hello world ....2");
-}
-
-
+   
+  <script>
+$('button')[0].onclick=()=>alert("hello world ....me");
+    // it is when click leave
+$('button')[1].onmouseup=()=>alert("hello world ....1");
+// it is when mouse enter 
+$('button')[2].onmouseenter=()=>alert("hello world ....2");
 // $('button')[0].click();
-
-
-
 $('body')[0].style.backgroundColor="green";
-
 
 // $('body')[0].addEventListener('keydown',(e)=>{
 //     console.log(e);
 // })
 // this is fopr key listen 
 
+
 let keys=[];
-
 // $('body')[0].addEventListener('keypress',(e)=>{ // it could keyup ,keydown and keypress
-
 //   // $('button')[0].click();
-
 //   keys.push(e.code);
-  
 //   console.log(keys,e);
 // })
 
 
 // $('body')[0].addEventListener('mousedown',(e)=>{ // it could keyup ,keydown and keypress
-
 // // $('button')[0].click();
-
 // keys.push(e.code);
 // console.log(keys,e);
 // })
@@ -91,25 +54,77 @@ let keys=[];
 //query selectre is used for selecting  all similar tag 
   
   let button=$('body')[0];
- 
-   button.addEventListener("mousedown", event => {
-    if (event.button == 0) {
-      console.log("Left button");
-    } else if (event.button == 1) {
-      console.log("Middle button");
-    } else if (event.button == 2) {
-      console.log("Right button");
-    }
-  });
+
+ button.addEventListener("mousedown", event =>console.log(event,"thisis mouse down events"));
+
+// window.addEventListener('keydown',e =>console.log(e));
+
+
+
+
+
+// -------------------------------------------------------------------------------
+                     // PRIMITIVE EVENTS
+  
+// window.addEventListener('keydown', (e) =>console.log(e));
+// window.dispatchEvent(new KeyboardEvent('keydown', {
+//   key: "e",
+//   keyCode: 69,
+//   code: "KeyE",
+//   which: 69,
+//   shiftKey: false,
+//   ctrlKey: false,
+//   metaKey: false
+// }));
+
+
+// ----------------------------------------------------------------------------------
+
+
+
+// -------------------------------------------------------------------------------
+                        //USER DEFINED EVENTS
+
+window.addEventListener('AJAY', (e) =>console.log(e));
+window.dispatchEvent(new KeyboardEvent('AJAY', {
+  key: "we",
+  keyCode: 169,
+  code: "AJAY RAJ",
+  which: 369,
+  shiftKey: false,
+  ctrlKey: false,
+  metaKey: false
+}));
+
+
+// ----------------------------------------------------------------------------------
+
+
+
+// -------------------------------------------------------------------------------
+                        //USER DEFINED EVENTS
+
+window.addEventListener('AJAY', (e) =>console.log(e));
+window.dispatchEvent(new MouseEvent('AJAY', {
+  key: "we",
+  keyCode: 169,
+  code: "AJAY RAJ",
+  which: 369,
+  shiftKey: false,
+  ctrlKey: false,
+  metaKey: false
+}));
+
+
+// ----------------------------------------------------------------------------------
 
 
 
 
 
 
-// var e = $.Event('keypress');
-//     e.which = 65; // Character 'A'
-//     $('body')[0].trigger(e);
+
+
 
 </script>
 
