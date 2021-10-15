@@ -3,5 +3,8 @@
         "STRING",
         "RECURSION",
         ""
-    ]
+    ],
+    "files.associations": {
+        "ostream": "cpp"
+    }
 }

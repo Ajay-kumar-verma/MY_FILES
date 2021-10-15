@@ -3,6 +3,7 @@
     "version":"0.0.1",
     "manifest_version":2,
     "description": "Basic of Extension....! ",
+
     "content_scripts":[
     {
         "matches":["<all_urls>"],
@@ -10,9 +11,14 @@
         "run_at":"document_end"
     }
   ],
-  
-  "browser_action":{
+
+  "browser_action":
+  {
     "default_popup":"popup.html"
-}
+  }
 
  }
+
+
+
+ 
