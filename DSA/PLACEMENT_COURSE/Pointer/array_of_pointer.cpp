@@ -20,6 +20,17 @@ cout<<"value of a[1] :"<<*(a+2)<<endl;
 cout<<"value of a[1] :"<<*(a+3)<<endl;
 
 
+// for(int i=0;i<5;i++){
+//    cout<<*(a+i)<<endl;
+// }
+
+int *ptr=a;
+
+for(int i=0;i<5;i++){
+   cout<<*ptr<<endl;
+ ptr++;
+}
+
 
     return 0;
 }
