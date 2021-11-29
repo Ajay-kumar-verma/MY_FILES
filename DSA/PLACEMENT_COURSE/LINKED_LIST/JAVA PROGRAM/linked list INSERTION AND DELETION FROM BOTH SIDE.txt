@@ -1,0 +1,283 @@
+//EXPLAIN IN DETAILING
+
+package clinkedlist;
+import java.util.Scanner;
+public class list {
+public static void main(String args[]) {
+	
+for(;;) {
+System.out.println("Enter your choice "
++ "\n1 insert front\n2 insert rear"
++ "\n3 delete front\n4 delete rear"
++ "\n5 display");
+  Scanner sc= new Scanner(System.in);
+  int n= sc.nextInt();
+  switch(n) {
+  case 1:
+  methods.insert_front(); break;
+  case 2:
+  methods.insert_rear(); break;
+ case 3:
+  methods.delete_front(); break;
+  case 4:
+ methods.delete_rear(); break;
+ case 5:
+  methods.display(); break;
+  default:
+  System.out.println("Invalid choice\n");
+   }  
+  }	
+ }	
+}
+//END OF MAIN
+
+class Node{
+  int x;
+ Node next=null;
+ Node(int x){
+ this.x=x;
+ }
+}
+
+
+class methods{
+static Node first;	
+
+static Scanner sc= new Scanner(System.in);
+	
+static void insert_front() {
+System.out.println("Enter item");
+int x = sc.nextInt();
+Node node = new Node(x);
+//whether it is first node or not 
+node.next=first;
+first=node;
+System.out.println(x+" is inserted at front");
+return;
+//this is how front insertion is 
+}	
+	
+static void insert_rear() {
+Node temp,node;
+temp=first;
+System.out.println("Enter item");
+int n= sc.nextInt();
+ node= new Node(n);
+if(first==null) {
+first=node;
+System.out.println(n+" is inserted at rear");
+return;
+}
+ //finding last node
+ while(temp.next!=null){
+ temp=temp.next; 
+ }
+ //if we want to add next node 
+ //this way we can add
+ //no need previous node
+temp.next=node;
+System.out.println(n+" is inserted at rear");
+
+return;
+}	
+
+
+static void delete_front() {
+Node temp;
+temp = first;
+// for empty
+if(temp==null) {
+System.out.println("List is empty");
+return;
+}
+
+System.out.println(temp.x+" is deleted front ");
+first=temp.next;
+//whether one item is or more 
+}
+
+static void delete_rear() {
+Node temp,prev;
+temp= first;
+prev=first;
+if(first==null) {
+System.out.println("List empty");
+return;
+}
+if(temp.next==null){
+System.out.println(temp.x+" is deleted rear ");
+first=null;
+return;	
+}
+//finding last node 
+//and previous one
+	
+while(temp.next!=null) {
+prev=temp;
+temp=temp.next;
+}
+//here last node is temp 
+//and previous node prev
+//we can't make temp is NULL
+//prev.next is last node 
+//this we can make as a
+//null only SO
+System.out.println(temp.x+" is deleted rear ");
+prev.next=null;
+return;
+}
+
+
+static void display() {
+	
+Node temp;
+temp= first;
+if(temp==null) {
+System.out.println("List is empty");
+return;
+}
+System.out.println("Items are:");
+while(temp!=null) {
+System.out.print(temp.x+"\t");
+temp=temp.next;
+}
+System.out.println("");
+return;
+ }
+}
+
+/*
+-------------------------------------------
+*/
+
+
+//OUTPUT
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+1
+Enter item
+2
+2 is inserted at front
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+1
+Enter item
+4
+4 is inserted at front
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+6
+Invalid choice
+
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+5
+Items are:
+4	2	
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+2
+Enter item
+5
+5 is inserted at rear
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+2
+Enter item
+6
+6 is inserted at rear
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+5
+Items are:
+4	2	5	6	
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+3
+4 is deleted front 
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+3
+2 is deleted front 
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+4
+6 is deleted rear 
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+4
+5 is deleted rear 
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+4
+List empty
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+3
+List is empty
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+5
+List is empty
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display

@@ -1,0 +1,419 @@
+//JAVA PROGRAM FOR DOUBLY LINKED LIST
+//USING HEADER AND WSING FOR LOOP NOT WHILE LOOP
+--------------------------------------------------------
+
+
+package Doublylinkedlist;
+import java.util.Scanner;
+public class header {
+	static class Node{
+		int x;
+		Node rl= null;
+		Node ll=null;
+		Node(int x){
+		this.x= x;	
+		}
+	}
+static Node head=new Node(0);
+
+static Scanner sc = new Scanner(System.in);
+public static void main(String [] args) {
+	
+	{head.rl=null;
+	head.ll=null;}	
+	
+	for(;;) {	
+  System.out.println("Enter your choice");
+  System.out.println("1 insert_front\n2"
+  + " delete_front\n3 insert_rear"
+  + "\n4 delete_rear\n5 display");
+	int choice = sc.nextInt();
+	switch(choice) {
+	case 1:
+	head=insert_front(head);
+	break;
+	case 2:
+	head=delete_front(head);
+	break;
+	case 3:
+	head=insert_rear(head);	
+	break;
+	case 4:
+	head= delete_rear(head);
+	break;
+	case 5:
+	display(head);break;
+	default:
+	System.out.println("Invalid choice");
+	break;
+	  }	
+	}			
+  }
+static Node delete_front(Node head) {
+if(head.rl==null) {
+System.out.println("No item in list");return null;
+}
+	head.rl.ll=null;
+	head=head.rl;
+  return head;
+} 
+static Node delete_rear(Node head) {
+if(head.rl==null) {
+System.out.println("No item in list");
+return null;
+} 
+ Node prev=head;
+ for(Node temp=head.rl;temp.rl!=null;prev=temp,temp=temp.rl);
+ prev.rl.ll=null;
+ prev.rl=null;
+	return head;
+	} 
+
+static void display(Node head) {
+if(head.rl==null){
+System.out.println("No item in list");
+return;
+}
+ Node temp = head.rl;
+
+while(temp!=null){
+System.out.print(temp.x+"\t");
+temp = temp.rl;
+ }	
+System.out.println("");
+}   
+
+
+static Node insert_front(Node head){
+System.out.println("Enter item to insert");
+int n= sc.nextInt();	
+Node temp = new Node(n);
+temp.rl=head.rl;
+if(head.rl!=null){
+head.rl.ll=head;
+}
+
+head.rl=temp;
+
+temp.ll=head;
+
+return head;
+}
+
+static Node insert_rear(Node head) {
+System.out.println("Enter item to insert");
+int n= sc.nextInt();	
+Node temp = new Node(n);	    
+
+
+Node prev=head;
+while(prev.rl!=null) {
+	prev=prev.rl;
+}
+
+prev.rl=temp;
+temp.ll=prev;
+return  head;
+	 }
+}
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------
+
+package Doublylinkedlist;
+import java.util.Scanner;
+public class header {
+	static class Node{
+		int x;
+		Node rl= null;
+		Node ll=null;
+		Node(int x){
+		this.x= x;	
+		}
+	}
+static Node head=new Node(0);		
+static Scanner sc = new Scanner(System.in);
+public static void main(String [] args) {
+for(;;) {	
+  System.out.println("Enter your choice");
+  System.out.println("1 insert_front\n2"
+  + " delete_front\n3 insert_rear"
+  + "\n4 delete_rear\n5 display");
+	int choice = sc.nextInt();
+	switch(choice) {
+	case 1:
+	head=insert_front(head);
+	break;
+	case 2:
+	head=delete_front(head);
+	break;
+	case 3:
+	head=insert_rear(head);	
+	break;
+	case 4:
+	head= delete_rear(head);
+	break;
+	case 5:
+	display(head);break;
+	default:
+	System.out.println("Invalid choice");
+	break;
+	  }	
+	}			
+  }
+static Node delete_front(Node head) {
+if(head.rl==null) {
+System.out.println("No item in list");return null;
+}
+	head.rl.ll=null;
+	head=head.rl;
+  return head;
+} 
+static Node delete_rear(Node head) {
+if(head.rl==null) {
+System.out.println("No item in list");
+return null;
+} 
+ Node prev=head;
+ for(Node temp=head.rl;temp.rl!=null;prev=temp,temp=temp.rl);
+ prev.rl.ll=null;
+ prev.rl=null;
+	return head;
+	} 
+
+static void display(Node head) {
+if(head.rl==null){
+System.out.println("No item in list");
+return;
+}
+ Node temp = head.rl;
+
+while(temp!=null){
+System.out.print(temp.x+"\t");
+temp = temp.rl;
+ }	
+System.out.println("");
+}   
+
+
+static Node insert_front(Node head){
+System.out.println("Enter item to insert");
+int n= sc.nextInt();	
+Node temp = new Node(n);
+   
+temp.rl=head.rl;
+if(head.rl!=null){
+head.rl.ll=head;
+}
+
+head.rl=temp;
+temp.ll=head;
+
+return head;
+}
+
+static Node insert_rear(Node head) {
+System.out.println("Enter item to insert");
+int n= sc.nextInt();	
+Node temp = new Node(n);	    
+
+
+Node prev=head;
+while(prev.rl!=null) {
+	prev=prev.rl;
+}
+
+prev.rl=temp;
+temp.ll=prev;
+return  head;
+	 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//OUTPUT
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+1
+Enter item to insert
+3
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+3	
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+3
+Enter item to insert
+56
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+3	56	
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+1
+Enter item to insert
+3
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+3	3	56	
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+2
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+3	56	
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+1
+Enter item to insert
+345
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+345	3	56	
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+3
+Enter item to insert
+6786
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+345	3	56	6786	
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+4
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+345	3	56	
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+4
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+345	3	
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+4
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+345	
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+4
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+No item in list
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display

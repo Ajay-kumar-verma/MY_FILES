@@ -1,0 +1,299 @@
+//LINKED LIST FOR STORING STUDENTS NAME AND NUMBER
+
+
+
+package clinkedlist;
+import java.util.Scanner;
+public class list {
+public static void main(String args[]) {
+	
+	for(;;) {
+		System.out.println("Enter your choice "
+				+ "\n1 insert front\n2 insert rear"
+				+ "\n3 delete front\n4 delete rear"
+				+ "\n5 display");
+
+	   Scanner sc= new Scanner(System.in);
+	  int n= sc.nextInt();
+	  switch(n) {
+	  case 1:
+		  methods.insert_front(); break;
+	  case 2:
+		 methods.insert_rear(); break;
+	  case 3:
+		  methods.delete_front(); break;
+	  case 4:
+		  methods.delete_rear(); break;
+	  case 5:
+		  methods.display(); break;
+		  default:
+			  System.out.println("Invalid choice\n");
+	  }  
+	}	
+ }	
+}
+//END OF MAIN
+
+class Node{
+   String  x;
+   int no;
+	Node next=null;
+	Node(String x,int no){
+		this.x=x;
+		this.no=no;
+	}
+}
+
+
+class methods{
+static Node first;	
+
+static Scanner sc= new Scanner(System.in);
+	
+static void insert_front() {
+	System.out.println(" Enter name and number");
+	String x = sc.next();
+	int no = sc.nextInt();
+	Node node = new Node(x,no);
+	//whether it is first node or not 
+	node.next=first;
+	first=node;
+	System.out.println(x+" "+no+" is inserted at front");
+	return;
+	//this is how front insertion is 
+}	
+	
+static void insert_rear() {
+	Node temp,node;
+	temp=first;
+	System.out.println("Enter name and number");
+	String n= sc.next();
+	int no= sc.nextInt();
+	 node= new Node(n,no);
+	if(first==null) {
+		first=node;
+		System.out.println(n+" "+no+" is inserted at rear");
+		return;
+	}
+	 //finding last node
+	 while(temp.next!=null){
+		 temp=temp.next; 
+	 }
+	 //if we want to add next node 
+	 //this way we can add
+	 //no need previous node
+	temp.next=node;
+	System.out.println(n+" "+no+" is inserted at rear");
+	
+	return;
+}	
+
+
+static void delete_front() {
+	Node temp;
+	temp = first;
+	// for empty
+	if(temp==null) {
+		System.out.println("List is empty");
+		return;
+	}
+
+	System.out.println(temp.x+" "+ temp.no+"is deleted front ");
+	first=temp.next;
+	//whether one item is or more 
+}
+
+static void delete_rear() {
+	Node temp,prev;
+	temp= first;
+	prev=first;
+	if(first==null) {
+		System.out.println("List empty");
+		return;
+		}
+	if(temp.next==null){
+	System.out.println(temp.x+" "+temp.no+" is deleted rear ");
+	first=null;
+	return;	
+	}
+	//finding last node 
+	//and previous one
+	
+	while(temp.next!=null) {
+		prev=temp;
+		temp=temp.next;
+	}
+	//here last node is temp 
+	//and previous node prev
+	//we can't make temp is NULL
+	//prev.next is last node 
+	//this we can make as a
+	//null only SO
+	System.out.println(temp.x+" "+temp.no+" is deleted rear ");
+
+	prev.next=null;
+	return;
+}
+
+
+static void display() {
+	
+	Node temp;
+	temp= first;
+	if(temp==null) {
+		System.out.println("List is empty");
+		return;
+	}
+	int i=1;
+	System.out.println("Items are:\nsn NAME\tNUMBER");
+	while(temp!=null) {
+		System.out.println(i+++" "+temp.x+"\t"+temp.no);
+		temp=temp.next;
+	}
+	System.out.println("");
+	return;
+ }
+}
+
+
+
+
+
+
+//------------------------
+//OUTPUT
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+2
+Enter name and number
+AJAY
+1234
+AJAY 1234 is inserted at rear
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+2
+Enter name and number
+AMAN
+4567
+AMAN 4567 is inserted at rear
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+5
+Items are:
+sn NAME	NUMBER
+1 AJAY	1234
+2 AMAN	4567
+
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+1
+ Enter name and number
+RAHUL
+9876
+RAHUL 9876 is inserted at front
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+5
+Items are:
+sn NAME	NUMBER
+1 RAHUL	9876
+2 AJAY	1234
+3 AMAN	4567
+
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+2
+Enter name and number
+VIKASH
+8745
+VIKASH 8745 is inserted at rear
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+5
+Items are:
+sn NAME	NUMBER
+1 RAHUL	9876
+2 AJAY	1234
+3 AMAN	4567
+4 VIKASH	8745
+
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+4
+VIKASH 8745 is deleted rear 
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+5
+Items are:
+sn NAME	NUMBER
+1 RAHUL	9876
+2 AJAY	1234
+3 AMAN	4567
+
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+2
+Enter name and number
+RAJA
+6723
+RAJA 6723 is inserted at rear
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display
+5
+Items are:
+sn NAME	NUMBER
+1 RAHUL	9876
+2 AJAY	1234
+3 AMAN	4567
+4 RAJA	6723
+
+Enter your choice 
+1 insert front
+2 insert rear
+3 delete front
+4 delete rear
+5 display

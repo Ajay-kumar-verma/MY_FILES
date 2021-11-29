@@ -1,0 +1,134 @@
+//1st
+package factorial;
+import java.util.Scanner;
+public class factorial {
+ static int n;
+ public static void main(String[] args) {
+ for(;;) {
+Scanner sc= new Scanner(System.in);	
+ System.out.println("Enter numner to find factorial");
+   n = sc.nextInt();
+ if(n<0)continue;		
+ System.out.println("Factorial is "+fact()); 	
+ } 	
+}
+static double fact() {		
+ if(n==0 | n==1)
+ return 1;
+ return n--*fact();
+ }
+}
+//OUTPUT
+
+Enter numner to find factorial
+3
+Factorial is 6.0
+Enter numner to find factorial
+4
+Factorial is 24.0
+Enter numner to find factorial
+5
+Factorial is 120.0
+Enter numner to find factorial
+45
+Factorial is 1.1962222086548019E56
+Enter numner to find factorial
+4
+Factorial is 24.0
+Enter numner to find factorial
+3
+Factorial is 6.0
+Enter numner to find factorial
+
+
+//END
+
+//2st
+
+package factorial;
+import java.util.Scanner;
+public class factorial {
+ public static void main(String[] args) {
+ for(;;) {
+ Scanner sc= new Scanner(System.in);
+ System.out.println("Enter numner to find factorial");
+  int  n = sc.nextInt();
+  if(n<0)continue;		      			          
+    	System.out.println("Factorial is "+fact(n));      	
+		}		
+	}
+static double fact(int m) {			
+	if(m==0 | m==1) 
+		return 1;
+	
+	return m*fact(m-1);	
+ }
+}
+
+//FACTORIAL
+//3nd 
+
+package factorial;
+import java.util.Scanner;
+public class factorial {
+static int n;
+ public static void main(String[] args) {
+ for(;;) {
+ Scanner sc= new Scanner(System.in);	
+ System.out.println("Enter numner to find factorial");
+  n = sc.nextInt();
+   if(n<0)continue;		
+          fact();		
+  }		
+ }
+static void fact() {	
+	double fact =1;	
+	for(int i=n;i>0;i--) {
+		if(n==0){
+	System.out.println(fact);
+		break;
+		}
+		else {
+		fact= fact*i;		
+		}
+	}
+	System.out.println("Factorial is "+fact);	
+ }		
+}
+
+
+//4ST
+//CODE FOR FINDING FACTORIAL
+package factorial;
+import java.util.Scanner;
+public class factorial {
+
+	public static void main(String[] args) {
+		for(;;) {
+			Scanner sc= new Scanner(System.in);
+			
+			System.out.println("Enter numner to find factorial");
+			int n = sc.nextInt();
+			if(n<0)continue;
+			
+			double fact =1;
+			
+			for(int i=n;i>0;i--) {
+				if(n==0){
+			System.out.println(fact);
+				break;
+				}
+				else {
+				fact= fact*i;	
+					
+				}
+				
+				
+			}
+			
+			System.out.println("Factorial is "+fact);
+		}
+		
+	}
+
+}

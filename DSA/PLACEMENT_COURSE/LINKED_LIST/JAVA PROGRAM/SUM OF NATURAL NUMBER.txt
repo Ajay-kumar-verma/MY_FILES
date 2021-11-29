@@ -1,0 +1,53 @@
+//JAVA PROGRAM FOR SUM OF NATURAL NUMBER
+
+
+
+package Youtube;
+import java.util.Scanner;
+ public class naturalnum {
+ static Scanner sc= new Scanner(System.in);
+
+ public static void main(String[] args) {
+  while(true) {
+	  System.out.println("Enter last numner");
+	  int n= sc.nextInt();
+	  int sum= sumnatural(n);
+    System.out.println("sum of number is "+sum);  
+  }		
+	}
+ 
+static int sumnatural(int m) {
+/*	int sum=0;
+	while(m>0){
+	sum+=m--;;		
+	}	
+return sum;*/	
+ return (m*(m+1))/2;
+
+
+}
+ 
+}
+
+
+
+
+
+
+//OUTPUT
+Enter last numner
+2
+sum of number is 3
+Enter last numner
+3
+sum of number is 6
+Enter last numner
+5
+sum of number is 15
+Enter last numner
+7
+sum of number is 28
+Enter last numner
+34
+sum of number is 595
+Enter last numner

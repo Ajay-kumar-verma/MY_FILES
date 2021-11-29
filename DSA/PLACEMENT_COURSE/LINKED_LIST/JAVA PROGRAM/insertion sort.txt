@@ -1,0 +1,662 @@
+
+package Youtube;
+import java.util.Scanner;
+public class insertionsort {
+static class Node{
+	int x;
+	Node next;
+	Node(int x){
+		this.x=x;
+	}
+	
+}
+static  Node first = null;	
+static Scanner sc= new Scanner(System.in);		
+public static void main(String []args) {	
+	while(true) {
+		System.out.println("Enter your choice\n1 INSERT\n2 DISPLAY");
+		int choice= sc.nextInt();	
+		switch(choice) {
+		case 1:
+			insert();break;
+		case 2:
+			display(); break;
+	    default:
+	    	System.out.println("Invalid choice"); break;
+		}
+		
+		
+	}
+	
+	
+}
+	
+
+
+static void display() {
+	if(first==null) {
+		System.out.println("No item");
+		return;
+		
+	}
+  Node temp =first;
+	while(temp!=null){
+		System.out.print(temp.x+"\t");
+		
+	temp=temp.next;	
+	}
+}
+
+
+static  void insert() {
+    System.out.println("Enter your item");
+	int item= sc.nextInt();
+	Node node= new Node(item);
+  
+	if(first==null) {
+		first= node;
+		System.out.println(item+" inserted");
+		return;		
+	}
+	
+	Node temp=first, prev=null;	
+	while(temp!=null) {
+		if(temp.x>item){
+		break;
+		}
+		prev=temp;
+		temp=temp.next;
+	}
+	/*
+  this code will through an error 
+  bcoz in last temp will null
+  that not contain any value;
+  
+	while(temp!=null) {
+		prev=temp;
+		temp=temp.next;
+         	if(temp.x>item){
+	     	break;
+		 }
+	
+	}
+		
+	*/
+	if(prev==null) {		
+		node.next=first;
+		first=node;
+		System.out.println(item+" inserted");	
+		return;
+	}
+	prev.next=node;
+	node.next=temp;
+
+	System.out.println(item+" inserted");	
+	return;
+
+}	
+
+	
+}
+
+
+
+
+
+
+//INSERTION SORT
+
+package orderedlist;
+import java.util.Scanner;
+public class orderedlist {
+static Scanner sc= new Scanner(System.in);
+static class Node{
+	int x;
+	Node next=null;
+	Node(int x){
+		this.x=x;
+	}
+	
+}	
+static Node first =null;	
+public static void main(String []args) {
+
+for(;;) {	
+	System.out.println("Enter your choice\n1 insert\n2"
+			+ " display\n3 delete\n4 reverse"
+			+ "\n5 reset");
+	int choice= sc.nextInt();
+  switch(choice) {
+  case 1:
+	 insert();break;
+  case 2:
+	 display();break;
+  case 3:
+	  delete();break;
+  case 4:
+	  reverse();break;
+  case 5:
+	  first=null;break;
+  default:
+	  System.out.println("Invalid choice"); break;
+  }
+	
+ }
+}
+static void delete(){
+System.out.println("Enter item to delete");	
+	int item= sc.nextInt();
+	 Node prev=null,temp=first;
+	 
+	 if(temp.x==item) {
+		System.out.println(first.x+" is deleted");
+		 first=first.next; 
+		 return; 
+	 }
+	 
+ while(temp!=null) {	 
+	if(temp.x==item) break;	 
+	 
+	 prev= temp;
+		 temp=temp.next; 
+	  }
+	 // we can start checking from 
+	 // 1st and 2nd 
+	 /*
+	  * while(temp!=null) {	 
+		 prev= temp;
+		 temp=temp.next;
+		 if(temp.x==item)
+		 break;
+	 }
+	 
+	   while(temp!=null) {	 
+		 if(temp.x==item)
+		 break;
+		 prev= temp;
+		 temp=temp.next;
+		 
+	 } 
+	   */ 
+	 if(temp==null) {
+		System.out.println("Not in list"); return; 
+	 }
+System.out.println(temp.x+" is deleted");	
+prev.next=temp.next;
+return;
+}
+
+static void display() {
+	if(first==null) {
+		System.out.println("No item");
+		return;
+	}
+	Node temp =first;
+	while(temp!=null) {
+	System.out.print(temp.x+"\t");	
+		temp=temp.next;
+	}
+	System.out.println("");
+}
+
+
+static void insert() {
+System.out.println("Enter item");
+int item= sc.nextInt();
+Node node =new Node(item);
+
+ if(first==null) {
+ first=node;
+ return;	
+ }
+// this code for ascending order
+ Node prev=null, temp = first;
+
+if(first.x>=item) {
+   node.next=first;
+   first=node; return;
+ } 
+//in case of item insertion
+//at 1st position we dont 
+//have prper address of
+// prev and first
+ while(temp!=null&&temp.x<item) {
+	   prev=temp;
+	   temp=temp.next;
+}
+
+/* 
+ while(temp!=null){
+ prev=temp;
+ temp=temp.next;
+ if(temp.x>item) break;
+ }
+
+ while(temp!=null){
+ if(temp.x>item) break;
+ prev=temp;
+ temp=temp.next;
+ } 
+  */
+ 
+ 
+ 
+ prev.next=node;
+ node.next=temp;
+return; 
+  
+ }
+
+static void reverse() {
+Node temp=first,rev=null;
+
+	while(first!=null) {
+		temp=first.next;
+		first.next=rev;
+		
+		rev=first;
+		
+		first=temp;
+	}
+
+	first=rev;
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+//output
+
+
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+1
+Enter item
+6
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+1
+Enter item
+3
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+2
+3	6	
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+1
+Enter item
+8
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+2
+3	6	8	
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+1
+Enter item
+2
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+2
+2	3	6	8	
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+3
+Enter item to delete
+6
+6 is deleted
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+3
+Enter item to delete
+4
+Not in list
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+3
+Enter item to delete
+5
+Not in list
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+2
+2	3	8	
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+3
+Enter item to delete
+8
+8 is deleted
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+1
+Enter item
+90
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+2
+2	3	90	
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+1
+Enter item
+45
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+4
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+2
+90	45	3	2	
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+4
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+2
+2	3	45	90	
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+5
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+2
+No item
+Enter your choice
+1 insert
+2 display
+3 delete
+4 reverse
+5 reset
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package orderedlist;
+import java.util.Scanner;
+public class orderedlist {
+static Scanner sc= new Scanner(System.in);
+static class Node{
+	int x;
+	Node next=null;
+	Node(int x){
+		this.x=x;
+	}
+	
+}	
+static Node first =null;	
+public static void main(String []args) {
+
+for(;;) {	
+	System.out.println("Enter your choice\n1 insert\n2"
+			+ " display\n3 delete\n4 reverse"
+			+ "\n5 reset");
+	int choice= sc.nextInt();
+  switch(choice) {
+  case 1:
+	 insert();break;
+  case 2:
+	 display();break;
+  case 3:
+	  delete();break;
+  case 4:
+	  reverse();break;
+  case 5:
+	  first=null;break;
+  default:
+	  System.out.println("Invalid choice"); break;
+  }
+	
+ }
+}
+static void delete(){
+System.out.println("Enter item to delete");	
+	int item= sc.nextInt();
+	 Node prev=null,temp=first;
+	 
+	 if(temp.x==item) {
+		System.out.println(first.x+" is deleted");
+		 first=first.next; 
+		 return; 
+	 }
+	 
+	 while(temp!=null&&temp.x==item) {	 
+		 prev= temp;
+		 temp=temp.next; 
+	  }
+	 // we can start checking from 
+	 // 1st and 2nd 
+	 /*
+	  * while(temp!=null) {	 
+		 prev= temp;
+		 temp=temp.next;
+		 if(temp.x==item)
+		 break;
+	 }
+	 
+	   while(temp!=null) {	 
+		 if(temp.x==item)
+		 break;
+		 prev= temp;
+		 temp=temp.next;
+		 
+	 } 
+	   */ 
+	 if(temp==null) {
+		System.out.println("Not in list"); return; 
+	 }
+System.out.println(temp.x+" is deleted");	
+prev.next=temp.next;		
+}
+
+static void display() {
+	if(first==null) {
+		System.out.println("No item");
+		return;
+	}
+	Node temp =first;
+	while(temp!=null) {
+	System.out.print(temp.x+"\t");	
+		temp=temp.next;
+	}
+	System.out.println("");
+}
+
+static void insert() {
+System.out.println("Enter item");
+int item= sc.nextInt();
+Node node =new Node(item);
+
+ if(first==null) {
+ first=node;
+ return;	
+ }
+
+Node prev=null, temp = first;
+
+  while(temp!=null) {
+	  /* this code checking from second
+	   in case item has to 
+	   insert at first position  
+	   prev=temp;
+	   temp=temp.next;
+	   if(temp.x>item)
+		   break; 
+	   for first insertion we have to write 
+	   special code	   
+		*/    
+
+	  if(temp.x>item)
+		   break; 
+	   prev=temp;
+	   temp=temp.next;
+	 /*it is checking from 1st 
+	  *we will not get proper value 
+	  *of prev and temp so we have 
+	  *to write special case for this  
+	  * 
+	  * */
+	   
+	   
+  }
+//if item is least 
+//so first insertion
+//this code for left insertion
+//at position 1st position only
+
+  if(prev==null) {
+     node.next=first;
+	 first=node; return;
+  //it is like front insertion
+   } 
+  //this code for right insertion
+  //at position 2nd or greater
+  
+prev.next=node;
+node.next=temp;
+return; 
+  
+ }
+
+static void reverse() {
+Node temp=first,rev=null;
+
+	while(first!=null) {
+		temp=first.next;
+		first.next=rev;
+		
+		rev=first;
+		
+		first=temp;
+	}
+
+	first=rev;
+
+}
+}
+
+/*if(first.next==null) {
+if(first.x>=item) {
+node.next=first;
+	 first=node; return;
+ }
+else {
+	first.next=node;
+	first= first;
+	return;
+} 	  
+
+}*/
+

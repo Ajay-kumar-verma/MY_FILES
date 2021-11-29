@@ -1,0 +1,20 @@
+//JAVA PROGRAM 
+//CONCEPT OF STATIC BLOCK
+
+package Youtube;
+public class staticblock {
+  static{
+  System.out.println("first line");
+  }
+ public static void main(String[] args) {
+ System.out.println("second line");
+ }
+ static{
+  System.out.println("third line");
+ }
+}
+
+//OUTPUT
+first line
+third line
+second line

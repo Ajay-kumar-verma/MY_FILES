@@ -1,0 +1,310 @@
+
+/*
+
+STORING STUDENTS DETAILS AND SHOWING IN LIST 
+
+ */
+
+
+
+
+//1ND METHOD
+
+package practice;
+
+import java.util.Scanner;
+
+public class Statics {
+	
+		 public static void main(String[] args) {		
+          
+			Student s = new Student();
+	      
+			s.read();
+	        s.show();
+		 
+		 }
+
+}
+
+
+
+class Student{
+	
+	 String name;
+		
+	 String mobile;
+	
+     int age;
+	
+	 String course;
+
+	 int n;
+	 
+	
+	 Student t[]=new Student[20];
+	 
+	 Scanner sc = new Scanner(System.in);
+	    
+	 
+	 void read() {
+
+		 	 
+			
+    	 System.out.print("ENTER NUMBER OF STUDENTS TO FILL DETAIL");
+    	
+    	 
+    	 n = sc.nextInt();
+    	
+         for(int i=0;i<n;i++) {
+    	 
+    	   int p = i+1;
+    	   
+    	   t[i] = new Student();
+    	   
+    	   System.out.println(p+ "  STUDENT DETAILS");
+    	     
+        	 System.out.print("PLEASE ENTER YOUR NAME");
+       	 
+        	 String nm = sc.next(); 
+              	
+     	  t[i].name= nm;
+      
+		 
+     	  System.out.print("PLEASE ENTER YOUR NUMBER");
+     	   	 
+      	String mob = sc.next(); 
+     	
+     	 t[i].mobile= mob;
+     	
+     	 
+     	 
+     	 System.out.print("PLEASE ENTER YOUR COURSE");
+     	   	 
+     	String COUSE = sc.next(); 
+     	
+     	 t[i].course= COUSE;
+     	 
+  
+       	 
+     	 System.out.print("PLEASE ENTER YOUR AGE");
+     	   	 
+     	int AG = sc.nextInt(); 
+     	
+     	 t[i].age= AG;  	 
+		 
+	 }
+	 	
+}
+	 
+	 void show() {
+
+		 
+           
+		   System.out.println("NAME\tNUMBER\tAGE\tCOURSE");     	 
+	     	 
+	     	 for(int i=0;i<n;i++) {
+
+	         	 System.out.println(t[i].name+"\t"+t[i].mobile+"\t"+t[i].age+"\t"+t[i].course);
+	     		 
+	     	 }
+
+		 
+		
+		 
+	 }
+ }
+
+
+
+/*
+[[[same program with little changing]]
+
+2ND METHOD 
+
+*/
+
+
+
+
+
+package practice;
+
+import java.util.Scanner;
+
+public class Statics {
+	
+		 public static void main(String[] args) {		
+          
+			Student s = new Student();
+	      
+			s.read();
+	        s.show();
+		 
+		 }
+
+}
+
+
+
+class Student{
+	
+	 String name;
+		
+	 String mobile;
+	
+     int age;
+	
+	 String course;
+
+	 int n;
+	 
+	
+	 Student t[]=new Student[20];
+	 
+	 Scanner sc = new Scanner(System.in);
+	    
+	 
+	 void read() {
+
+		 	 
+			
+    	 System.out.print("ENTER NUMBER OF STUDENTS TO FILL DETAIL");
+    	
+    	 n = sc.nextInt();
+    	
+         for(int i=0;i<n;i++) {
+    	 
+    	   int p = i+1;
+    	   
+    	   t[i] = new Student();
+    	   
+    	   System.out.println(p+ "  STUDENT DETAILS");
+    	     
+        	 System.out.print("PLEASE ENTER YOUR NAME");
+       	 
+        	 t[i].name	= sc.next(); 
+              	 
+     	  System.out.print("PLEASE ENTER YOUR NUMBER");
+     	   	 
+      	 
+     	 t[i].mobile= sc.next();
+     	
+     	 
+     	 System.out.print("PLEASE ENTER YOUR COURSE");
+     	   	 
+     	t[i].course = sc.next(); 
+     	 
+     	 System.out.print("PLEASE ENTER YOUR AGE");
+     	   
+     	 t[i].age=sc.nextInt();   	 
+		 
+	 }
+	 	
+}
+	 
+	 void show() {
+
+		 
+           
+		   System.out.println("NAME\tNUMBER\tAGE\tCOURSE");     	 
+	     	 
+	     	 for(int i=0;i<n;i++) {
+
+	         	 System.out.println(t[i].name+"\t"+t[i].mobile+"\t"+t[i].age+"\t"+t[i].course);
+	     		 
+	     	 }
+
+		 
+		
+		 
+	 }
+ }
+
+
+
+
+
+
+
+
+/*
+
+[[[[[SAME PROBLEM SOLVED ]]]]]
+3ND METHOD FOR SOLVING PROBLEM
+
+*/
+
+
+
+
+package practice;
+
+import java.util.Scanner;
+
+public class Statics {
+	
+		 public static void main(String[] args) {		
+          
+		    Student t[];
+			
+		    t=new Student[20];
+	        
+		    int n;
+		    
+             	 Scanner sc = new Scanner(System.in);
+		
+				 System.out.print("ENTER NUMBER OF STUDENTS TO FILL DETAIL");
+		    	
+		    	 n = sc.nextInt();
+		    	
+		         for(int i=0;i<n;i++) { 	  
+		    	   
+		    	   t[i] = new Student();
+		    	   
+		    	   System.out.println(i+1+ "  STUDENT DETAILS");
+		    	     
+		        	 System.out.print("PLEASE ENTER YOUR NAME");
+		       	 
+		        	 t[i].name	= sc.next(); 
+		              	 
+		     	  System.out.print("PLEASE ENTER YOUR NUMBER");
+		     	   	 
+		      	 
+		     	 t[i].mobile= sc.next();
+		     	
+		     	 
+		     	 System.out.print("PLEASE ENTER YOUR COURSE");
+		     	   	 
+		     	t[i].course = sc.next(); 
+		     	 
+		     	 System.out.print("PLEASE ENTER YOUR AGE");
+		     	   
+		     	 t[i].age=sc.nextInt();   	 
+				 
+			 }
+		    		   System.out.println("NAME\tNUMBER\tAGE\tCOURSE");     	 
+		    	     	 
+		    	     	 for(int i=0;i<n;i++) {
+
+		    	         	 System.out.println(t[i].name+"\t"+t[i].mobile+"\t"+t[i].age+"\t"+t[i].course);
+		    	     		 
+		    	     	 }		         
+		 }
+
+}
+
+class Student{
+	
+	 String name;		
+	 String mobile;
+     int age;
+	 String course;	 
+ }
+
+
+
+
+
+
+/* END OF PROGRAM*/

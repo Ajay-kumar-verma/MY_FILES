@@ -1,0 +1,58 @@
+//JAVA PROGRAM FOR SUM OF EVEN NUMBER
+package Youtube;
+import java.util.Scanner;
+public class EVEN {
+static Scanner sc= new Scanner(System.in);
+	public static void main(String[] args) {
+	for(;;) {
+	System.out.println("Enter last number");
+	int n= sc.nextInt();		
+	int sum = sum_even(n);		
+	System.out.println("Sum of even number is "+sum);
+	}	
+}
+static int sum_even(int n) {
+if(n%2==1)
+	n--;
+return n*(n+2)/4;
+
+/*
+int sum =0;
+while(n>0) {
+sum +=n;
+//sum = sum +n;
+n-=2;
+//n= n-2;
+}	
+return sum;
+*/
+
+
+}
+}
+
+
+
+//OUTPUT
+Enter last number
+2
+Sum of even number is 2
+Enter last number
+3
+Sum of even number is 2
+Enter last number
+4
+Sum of even number is 6
+Enter last number
+5
+Sum of even number is 6
+Enter last number
+6
+Sum of even number is 12
+Enter last number
+7
+Sum of even number is 12
+Enter last number
+10
+Sum of even number is 30
+Enter last number

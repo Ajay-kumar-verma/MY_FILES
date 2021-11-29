@@ -1,0 +1,199 @@
+// FINDING LCM OF MULTIPLE NUMBER
+package Youtube;
+import java.util.Scanner;
+public class hcfOfmultiple {
+	static Scanner sc = new Scanner(System.in);
+	static class Node{
+		int x;
+		Node next;
+		Node(int x){
+			this.x=x;
+		}
+	}
+ static Node first=null;
+ 
+	public static void main(String[] args) {
+			for(;;) {
+				System.out.println("Enter your choice \n1 insert\n2 display\n3 find hcf"
+						+ "\n4 reset");
+				int choice =sc.nextInt();
+				switch(choice) {
+				case 1: 
+				System.out.println("Enter number ");
+			    choice= sc.nextInt();
+				push(choice); break;
+				case 2:	display();break;
+				case 3:find_hcf();break;
+				case 4: first=null;
+				System.out.println("reset");break;
+				default:
+					System.out.println("Invalid choice"); break;				
+				}	
+		  }			
+	}	
+static void find_hcf() {
+if(first==null) {
+  System.out.println("NO input"); return;	
+ }	
+ while(true) {
+ if(first.next==null) {
+  System.out.println("LCM IS "+ first.x);break;	
+	 }
+ int p= pop();
+ int q= pop();
+ int HCF= hcf(p,q);
+// WE USED FUNDAMENTAL PROPERTIES OF 
+// LCM AND HCF		
+ int z= p*q;
+ int LCM= z/HCF;	
+  push(LCM);	
+	}	
+}
+static int hcf(int a,int b) {
+	if(a==0) return b;
+	if(b==0) return a;
+	return  hcf(b,a%b);	
+}
+static int pop() {
+	if(first==null) {
+		return 0; 	
+	 }
+	Node temp=first;
+	first=first.next;
+	return temp.x;	
+}
+
+ static void push(int a) {
+	 Node node = new Node(a);
+	  node.next=first;
+	 first= node; return;
+ }
+ 
+ static void display() {
+ if(first==null) {
+	 System.out.println("NO input"); return;	
+ }
+  Node temp= first;
+ while(temp!=null) {
+	 
+	 System.out.print(temp.x+"\t");
+	temp=temp.next; 
+ }
+ System.out.println();
+ 
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//END
+
+//OUTPUT
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+1
+Enter number 
+4
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+1
+Enter number 
+6
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+3
+LCM IS 12
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+8
+Invalid choice
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+1
+Enter number 
+8
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+1
+Enter number 
+12
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+3
+LCM IS 24
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+4
+reset
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+1
+Enter number 
+12
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+1
+Enter number 
+8
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+1
+Enter number 
+56
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+3
+LCM IS 168
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset

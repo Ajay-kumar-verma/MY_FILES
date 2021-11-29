@@ -1,0 +1,570 @@
+//JAVA PROGRAM FOR CIRCULAR LINKED LIST
+//EASY IMPLEMENTATION 
+//EASY INSERTION AND DELETION 
+//SIMILAR ALL OPERATION
+--------------------------------------------------------------
+
+
+package circularlinkedlist;
+
+import java.util.Scanner;
+public class sort {
+	static class Node{
+		int x;
+		Node next;
+		Node(int x){
+			this.x=x;
+		}
+	}	
+  static Node first= null;
+  static Scanner sc = new Scanner(System.in);
+  public static void main(String [] args) {
+   for(;;) {		
+		System.out.println("Enter your choice");
+		System.out.println("1 insert_front\n2 delete_front\n3 insert_rear"
+		+ "\n4 delete_rear\n5 display");
+    int choice = sc.nextInt();
+    switch(choice) {
+	case 1:
+	first=insert(first,1);
+	break;
+	case 2:
+	first=delete(first,1);
+	break;
+	case 3:
+	first=insert(first,2);	
+	break;
+	case 4:
+	first= delete(first,2);
+	break;
+	case 5:
+	display(first);break;
+	default:
+	System.out.println("Invalid choice");
+		break;
+	}			
+  }			
+}
+  
+static void display(Node first) {
+		 if(first==null) {
+		 System.out.println("No item in list");
+		 return ;
+	    	} 
+		Node temp=first;	 
+		while(temp.next!=first) {
+		System.out.print(temp.x+"\t");
+		temp = temp.next;
+	   }
+	   System.out.println(temp.x);	
+       System.out.println("");
+}   
+  
+static Node delete(Node first,int s) {
+   if(first==null) {
+  	 System.out.println("No item in list");return null;
+  }
+   Node cur=first;
+   if(cur.next==first) {
+	return null;   
+   }   
+   
+  if(s==1) {
+       while(cur.next!=first){
+       cur=cur.next;   
+                }
+    cur.next=first.next; 
+  	 return first.next; 
+      	 }
+
+   Node prev=null; 
+   while(cur.next!=first) {
+     prev=cur;
+     cur=cur.next;
+      }
+     prev.next=cur.next;
+     return first;   
+} 	     
+
+static Node insert(Node first,int s) {
+	  System.out.println("Enter item to insert");
+	  int n= sc.nextInt();	
+	  Node temp = new Node(n);	    
+	  if(first==null) {	
+	    temp.next=temp;
+	  return temp;
+	 }    
+	    temp.next=first;
+	    Node last=first;
+		while(last.next!=first) {
+		last= last.next;
+	  }  
+		temp.next=first;
+	    last.next=temp;
+		 
+		if(s==1)
+		 return temp;
+		else
+   	return first;
+ } 
+}
+
+
+
+------------------------------------------------------------------
+package circularlinkedlist;
+import java.util.Scanner;
+public class circular {
+static class Node{
+	int x;
+	Node next;
+	Node(int x){
+		this.x=x;
+	}
+}	
+static Node first= null;
+static Scanner sc = new Scanner(System.in);
+
+     public static void main(String [] args) {
+
+	for(;;) {
+		
+		System.out.println("Enter your choice");
+		System.out.println("1 insert_front\n2 delete_front\n3 insert_rear"
+				+ "\n4 delete_rear\n5 display");
+		int choice = sc.nextInt();
+		
+		switch(choice) {
+		case 1:
+		first=insert_front(first);
+		break;
+		case 2:
+		first=delete_front(first);
+		break;
+    	case 3:
+        first=insert_rear(first);	
+		break;
+	     case 4:
+           first= delete_rear(first);
+		break;
+		case 5:
+			display(first);break;
+		default:
+			System.out.println("Invalid choice");
+			break;
+		}
+		
+	}			
+}
+static Node delete_front(Node first) {
+   if(first==null) {
+  	 System.out.println("No item in list");return null;
+ }
+   Node cur=first;
+   if(cur.next==first) {
+	return null;   
+   }
+   
+   while(cur.next!=first){
+   cur=cur.next;   
+  }
+   cur.next=first.next; 
+  	 return first.next; 
+} 
+     
+ 
+     
+static Node delete_rear(Node first) {
+    	 if(first==null) {
+    	 System.out.println("No item in list");
+    	 return null;
+    	 }
+ 
+   Node cur=first;
+      if(cur.next==first) {
+  	return null;   
+   }  	 
+    Node prev=null; 
+    while(cur.next!=first) {
+      prev=cur;
+      cur=cur.next;
+   }
+      prev.next=cur.next;
+      return first;
+} 
+
+ static void display(Node first) {
+	 if(first==null) {
+	 System.out.println("No item in list");
+	return ;
+	}
+	 
+	Node temp=first;	 
+	while(temp.next!=first) {
+	System.out.print(temp.x+"\t");
+	temp = temp.next;
+   }
+System.out.println(temp.x);
+	
+  System.out.println("");
+ }   
+
+static Node insert_front(Node first) {
+  System.out.println("Enter item to insert");
+  int n= sc.nextInt();	
+  Node temp = new Node(n);
+  if(first==null) {
+   temp.next=temp;
+     return temp;
+   }
+   temp.next=first; 
+  Node cur= first;    
+  while(cur.next!=first) {
+	  cur= cur.next;
+ }  
+  cur.next=temp;
+  return temp;
+	     	    
+}
+static Node insert_rear(Node first) {
+  System.out.println("Enter item to insert");
+  int n= sc.nextInt();	
+  Node temp = new Node(n);	    
+  if(first==null) {	
+    temp.next=temp;
+  return temp;
+ }    
+    temp.next=first;
+    Node cur=first;
+	while(cur.next!=first) {
+	cur= cur.next;
+  }
+	cur.next=temp; 
+	return first;
+} 
+
+ 
+
+}
+
+
+
+
+
+
+
+
+
+//OUTPUT
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+1
+Enter item to insert
+2
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+1
+Enter item to insert
+3
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+1
+Enter item to insert
+5
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+5	3	2
+
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+2
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+3	2
+
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+2
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+2
+
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+2
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+No item in list
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+3
+Enter item to insert
+2
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+3
+Enter item to insert
+4
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+3
+Enter item to insert
+5
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+3
+Enter item to insert
+6
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+2	4	5	6
+
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+3
+Enter item to insert
+7
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+2	4	5	6	7
+
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+4
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+4
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+4
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+2	4
+
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+4
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+2
+
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+4
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+No item in list
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+1
+Enter item to insert
+3
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+1
+Enter item to insert
+4
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+4	3
+
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+3
+Enter item to insert
+5
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+3
+Enter item to insert
+7
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+4	3	5	7
+
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+4
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+2
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+3	5
+
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+2
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+4
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+No item in list
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display

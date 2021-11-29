@@ -1,0 +1,40 @@
+//plindrone
+package PALINDRONE;
+
+import java.util.Scanner;
+
+public class palindrone {
+ static int x;
+ static int rev;
+ static Scanner sc= new Scanner(System.in);
+ public static void main(String[] args) {
+
+	for(;;) {
+
+		System.out.println("Enter number to check palindrone");
+	
+		x=sc.nextInt();
+			
+		rev=0;
+		int temp=x;
+		
+		while(temp>0) {
+ // adding remainer to number reverse number 
+				
+		rev= (rev*10)+(temp%10);
+		
+		temp=temp/10;	
+		}			
+		
+	if(x==rev) {
+	System.out.println(x+" number is palindrone");
+	}
+	else
+	System.out.println("Given number is "+x+"and reverse number is "+rev+"\n not palindrone!");
+			
+		}
+		
+		
+   }
+
+}

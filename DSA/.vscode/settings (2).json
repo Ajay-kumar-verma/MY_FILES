@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": [
+        "STRING",
+        "RECURSION",
+        ""
+    ],
+    "files.associations": {
+        "ostream": "cpp"
+    }
+}

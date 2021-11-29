@@ -1,0 +1,147 @@
+
+package queue;
+
+import java.util.Scanner;
+
+public class queue {
+   
+ static int a[]=new int[20];
+ static int n;
+
+/*n means elements are available 
+form 0 to n-1 NOT at N(n)
+n=5 ,till 4th index element is 
+there
+*/
+
+ static int i;
+ static int f=0;
+
+/* this represnt left(front) side  means at f=0 element
+ is there and if f=4 at 4 element is there;
+*/
+ static Scanner sc= new Scanner(System.in);
+	
+	
+ public static void main(String[] args) {
+
+ read();
+	for(;;){
+		
+ System.out.println("Enter your choice\n1 insert"
+ 		+ " rear \n2 insert front "
+ 		+ "\n3 delete rear\n4 delete front \n5 Display");
+  i=sc.nextInt();
+ switch(i){
+    case 1:insertr();break;
+    case 2:insertf();break;
+    case 3:deleter();break; 
+    case 4:deletef();break;
+    case 5:display();break;
+    default:System.out.println("Invalid choice");break;
+     }				
+ }	
+  }
+
+ 
+ 
+static void read() {
+  System.out.println("Enter number of elements to be entered");
+    n = sc.nextInt();
+   for(i=0;i<n;i++) {
+   a[i]=sc.nextInt();
+	}
+		
+  }
+
+
+static void insertr() {
+    if(n==20) {//till n=19 index elem can be filled not further
+    	System.out.println("Queue is over flow"); return;
+    }  
+	System.out.println("Enter element to be insert");	
+	a[n++]=sc.nextInt(); return;
+}
+
+
+static void insertf(){
+	
+if(f!=0) {// if f=0 elem cant be filled further left side
+	System.out.println("Enter value to insert");
+	a[--f]=sc.nextInt();
+System.out.println(a[f]+"is inserted ");	
+return;		
+}
+else System.out.println("cant possible this side");	
+	return;
+ }
+
+
+static void deletef() {
+	if(f==n) { 
+/* queue  is empty elem is present till n-1 only
+and at f elem should be ther that cant possible*/
+
+		System.out.println("Queue is underflow");return;
+	 }
+ 
+	System.out.println(a[f++]+"is deleted ");
+	
+ }	
+
+static void deleter() {
+	if(f==n) {
+		System.out.println("Queue is underflow");return;
+	 }
+ 
+	System.out.println(a[--n]+"is deleted ");
+	
+
+
+	
+	
+}
+
+
+static void display() {
+	if(f==n) {
+		System.out.println("Queue is empty");return;
+	}
+	for(i=f;i<n;i++)
+		 System.out.print(a[i]+"\t");
+	
+ }	
+
+
+
+
+
+
+}
+
+/*
+HOW PROGRAM IS WRITTEN
+INITIALLY F=0 AND N=0 AND 
+ELEM NOT PRESENT AT ANY INDEX
+NO OF ELEM IS N MEANS
+ELEM WILL BE FROM AT 0,1,2 ,3,4,5 .. n-1;
+
+WHILE INSERTING 
+WE HAVE CHECK ONLY SPACE IS THERE OR NOT
+WHERE ELEM HAS TO BE INSERTED.
+
+FOR FRONT (LEFT INSERTION)
+F SHOULD NOT BE 0(F>0) 
+BECAUSE ELEM WILL INSERT 
+LEFT SIDE ONLY IN THIS CASE
+AND INSERTION CAN BE DONE AS
+ PROGRAM IS WRITTEN.
+ 
+
+FOR REAR (RIGHT INSERTION)
+N < SIZE OF ARRAY
+BECAUSE ELEM WILL INSERT 
+RIGHT SIDE ONLY IN THIS CASE
+AND INSERTION CAN BE DONE
+AS PROGRAM IS WRITTEN.
+

@@ -1,0 +1,62 @@
+//JAVA PROGRAM FOR FINDING SUM OF ODD NO
+
+package Youtube;
+import java.util.Scanner;
+public class ODD {
+static Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) {
+		for(;;){	
+		System.out.println("Enter last number");
+		int n = sc.nextInt();
+		int sum = sum_odd(n);
+		
+		System.out.println("Sum of odd number is "+sum);
+		}
+	}
+static int sum_odd(int n) {
+	if(n%2==0) n--;
+	
+	
+	int y= (n-1)/2;
+	int m = y+1;
+	return m*m;
+	
+/*	
+	int sum=0;
+	while(n>0) {
+    sum +=n;
+	//sum = sum +n;
+	n-=2;
+    //n= n-2;	
+	}
+	
+return sum;
+*/	
+}
+}
+
+
+
+//OUTPUT
+Enter last number
+1
+Sum of odd number is 1
+Enter last number
+2
+Sum of odd number is 1
+Enter last number
+3
+Sum of odd number is 4
+Enter last number
+4
+Sum of odd number is 4
+Enter last number
+54
+Sum of odd number is 729
+Enter last number
+4
+Sum of odd number is 4
+Enter last number
+34
+Sum of odd number is 289
+Enter last number

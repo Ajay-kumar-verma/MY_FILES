@@ -1,0 +1,145 @@
+//JAVA PROGRAM FOR
+//SUM OF NATURAL NUMBER
+//ODD NUMBER
+//EVEN NUMBER
+
+package SUNOFNUMBER;
+import java.util.Scanner;
+public class sumofnaturalnumber {
+
+static Scanner sc = new Scanner(System.in);	
+	
+public static void main(String []args){
+	
+ while(true) {
+ System.out.println("Enter your choice sum of "
+ + "\n1 natural numbe\n2 odd number\n3 even number");
+ int choice = sc.nextInt();
+ switch(choice) {
+  case 1:
+  System.out.println("Enter last  number");
+ int n= sc.nextInt();
+ natural(n);break;
+  case 2:
+  System.out.println("Enter last number");
+     n= sc.nextInt();
+	odd(n);break;
+  case 3:
+   System.out.println("Enter last number");
+      n= sc.nextInt();
+	even(n);break;
+    default:
+  System.out.println("invalid choice"); break;		
+		
+  }
+ }
+}	
+
+static void even(int n) {
+if(n%2==1) {
+	n--;
+}
+
+int sum=0;
+while(n>0) {
+	sum+=n;	
+n=n-2;
+ }
+
+System.out.println("Sum of even number is "+sum); return;
+
+}
+static void odd(int n) {
+ if(n%2==0) {
+ n--;
+}
+int sum=0;
+while(n>0) {
+ sum+=n;			
+ n=n-2;
+ }
+System.out.println("Sum of odd number is "+sum); return;
+
+}
+
+static void natural(int n) {
+ int sum=0;
+ while(n>0) {
+ sum+=n--;	
+ }
+System.out.println("Sum of natural number is "+sum); return;
+	
+ }
+
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//OUTPUT
+Enter your choice sum of 
+1 natural numbe
+2 odd number
+3 even number
+1
+Enter last  number
+6
+Sum of natural number is 21
+Enter your choice sum of 
+1 natural numbe
+2 odd number
+3 even number
+1
+Enter last  number
+123
+Sum of natural number is 7626
+Enter your choice sum of 
+1 natural numbe
+2 odd number
+3 even number
+2
+Enter last number
+67
+Sum of odd number is 1156
+Enter your choice sum of 
+1 natural numbe
+2 odd number
+3 even number
+2
+Enter last number
+45
+Sum of odd number is 529
+Enter your choice sum of 
+1 natural numbe
+2 odd number
+3 even number
+3
+Enter last number
+45
+Sum of even number is 506
+Enter your choice sum of 
+1 natural numbe
+2 odd number
+3 even number
+3
+Enter last number
+6543
+Sum of even number is 10702712
+Enter your choice sum of 
+1 natural numbe
+2 odd number
+3 even number

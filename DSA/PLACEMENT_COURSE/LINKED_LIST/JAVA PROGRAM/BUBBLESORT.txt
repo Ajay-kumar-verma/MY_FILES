@@ -1,0 +1,241 @@
+// BUBBLE SORT AND SELECTION SORT 
+//local variable cant be used outside
+
+
+//START BUBBLE SORT
+ 
+package sorting;
+
+import java.util.*;
+
+public class bubble {
+
+public static void main(String[] args) {
+		
+int a[];
+	
+a = new int[10];
+	
+Scanner sc= new Scanner(System.in);
+int n;
+int i;
+for(;;){
+System.out.println("Enter number of elemets to be inserted");		
+n = sc.nextInt();
+  if(n>10)continue;	
+
+  else {	
+   	for( i=0;i<n;i++) {
+  a[i]= sc.nextInt();
+     	}
+	}
+	break;
+		
+	}
+
+for(i=0;i<n;i++) {
+	
+ for(int j=0;j<n-1-i;j++) {
+	 if(a[j]>a[j+1]){
+	
+		 int temp= a[j];
+		a[j]=a[j+1];
+		a[j+1]=temp;
+	 }
+	 
+ }	
+	
+}		
+
+for(i=0;i<n;i++) {
+	System.out.print(a[i]+"\t");
+}
+
+		
+	}
+
+}
+
+//END
+
+
+//start
+// using method and static keyword
+
+
+package sorting;
+
+import java.util.*;
+
+public class bubble {
+  static int a[]=new int[10];
+  static Scanner sc= new Scanner(System.in);
+  static	int n;
+  static	int i;
+
+  public static void main(String[] args) {
+		
+for(;;){
+
+	System.out.println("Enter your choice \n1read\n2sort\nshow");
+	i = sc.nextInt();
+	switch(i) {
+	case 1:
+		read();break;
+	case 2:
+		sort();break;
+	case 3:
+		show();break;
+		default:
+			System.out.println("Invalid choice");break;
+		
+	}
+	
+	
+	
+	
+	}
+
+  }
+  
+static void read() {
+
+System.out.println("Enter number of elemets to be inserted");		
+  n = sc.nextInt();
+
+  	for( i=0;i<n;i++) {
+  a[i]= sc.nextInt();
+     	}
+
+		
+	}
+
+
+
+static void sort() {
+
+for(i=0;i<n;i++) {
+	
+ for(int j=0;j<n-1-i;j++) {
+	 if(a[j]>a[j+1]){
+	
+		 int temp= a[j];
+		a[j]=a[j+1];
+		a[j+1]=temp;
+	 }
+	 
+ }	
+	
+}		
+	
+}
+
+
+static void show () {
+	
+
+for(i=0;i<n;i++) {
+	System.out.print(a[i]+"\t");
+}
+
+
+}
+
+
+	
+}
+
+//End
+
+//SELECTION SORT
+//START
+package sorting;
+import java.util.Scanner;
+public class selection {
+	  static int a[]=new int[10];
+	  static Scanner sc= new Scanner(System.in);
+	  static	int n;
+	  static	int i;
+
+	  public static void main(String[] args) {
+			
+	for(;;){
+
+		System.out.println("Enter your choice \n1read\n2sort\nshow");
+		i = sc.nextInt();
+		switch(i) {
+		case 1:
+			read();break;
+		case 2:
+			sort();break;
+		case 3:
+			show();break;
+			default:
+				System.out.println("Invalid choice");break;
+			
+		}
+			
+		}
+
+	  }
+	  
+	static void read() {
+
+	System.out.println("Enter number of elemets to be inserted");		
+	  n = sc.nextInt();
+
+	  	for( i=0;i<n;i++) {
+	  a[i]= sc.nextInt();
+	     	}
+
+			
+		}
+
+
+
+	static void sort() {
+
+	for(i=0;i<n;i++) {
+      
+		int m=i; 	
+      // searching smallest element
+		
+	 for(int j=i+1;j<n;j++) {
+		 if(a[m]>a[j]){
+	     	m=j;
+		 } 
+	 }	
+	 
+	 //swapping elements
+
+
+        
+	a[m]=a[i]+a[m];
+	a[i]=a[m]-a[i];
+	 a[m]=a[m]-a[i];
+	 
+	}		
+		
+	}
+
+
+	static void show () {
+		
+
+	for(i=0;i<n;i++) {
+		System.out.print(a[i]+"\t");
+	}
+
+
+	}
+		
+	}
+
+
+
+
+
+
+
+
+

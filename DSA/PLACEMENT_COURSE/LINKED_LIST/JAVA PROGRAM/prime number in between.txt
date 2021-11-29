@@ -1,0 +1,118 @@
+//FINDING PRIME NUMBER IN BETWEEN GIVEN NUMBER
+
+
+package PRIME;
+import java.util.Scanner;
+public class PRINTINGPRIME {
+	
+static Scanner sc= new Scanner(System.in);	
+	
+public static void main(String []args){
+	 
+  for(;;) {
+	  
+	  System.out.println("Enter first number");
+	  int a = sc.nextInt();
+
+	  System.out.println("Enter second  number");
+	  int b = sc.nextInt();
+	  if(a<2) a=2;
+      if(b<2) b=2;
+      
+      if(a==b) {
+    	  System.out.println("0 number");
+      }
+      else {
+    	  prno(a,b);
+      }  
+   }
+  }	
+static void prno(int a,int b) {
+	if(a>b) {
+		prno(b,a);
+		}
+	int count =0;
+	for(int i=a;i<=b;i++) {
+	int x= prime(i);	
+		if(x==1) {
+			continue;
+		}
+		else {
+			count++;
+		System.out.print(i+" \t");		
+		}	
+	}
+	System.out.println(" ");
+	System.out.println("Prime numbers are "+a+"  "+b+":is "+count);  
+
+  }
+static int prime(int a) {
+	
+	for(int i=2;i*i<=a;i++) {
+	
+		if(a%i==0) {	
+			return 1;
+		}
+		
+		else {
+			continue;
+		}
+	}
+	return 0;	
+}
+
+}
+
+
+
+
+
+
+
+
+
+//output
+Enter first number
+3
+Enter second  number
+45
+3 	5 	7 	11 	13 	17 	19 	23 	29 	31 	37 	41 	43 	 
+Prime numbers are 3  45:is 13
+Enter first number
+1
+Enter second  number
+8
+2 	3 	5 	7 	 
+Prime numbers are 2  8:is 4
+Enter first number
+7
+Enter second  number
+12
+7 	11 	 
+Prime numbers are 7  12:is 2
+Enter first number
+123
+Enter second  number
+132
+127 	131 	 
+Prime numbers are 123  132:is 2
+Enter first number
+1
+Enter second  number
+4
+2 	3 	 
+Prime numbers are 2  4:is 2
+
+Enter first number
+1234
+Enter second  number
+1243
+1237 	 
+Prime numbers are 1234  1243:is 1
+Enter first number
+145
+Enter second  number
+154
+149 	151 	 
+Prime numbers are 145  154:is 2
+Enter first number

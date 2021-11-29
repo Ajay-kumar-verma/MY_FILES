@@ -1,0 +1,494 @@
+//BAsic operation OF LINKED LIST
+package INSERTIO_DELETION_IN_LINKED_LIST;
+import java.util.Scanner;
+public class LINKEDLIST {
+static Scanner sc= new Scanner(System.in);
+static class Node{
+	int x;
+	Node next;
+	Node(int x){
+		this.x=x;
+	}
+}
+static Node first=null;
+public static void main(String []args) {
+		while(true) {
+			System.out.println("Enter your choice\n1 insert\n2 delete\n3 dispaly");
+			int n= sc.nextInt();
+			switch(n) {
+			case 1:
+				System.out.println("Enter number at which has to insert");
+				n= sc.nextInt();
+				System.out.println("Enter number");
+				int  no= sc.nextInt();
+			first=insert(n,no); break;
+			case 2:
+				System.out.println("Enter number");
+				no= sc.nextInt();
+			first=delete(no); break;
+			case 3:
+				display();break;
+			default:
+				System.out.println("Invalid choice");
+				break;		
+			}
+		}		
+	}
+	
+static void display() {
+	if(first==null) {	 
+		System.out.println("No item"); return ; 	
+		}
+System.out.println("Item are:");
+Node temp= first;
+do {	
+	System.out.print(temp.x+"\t");
+	temp=temp.next;
+}while(temp!=null);	
+System.out.println(" ");
+}
+
+static Node delete(int m) {
+	if(first==null) {	 
+		System.out.println("No item"); return null; 	
+		}
+
+	if(first.x==m) {
+			first=first.next;
+			return first;
+	}	
+	
+	Node prev=null,temp=first;
+		do{		
+		if(temp.x==m)
+		break;
+	
+		prev=temp;
+		temp= temp.next;
+//after temo.netx must check
+//whether it is null or not		
+		}while(temp!=null) ;
+		
+		if(temp==null) {
+			System.out.println("Not exist "+m);
+			return first;
+		}
+		prev.next=temp.next;
+		System.out.println(m+" is deleted ");
+		return first;
+}
+
+static Node insert(int m,int n) {
+	
+	Node node = new Node(n);
+	if(first==null) {	 
+	return node; 	
+	}
+	if(first.x==m) {	
+		node.next=first;
+		return node;
+	}
+	Node prev=null,temp=first;
+	while(temp!=null) {		
+		if(temp.x==m) {
+			break;
+		}
+		prev=temp;
+		temp= temp.next;
+	}
+	if(temp==null) {
+		System.out.println("inserted at last");
+	}
+	prev.next=node;
+	node.next= temp;
+	return first;
+ }	
+	
+}
+
+
+
+
+//OUTPUT
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+2
+Enter number
+3
+No item
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+3
+No item
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+1
+Enter number at which has to insert
+1
+Enter number
+4
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+1
+Enter number at which has to insert
+6
+Enter number
+7
+inserted at last
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+2
+Enter number
+2
+Not exist 2
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+3
+Item are:
+4	7	 
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+1
+Enter number at which has to insert
+7
+Enter number
+123
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+3
+Item are:
+4	123	7	 
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+1
+Enter number at which has to insert
+4
+Enter number
+333
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+3
+Item are:
+333	4	123	7	 
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+1
+Enter number at which has to insert
+4
+Enter number
+31
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+3
+Item are:
+333	31	4	123	7	 
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+2
+Enter number
+4
+4 is deleted 
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+2
+Enter number
+123
+123 is deleted 
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+3
+Item are:
+333	31	7	 
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+2
+Enter number
+333
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+2
+Enter number
+2
+Not exist 2
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+
+
+
+
+
+
+//END 
+
+
+
+//START
+
+package INSERTIO_DELETION_IN_LINKED_LIST;
+import java.util.Scanner;
+public class LINKEDLIST {
+static Scanner sc= new Scanner(System.in);
+static class Node{
+	int x;
+	Node next;
+	Node(int x){
+		this.x=x;
+	}
+}
+static Node first=null;
+public static void main(String []args) {
+		while(true) {
+			System.out.println("Enter your choice\n1 insert\n2 delete\n3 dispaly");
+			int n= sc.nextInt();
+			switch(n) {
+			case 1:
+				System.out.println("Enter number at which has to insert");
+				n= sc.nextInt();
+				System.out.println("Enter number");
+				int  no= sc.nextInt();
+			first=insert(n,no); break;
+			case 2:
+				System.out.println("Enter number");
+				no= sc.nextInt();
+			first=delete(no); break;
+			case 3:
+				display();break;
+			default:
+				System.out.println("Invalid choice");
+				break;		
+			}
+		}		
+	}
+	
+static void display() {
+	
+	if(first==null) {	 
+		System.out.println("No item"); return ; 	
+		}
+System.out.println("Item are:");
+Node temp= first;
+do {	
+	System.out.print(temp.x+"\t");
+	temp=temp.next;
+}while(temp!=null);
+	
+System.out.println("");
+
+}
+
+
+static Node delete(int m) {
+	if(first==null) {	 
+		System.out.println("No item"); return null; 	
+		}
+		if(first.x==m) {
+			first=first.next;
+			return first;
+		}
+		
+		Node prev=null,temp=first;
+		while(temp!=null) {		
+			if(temp.x==m) {
+				break;
+			}	
+			prev=temp;
+			temp= temp.next;
+		}
+		if(temp==null) {
+			System.out.println("Not exist "+m);
+			return first;
+		}
+		
+		
+		prev.next=temp.next;
+
+		System.out.println(m+" is deleted ");
+		
+		
+		return first;
+}
+
+static Node insert(int m,int n) {
+	
+	Node node = new Node(n);
+	if(first==null) {	 
+	return node; 	
+	}
+	if(first.x==m) {	
+		node.next=first;
+		return node;
+	}
+	
+	Node prev=null,temp=first;
+	while(temp!=null) {		
+		if(temp.x==m) {
+			break;
+		}
+	
+		prev=temp;
+		temp= temp.next;
+	
+	}
+	
+	prev.next=node;
+	node.next= temp;
+	return first;
+	
+}	
+	
+}
+
+
+
+
+//OUTPUT
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+1
+Enter number at which has to insert
+4
+Enter number
+4
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+3
+Item are:
+4	
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+1
+Enter number at which has to insert
+1
+Enter number
+1
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+3
+Item are:
+4	1	
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+1
+Enter number at which has to insert
+5
+Enter number
+676
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+3
+Item are:
+4	1	676	
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+2
+Enter number
+676
+676 is deleted 
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+3
+Item are:
+4	1	
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+1
+Enter number at which has to insert
+1
+Enter number
+234
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+3
+Item are:
+4	234	1	
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+1
+Enter number at which has to insert
+234
+Enter number
+0
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+3
+Item are:
+4	0	234	1	
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+2
+Enter number
+234
+234 is deleted 
+Enter your choice
+1 insert
+2 delete
+3 dispaly
+3
+Item are:
+4	0	1	
+Enter your choice
+1 insert
+2 delete
+3 dispaly

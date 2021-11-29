@@ -1,0 +1,88 @@
+
+//JAVA PROGRAM FOR PRINTING 
+//PATTERN (TRIANGLE)
+
+package pattern;
+import java.util.Scanner;
+public class triangle {
+
+ public static void main(String[] args) {	
+		
+	for(;;) {
+	System.out.println("Enter length of base");
+	Scanner sc = new Scanner(System.in);
+	int n = sc.nextInt();
+	tri(n);
+    //revtri(n);
+		}  
+  }
+
+	
+static void tri(int m) {
+	
+ for(int i=1;i<=m;i++) {
+ //this loop vertical length of triangle
+	
+for(int j=1;j<=i;j++){
+//this loop will print horizontally
+
+System.out.print(" * ");
+}	
+System.out.println();	
+	
+}	
+}	
+
+static void revtri(int m) {
+	
+
+for(int i=1;i<=m;i++) {
+//this loop vertical length of triangle
+	
+for(int j=m;j>=i;j--){
+//this loop will print horizontally
+
+ System.out.print(" * ");
+  }	
+System.out.println();	
+
+ }	
+	
+}
+
+}
+
+
+
+//output
+Enter length of base
+3
+ * 
+ *  * 
+ *  *  * 
+Enter length of base
+4
+ * 
+ *  * 
+ *  *  * 
+ *  *  *  * 
+Enter length of base
+6
+ * 
+ *  * 
+ *  *  * 
+ *  *  *  * 
+ *  *  *  *  * 
+ *  *  *  *  *  * 
+Enter length of base
+9
+ * 
+ *  * 
+ *  *  * 
+ *  *  *  * 
+ *  *  *  *  * 
+ *  *  *  *  *  * 
+ *  *  *  *  *  *  * 
+ *  *  *  *  *  *  *  * 
+ *  *  *  *  *  *  *  *  * 
+Enter length of base

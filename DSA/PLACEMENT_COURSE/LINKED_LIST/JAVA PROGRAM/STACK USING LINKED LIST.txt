@@ -1,0 +1,416 @@
+//STACK USING LINKED LIST
+
+//1ST METHOD
+package linkedlist;
+import java.util.Scanner;
+public class list {
+  static node first;
+ 	public static void main(String[] args) {
+
+for(;;) {
+ Scanner sc= new Scanner(System.in);  			
+ System.out.println("Enter your choice\n1 push\n2 pop\n3 display");
+  int n= sc.nextInt();
+ switch(n) {
+   case 1:
+    	System.out.println("Enter item");
+    int i= sc.nextInt();
+    first= push(i); break;
+   case 2: 
+    first=pop(); break;
+   case 3 : show(); break;
+     default:
+  System.out.println("Invalid choice");
+      }
+  		 	
+  }
+  
+}
+	
+	
+ static node push(int x){	
+ System.out.println(x+"is inserted");
+   node Node = new node(x);  	
+   Node.link= first;
+  return Node;
+}	
+	  
+	  
+ static void show() { 
+ node temp;
+ temp =first;
+ if(temp==null) {
+ System.out.println("Stack empty");
+ return;
+ }
+ System.out.println("items are");
+   while(temp!=null) {
+  System.out.print(temp.x+"\t");
+ temp= temp.link;	
+ }  
+ System.out.println(" ");
+  }
+	  
+ static node pop() {
+ //node temp;
+ // temp =first;
+ // here node is like datatype and 
+ //temp is variable name (not actually)
+//We can use temp instead of first
+  if(first==null) {
+ System.out.println("Stack underflow");	 
+   return first;
+ }
+ else {
+ System.out.println(first.x+" is deleted");
+ return first.link;
+ }
+}
+	  
+}
+
+
+class node{	
+int x;
+node link;
+node(int x){
+this.x = x;
+ }
+}
+
+
+--------------------------------------------------
+
+//2nd method
+
+package linkedlist;
+import java.util.Scanner;
+public class list {
+ 
+ static node first=null;
+
+ static class node{	
+ int x;
+ node link;
+ node(int x){
+ this.x = x;
+ }
+}
+ 
+ // static means without making object
+ //data can be  accessed and used
+ //we don't make object of method and variable 
+ //we make object of class and access them
+ public static void main(String[] args) {
+  for(;;) {
+		
+  Scanner sc= new Scanner(System.in);  			
+  System.out.println("Enter your choice\n1 push\n2 pop\n3 display");
+     int n= sc.nextInt();
+     
+     switch(n) {
+   case 1:
+   System.out.println("Enter item");
+   int i= sc.nextInt();
+    first= push(i); break;
+  case 2: 
+  first=pop(); break;
+ case 3 : show(); break;
+   default:
+  System.out.println("Invalid choice");
+       }  		
+  }
+	  
+   }
+	
+ static node push(int x){	
+ System.out.println(x+"is inserted");
+ node temp; 
+ temp = new node(x);  	
+ temp.link= first;
+ return temp;
+  }	
+	  
+	  
+ static void show() { 
+ node temp;
+ temp =first;
+  if(temp==null) {
+ System.out.println("Stack empty");
+   return;
+   }
+  System.out.println("items are");
+  while(temp!=null) {
+  System.out.print(temp.x+"\t");
+ temp= temp.link;	
+ }  
+ System.out.println(" ");
+  }
+  
+ static node pop() {
+ //node temp;
+// temp =first;
+ // here node is like datatype and 
+ //temp is variable name (not actually)
+ if(first==null) {
+ System.out.println("Stack underflow");	 
+   return first;
+ }
+ else {
+ System.out.println(first.x+" is deleted");
+  return first.link;
+ }
+ }
+}
+
+
+//3nd method
+
+package linkedlist;
+import java.util.Scanner;
+public class list {
+
+  static node first=null;
+  static int n;
+// we declare n globally
+ static class node{	
+ int x;
+ node link;
+ node(int x){
+ this.x = x;
+ }
+}
+ 
+ // static means without making object
+ //data can be  accessed and used
+ //we don't make object of method and variable 
+ //we make object of class and access them
+ public static void main(String[] args) {
+
+	  for(;;) {
+  		
+  Scanner sc= new Scanner(System.in);  			
+  System.out.println("Enter your choice\n1 push\n2 pop\n3 display");
+   n= sc.nextInt();     
+    switch(n) {
+    case 1:
+    System.out.println("Enter item");
+    n= sc.nextInt();
+     push(n); break;
+      case 2: 
+    pop(); break;
+  case 3 : show(); break;
+    default:
+  System.out.println("Invalid choice");
+    break; 
+      }  		
+  }
+	  
+   }
+	
+ static void push(int n){	
+ System.out.println(n+"is inserted");
+ node temp; 
+ temp = new node(n);  	
+   temp.link= first;
+ first= temp;
+  }	
+	
+ static void show() { 
+ node temp;
+ temp =first;
+ if(temp==null) {
+  System.out.println("Stack empty");
+   return;
+   }
+   System.out.println("items are");
+  while(temp!=null) {
+  System.out.print(temp.x+"\t");
+ temp= temp.link;	
+ }  
+ System.out.println(" ");
+  }
+	  
+ static void pop() {
+ //node temp;
+ // temp =first;
+ // here node is like datatype and 
+ //temp is variable name (not actually)
+ if(first==null) {
+ System.out.println("Stack underflow");	 
+    return;
+ }
+ else {
+ System.out.println(first.x+" is deleted");
+ first= first.link;
+  }
+ }
+ 
+}
+
+
+//4st method
+//in detailing
+package linkedlist;
+import java.util.Scanner;
+public class list {
+
+  static int n;
+// we declare n globally
+ public static void main(String[] args) {
+	  for(;;) {
+		
+		  Scanner sc= new Scanner(System.in);  			
+  		  System.out.println("Enter your choice\n1 push\n2 pop\n3 display");
+           n= sc.nextInt();
+       
+       switch(n) {
+        case 1:
+        	System.out.println("Enter item");
+        	  n= sc.nextInt();
+         methods.push(n); break;
+        case 2: methods.pop(); break;
+        case 3 :methods.show(); break;
+        default:
+        	System.out.println("Invalid choice");
+              break; 
+       }  		
+	  }
+	  
+   }
+		  
+}
+//end main class
+// data will be field here 
+class node{	
+	int x;
+	node link;
+	node(int x){
+	this.x = x;
+	}
+}
+
+//all methods are here 
+class methods{
+ static node first=null;
+
+ static void push(int n){	
+ System.out.println(n+"is inserted");
+ node temp; 
+ temp = new node(n);  	
+  temp.link= first;
+ first= temp;
+}	
+
+ static void show() { 
+ node temp;
+ temp =first;
+ if(temp==null) {
+ System.out.println("Stack empty");
+ return;
+ }
+ System.out.println("items are");
+ while(temp!=null) {
+System.out.print(temp.x+"\t");
+temp= temp.link;	
+}  
+System.out.println(" "); return;
+  }
+	  
+ static void pop() {
+ //node temp;
+// temp =first;
+// here node is like datatype and 
+ //temp is variable name (not actually)
+ if(first==null) {
+ System.out.println("Stack underflow");	 
+   return;
+ }
+ else {
+  System.out.println(first.x+" is deleted");
+ first= first.link;
+ }
+ }
+
+ }
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//OUTPUT
+Enter your choice
+1 push
+2 pop
+3 display
+1
+Enter item
+23
+23is inserted
+Enter your choice
+1 push
+2 pop
+3 display
+1
+Enter item
+56
+56is inserted
+Enter your choice
+1 push
+2 pop
+3 display
+1
+Enter item
+54
+54is inserted
+Enter your choice
+1 push
+2 pop
+3 display
+3
+items are
+54	56	23	 
+Enter your choice
+1 push
+2 pop
+3 display
+2
+54 is deleted
+Enter your choice
+1 push
+2 pop
+3 display
+2
+56 is deleted
+Enter your choice
+1 push
+2 pop
+3 display
+2
+23 is deleted
+Enter your choice
+1 push
+2 pop
+3 display
+2
+Stack underflow
+Enter your choice
+1 push
+2 pop
+3 display
+3
+Stack empty
+Enter your choice
+1 push
+2 pop
+3 display

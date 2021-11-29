@@ -1,0 +1,353 @@
+//FINDING HCF OF MULTIPLE MUMBERS
+package Youtube;
+import java.util.Scanner;
+
+public class hcfOfmultiple {
+  static class Node{
+  int x;
+   Node next;
+    Node(int n){
+    this.x=n;
+	}
+}
+static Node first=null;	
+	static 	Scanner sc= new Scanner(System.in);	
+	public static void main(String[] args) {
+
+  for(;;) {
+ System.out.println("Enter your choice ");
+ System.out.print("\n1 FIND HCF\n2 INPUT"
+ + " NUMBER\n3 DISPLAY"
+ + "\n4 RESET");
+int choice = sc.nextInt(); 	
+switch(choice) {
+case 1:
+FindHcf();break;			
+ case 2:
+ System.out.println("Enter number");
+  int no= sc.nextInt(); 
+  insert(no);break;
+ case 3:
+ display();break;
+ case 4:
+  System.out.println("RESET");
+  first= null; break;
+ default:
+  System.out.println("Invalid choice");
+break;
+  }			
+ }
+}
+static void insert(int no) {
+Node temp = new Node(no);
+temp.next=first;
+first= temp;
+System.out.println();
+return;
+}	
+static void FindHcf()	{
+ if(first==null) {
+ System.out.println("No input");return;
+    }
+ while(true) {
+ if(first.next==null) {
+ System.out.println("HCF IS "+first.x);
+ break;}
+ int a= pop();
+ int b= pop();
+ int c= hcf(a,b);
+ insert(c);
+ }	
+}
+static int hcf(int a,int b){
+	if(a==0) return b;
+	if(b==0) return a;
+	return hcf(b,a%b);
+}
+static int pop() {
+	if(first==null)return 0;
+	Node temp=first;
+	first= temp.next;
+	return temp.x;
+}	
+static void display() {
+	if(first==null) {
+		System.out.println("No input");return;
+	}
+	Node temp = first;
+	while(temp!=null) {
+	System.out.print(temp.x+"\t");	
+	temp=temp.next;	
+	}
+	System.out.println("");return;
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//FINDING HCF OF MULTIPLE NUMBER
+2 METHOD
+package Youtube;
+import java.util.Scanner;
+public class hcfOfmultiple {
+static	Scanner sc= new Scanner(System.in);
+
+public static void main(String[] args) {
+		
+ for(;;) {
+ System.out.println("Enter choice");
+ System.out.println("\n1 FIND HCF\n2 INPUT NUMBERS\n3 DISPLAY NUMBERS\n4 RESET");
+   int choice= sc.nextInt();
+   switch(choice) {
+   case 1:
+   hcf();break;
+   case 2:
+   System.out.println("Enter number");
+   int n= sc.nextInt();            	 
+   insert(n);break;
+   case 3:
+   display();break;
+   case 4:
+   first=null; break;
+   default:
+   System.out.println("Invalid choice");
+   break;
+       }
+  }
+}
+	
+static class Node{
+   int x;
+   Node next;
+   Node(int x){
+   this.x=x;
+ }		
+}	
+
+static Node first=null;		
+static void hcf(){
+   if(first==null) {
+   System.out.println(" No input");	
+   return;
+   }
+ while(true) {    
+ if(first.next==null) {
+ System.out.println(first.x+" is HCF");
+ break;
+      }
+  int a= pop();
+  int b=pop();
+  int c = FindHcf(a,b);
+ insert(c);
+}
+return;	
+}
+
+static int pop(){
+  if(first==null) { return 0;}
+  else {
+  Node temp;
+  temp =first;
+  first= temp.next;
+  int y= temp.x;
+  return y;}
+}
+static void insert(int n){	
+   Node node = new Node(n);
+    node.next=first;
+  first = node;
+  return;
+}	
+
+static void display() {
+  if(first==null) {
+  System.out.println("No input"); return;
+}
+	else {
+	Node temp;
+	temp= first;
+while(temp!=null) {
+System.out.print(temp.x+"\t");
+temp=temp.next;
+ }		
+System.out.println(" ");
+return;
+ }
+	
+}
+static int FindHcf(int a,int b) {
+	 if(a==0) return b;
+	 if(b==0) return a;
+	return FindHcf(b,a%b);
+ }
+
+}
+
+//OUTPUT
+
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+1
+ No input
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+3
+No input
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+4
+RESET
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+2
+Enter number
+45
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+2
+Enter number
+60
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+3
+60	45	 
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+1
+15 is HCF
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+3
+15	 
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+4
+RESET
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+2
+Enter number
+108
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+2180
+Invalid choice
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+3
+108	 
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+2
+Enter number
+180
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+3
+180	108	 
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+1
+36 is HCF
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+4
+RESET
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+1
+ No input
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+3
+No input
+Enter choice
+
+1 FIND HCF
+2 INPUT NUMBERS
+3 DISPLAY NUMBERS
+4 RESET
+
+

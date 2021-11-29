@@ -1,0 +1,232 @@
+//FINDING OF HCF OF MULTIPLE NUMBER
+
+
+
+package Youtube;
+import java.util.Scanner;
+public class hcfOfmultiple {
+static Scanner sc = new Scanner(System.in);
+static class Node{
+int x;
+Node next;
+Node(int x){
+this.x=x;
+}
+}
+	
+ static Node first=null;
+ 
+	public static void main(String[] args) {
+       for(;;) {
+	System.out.println("Enter your choice \n1 insert\n2 display\n3 find hcf"
+	+ "\n4 reset");
+	int choice =sc.nextInt();
+	switch(choice) {
+	case 1: 
+	System.out.println("Enter number ");
+	 choice= sc.nextInt();
+	push(choice); break;
+	case 2:	display();break;
+	case 3:find_hcf();break;
+	case 4: first=null;
+	System.out.println("reset");break;
+		default:
+	System.out.println("Invalid choice"); break;				
+  }	
+ }			
+}
+	
+static void find_hcf() {
+if(first==null) {
+ System.out.println("NO input"); return;	
+ }	
+ while(true) {
+ if(first.next==null) {
+  System.out.println("HCF IS "+ first.x);break;	
+  }
+ int a= pop();
+ int b= pop();
+ int c= hcf(a,b);
+ push(c);	
+	}	
+}
+
+static int hcf(int a,int b) {
+if(a==0) return b;
+if(b==0) return a;
+return  hcf(b,a%b);	
+}
+
+static int pop() {
+if(first==null) {
+return 0; 	
+ }
+Node temp=first;
+first=first.next;
+return temp.x;	
+}
+
+ static void push(int a) {
+ Node node = new Node(a);
+  node.next=first;
+ first= node; return;
+ }
+ 
+ static void display() {
+ if(first==null) {
+ System.out.println("NO input"); return;	
+ }
+  Node temp= first;
+ while(temp!=null) {
+	 
+ System.out.print(temp.x+"\t");
+temp=temp.next; 
+ }
+ System.out.println();
+ 
+ }
+}
+
+
+
+
+
+
+/OUTPUT
+
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+2
+NO input
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+3
+NO input
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+4
+reset
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+1
+Enter number 
+108
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+3
+HCF IS 108
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+1
+Enter number 
+180
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+2
+180	108	
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+3
+HCF IS 36
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+2
+36	
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+1
+Enter number 
+27
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+2
+27	36	
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+3
+HCF IS 9
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+1
+Enter number 
+12
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+2
+12	9	
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+3
+HCF IS 3
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+4
+reset
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+2
+NO input
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+3
+NO input
+Enter your choice 
+1 insert
+2 display
+3 find hcf
+4 reset
+

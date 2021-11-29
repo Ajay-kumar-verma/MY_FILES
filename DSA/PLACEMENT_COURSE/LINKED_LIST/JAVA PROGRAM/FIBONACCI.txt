@@ -1,0 +1,108 @@
+
+// fibonacci series
+
+package Fibonacci;
+import java.util.Scanner;
+public class fibonacci {
+	static int n;
+	public static void main(String[] args) {
+		for(;;) {
+		Scanner sc= new Scanner(System.in);	
+		System.out.println("Enter valeu to get fibonacci series ");
+	     n=  sc.nextInt();	
+		  if(n==0)continue;
+	      fibo();
+		   
+     	}	
+	}
+
+	static void fibo() {
+		
+		  if(n==1) {System.out.println("0");}
+		    
+		  int a=0,b=1;
+		  if(n==2){
+		   System.out.print(a+"\t"+b+"\t");
+	                          
+		  }
+		   for(int i=3;i<=n;i++) {
+	    	
+			   System.out.print(a+b+"\t");
+	    	b=a+b;
+	    	a=b-a;
+	    }
+		   return;
+	}
+	
+	   /*
+	    * for(int i=3;i<=n;i++) {
+       int num= a+b;	
+		   System.out.print(num+"\t");
+ 	a=b;
+ 	b=num;
+ }
+	    * 
+	    */
+	
+	
+}
+
+
+
+
+
+
+
+//FIBONACCI
+
+
+
+
+
+package Fibonacci;
+import java.util.Scanner;
+public class fibonacci {
+
+
+	
+	public static void main(String[] args) {
+		
+	for(;;) {
+		
+		Scanner sc= new Scanner(System.in);	
+		System.out.println("Enter valeu to get fibonacci series ");
+         	    int n=  sc.nextInt();	
+		  if(n==0)continue;
+		  if(n==1) {System.out.println("0");continue;}
+	    
+		  int a=0,b=1;
+		   System.out.print(a+"\t"+b+"\t");
+	    
+		   for(int i=3;i<=n;i++) {
+	    	
+			   System.out.print(a+b+"\t");
+	    	b=a+b;
+	    	a=b-a;
+	    }
+		   /*
+		    * for(int i=3;i<=n;i++) {
+	          int num= a+b;	
+			   System.out.print(num+"\t");
+	    	a=b;
+	    	b=num;
+	    }
+		    * 
+		    */
+		    
+	    
+		   System.out.println();
+	    
+		
+	}
+		
+		
+		
+		
+	}
+
+}

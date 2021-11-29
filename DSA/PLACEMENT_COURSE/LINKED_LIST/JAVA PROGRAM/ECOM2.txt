@@ -1,0 +1,495 @@
+//JAVA PROGRAM ECOM
+
+package ecomerce;
+import java.util.Scanner;
+public class ecom {
+public static void main(String[] args) {
+	for(;;) {
+System.out.println("Menu\n1 Order product"
+ 		+ "\n2 Customer cdetail\n3 Update\n4 Update detail");	
+Scanner sc = new Scanner(System.in);
+String choice = sc.next();
+ switch(choice) {
+ case "1":mthd.order(); break;
+ case "2":mthd.cdetail();break;
+ case "3":mthd.update(); break;
+ case "4":mthd.udetail();break;
+ default:
+	System.out.println("Invalid choice");
+	break;
+  }
+  }
+}
+//END OF MAIN BLOCK
+}
+//END OF ECOM CLASS 
+class mthd{ 
+	static  Scanner sc = new Scanner(System.in);
+	static Node head=new Node(1,"1",1);
+	static dnode dhd= new dnode("1","1","1",1,0);
+	static uNode uhd= new uNode(1,"1",1);
+	static {
+		Node temp= new Node(100,"A",100);
+		head.next=temp;	
+		}	
+
+	
+  static void update(){
+  uNode utemp= new uNode(0,"no update",0);
+  utemp.next=uhd.next;
+  uhd.next=utemp;
+			
+		System.out.println("Enter product name.");
+		String pnam= sc.next();
+		utemp.pnam=pnam;
+		System.out.println("Enter quanties.");
+		int pno=0;
+		pno=sc.nextInt();
+		utemp.no=pno;
+    	System.out.println("Enter price in $.");
+	    int prc = sc.nextInt();
+       utemp.prc=prc;
+	    Node temp= head.next,prev=head;
+
+	  while(temp!=null){
+	   if(pnam.equals(temp.pnam)) {
+		    if(pno==0) {
+		   prev.next=temp.next;
+		   return;
+		    }   	   
+		   temp.no=pno;
+			temp.prc=prc;
+		    return;
+		  }
+		prev=temp;	 
+	   temp=temp.next;
+	   }
+	 
+	  if(pno!=0) {
+		  System.out.println("NOT UPDATED");
+	  }
+	  temp= new Node(pno,pnam,prc);
+		temp.next=head.next;
+		head.next=temp;
+		 return;
+		 }
+
+
+  
+  static void udetail() {
+		uNode utmp=uhd.next;
+	    if(utmp==null){ 
+		System.out.println("NO HISTORY");
+		return;
+	  }
+	  while(utmp!=null) {
+	  System.out.println("Name of product "+utmp.pnam);
+	  System.out.println("no of product "+utmp.no);
+	  System.out.println("price of each product "+utmp.prc);
+	  System.out.println("---------------------------------"); 
+   utmp=utmp.next; 
+  }
+ }
+    
+    static void cdetail() {
+ 	dnode tmp=dhd.next;
+    if(tmp==null){ 
+	System.out.println("NO HISTORY");
+	return;
+  }
+
+  while(tmp!=null) {
+  System.out.println("Name of customer "+tmp.cnam);
+  System.out.println("Searched product "+tmp.spnam);
+  System.out.println("selected product "+tmp.pnam);
+  System.out.println("No of selected product "+tmp.no);
+
+  if(tmp.success==1) {
+	 System.out.println(" BOUGHT ! ");
+   }
+  else {
+	System.out.println("DID NOT BUY ! ");	
+   }
+
+  System.out.println("---------------------------------");
+  tmp =tmp.next;
+}
+  } 
+  
+
+  
+ 
+static void order(){
+	 Node temp=head.next;
+	 if(temp==null){
+		 System.out.println("Sorry stock Empty"); return;
+	 }
+
+	 System.out.println("for cancellation Enter -1, any time");
+	 
+	 System.out.println("Please Enter your name ");
+		String name= sc.next();
+	    String pnam=" ";
+	    String sp=" ";
+	    int no=0; 
+		
+		//storing history
+		  dnode tmp= new dnode("Someone",sp,pnam,no,0); 
+		  tmp.next=dhd.next;
+		  dhd.next=tmp;
+	 	if(name.equals("-1")) return;
+		tmp.cnam=name;
+	   	
+	System.out.println("Choose your product:\nName\tquanties\tprice\tName\tquanties\tprice");
+
+	 while(temp!=null){
+	      System.out.print(temp.pnam+"\t"+temp.no+"\t\t"+"$"+temp.prc+"\t");
+		 temp=temp.next;
+	    if(temp==null)break;
+	     System.out.print(temp.pnam+"\t"+temp.no+"\t\t"+"$"+temp.prc);
+	     temp=temp.next;
+	    System.out.println();
+	  }
+	 
+	 
+	 System.out.println();
+	 
+
+	 int nofp=0;
+	 int price=0;
+	  //search product
+	 
+	 while(true){
+		 System.out.println("Product name:");
+		 pnam=sc.next();  
+		 if(pnam.equals("-1"))return;
+		 tmp.spnam=tmp.spnam+" "+pnam;
+		   temp=head;
+		   while(temp!=null) {
+			   if(pnam.equals(temp.pnam)) {
+				   nofp=temp.no;
+				   price=temp.prc;
+				   break;
+			   }
+			 temp=temp.next;
+	   }
+	   if(temp!=null){
+	    break;  
+	   }
+	   System.out.println("soory :( "+pnam+ " is not in stock"); 	  
+	 }
+	    
+	 tmp.pnam=pnam;
+	 
+	 
+	   while(true){
+	     System.out.println("Enter Quanty");
+		  no= sc.nextInt();
+	    if(no==-1) return;    
+		tmp.no=no;
+	    if(0<no && no<=nofp) {
+		  	   break;
+		   }
+		   System.out.println("please order less than or equals to "+nofp);  
+	   }
+	   
+	   
+	   System.out.println("Just pay $"+no*price+ " for " +no+ " "+pnam);
+	   System.out.println("If you want to buy type BUY");
+	   String n= sc.next();
+	   
+	   if(n.equals("-1")) return;
+	   
+	   if(!(n.equals("BUY"))) return;
+
+	            
+	      temp=head;
+	   Node prv=head;
+	   while(temp!=null){
+		   prv=temp;
+			 temp=temp.next;
+		   if(pnam.equals(temp.pnam)){
+			  if(nofp==no) {
+	           prv.next=temp.next;	
+				}
+			   temp.no=nofp-no;
+			  break;
+		   }
+	   }
+	   System.out.println("Thank you "+name+":) Visit again ");
+	tmp.success=1;  
+ }
+
+}
+
+
+
+
+
+class uNode{
+	 int no;
+	 String pnam;
+	 int prc;
+	 uNode(int x,String name,int prc){
+	 this.no=x;
+	 this.pnam=name;
+	 this.prc=prc;
+	 }
+	 uNode next=null;
+	 }
+
+
+//this node may be inside main class 
+//or outside of main class
+
+
+class dnode{
+	String cnam,spnam,pnam;
+	int no;
+	int success=0;
+  dnode(String name,String prodnam,String buyprod,int no,int suc){
+	this.cnam=name;
+    this.spnam=prodnam;
+	this.pnam=buyprod;
+	this.no=no;
+	this.success=suc;
+  }	 
+dnode next;	
+//pnam product name or buy product name
+//cname customer name
+//no of product buy or present
+}
+
+
+class Node{
+ int no;
+ String pnam;
+ int prc;
+ Node(int x,String name,int prc){
+ this.no=x;
+ this.pnam=name;
+ this.prc=prc;
+ }
+ Node next=null;
+ }
+
+
+
+
+
+
+
+
+
+//OUTPUT
+Menu
+1 Order product
+2 Customer cdetail
+3 Update
+4 Update detail
+2
+NO HISTORY
+Menu
+1 Order product
+2 Customer cdetail
+3 Update
+4 Update detail
+4
+NO HISTORY
+Menu
+1 Order product
+2 Customer cdetail
+3 Update
+4 Update detail
+1
+for cancellation Enter -1, any time
+Please Enter your name 
+rahul
+Choose your product:
+Name	quanties	price	Name	quanties	price
+A	100		$100	
+Product name:
+s
+soory :( s is not in stock
+Product name:
+s
+soory :( s is not in stock
+Product name:
+d
+soory :( d is not in stock
+Product name:
+s
+soory :( s is not in stock
+Product name:
+A
+Enter Quanty
+12
+Just pay $1200 for 12 A
+If you want to buy type BUY
+BUY
+Thank you rahul:) Visit again 
+Menu
+1 Order product
+2 Customer cdetail
+3 Update
+4 Update detail
+2
+Name of customer rahul
+Searched product   s s d s A
+selected product A
+No of selected product 12
+ BOUGHT ! 
+---------------------------------
+Menu
+1 Order product
+2 Customer cdetail
+3 Update
+4 Update detail
+4
+NO HISTORY
+Menu
+1 Order product
+2 Customer cdetail
+3 Update
+4 Update detail
+3
+Enter product name.
+A
+Enter quanties.
+1234
+Enter price in $.
+1233
+Menu
+1 Order product
+2 Customer cdetail
+3 Update
+4 Update detail
+1
+for cancellation Enter -1, any time
+Please Enter your name 
+vijay
+Choose your product:
+Name	quanties	price	Name	quanties	price
+A	1234		$1233	
+Product name:
+2
+soory :( 2 is not in stock
+Product name:
+-1
+Menu
+1 Order product
+2 Customer cdetail
+3 Update
+4 Update detail
+2
+Name of customer vijay
+Searched product   2
+selected product  
+No of selected product 0
+DID NOT BUY ! 
+---------------------------------
+Name of customer rahul
+Searched product   s s d s A
+selected product A
+No of selected product 12
+ BOUGHT ! 
+---------------------------------
+Menu
+1 Order product
+2 Customer cdetail
+3 Update
+4 Update detail
+4
+Name of product A
+no of product 1234
+price of each product 1233
+---------------------------------
+Menu
+1 Order product
+2 Customer cdetail
+3 Update
+4 Update detail
+3
+Enter product name.
+B
+Enter quanties.
+34
+Enter price in $.
+45
+NOT UPDATED
+Menu
+1 Order product
+2 Customer cdetail
+3 Update
+4 Update detail
+1
+for cancellation Enter -1, any time
+Please Enter your name 
+YADAV
+Choose your product:
+Name	quanties	price	Name	quanties	price
+B	34		$45	A	1234		$1233
+
+Product name:
+K
+soory :( K is not in stock
+Product name:
+D
+soory :( D is not in stock
+Product name:
+G
+soory :( G is not in stock
+Product name:
+T
+soory :( T is not in stock
+Product name:
+B
+Enter Quanty
+2
+Just pay $90 for 2 B
+If you want to buy type BUY
+BUY
+Thank you YADAV:) Visit again 
+Menu
+1 Order product
+2 Customer cdetail
+3 Update
+4 Update detail
+2
+Name of customer YADAV
+Searched product   K D G T B
+selected product B
+No of selected product 2
+ BOUGHT ! 
+---------------------------------
+Name of customer vijay
+Searched product   2
+selected product  
+No of selected product 0
+DID NOT BUY ! 
+---------------------------------
+Name of customer rahul
+Searched product   s s d s A
+selected product A
+No of selected product 12
+ BOUGHT ! 
+---------------------------------
+Menu
+1 Order product
+2 Customer cdetail
+3 Update
+4 Update detail
+4
+Name of product B
+no of product 34
+price of each product 45
+---------------------------------
+Name of product A
+no of product 1234
+price of each product 1233
+---------------------------------
+Menu
+1 Order product
+2 Customer cdetail
+3 Update
+4 Update detail

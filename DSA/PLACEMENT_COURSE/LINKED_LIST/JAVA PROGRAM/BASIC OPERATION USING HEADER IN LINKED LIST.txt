@@ -1,0 +1,300 @@
+//JAVA PROGRAM FOR
+//BASIC OPERATION IN LINKED LIST
+//USING HEADER 
+
+
+
+package HEADERINLINKEDLIST;
+import java.util.Scanner;
+public class list {
+static class Node{
+ int x;
+ Node next;
+ Node(int x){
+ this.x=x;
+ }
+}
+static Node head=new Node(0);
+	
+public static void main(String []args) {
+ Scanner sc =new Scanner(System.in);
+ for(;;) {
+ System.out.println("Enter your choice\n1 insert\n2 delete\n3 display");
+int ch= sc.nextInt();
+ switch(ch) {
+ case 1:
+ System.out.println(" At where to insert");
+int m= sc.nextInt();
+ System.out.println(" Enter number");
+ int n= sc.nextInt();
+  insert(m,n);break;
+ case 2:
+ System.out.println(" Enter number");
+  n= sc.nextInt();
+    delete(n);break;
+  case 3:
+ display(); break;
+    default:
+  System.out.println("Invalid choice");
+   break;   
+  }
+ }
+}
+static void display() {
+ if(head.next==null) { 
+ System.out.println("NO number");
+return;
+ }
+ System.out.println("Numbers are:");
+Node temp=head.next;
+while(temp!=null) {
+ System.out.print(temp.x+" \t");
+ temp = temp.next;
+ }
+System.out.println(" ");
+}
+static void delete(int n) {
+if(head.next==null) { 
+ System.out.println("NO number");
+}
+	
+else {
+ Node prev=head, temp = head.next;	
+ while(temp!=null) {
+ if(temp.x==n)break;
+ else {
+ prev=temp;
+ temp=temp.next;    
+   }	
+ }
+  if(temp==null) {
+ System.out.println(n+" is not there");
+ return;}
+  
+  prev.next=temp.next;
+  System.out.println(n+" is deleted");	  
+  }  
+}		
+static void insert(int m ,int n) {
+ Node node = new Node(n);
+ if(head.next==null){
+ head.next=node;
+ }
+ else {
+ Node prev= head,temp=head.next;
+  while(temp!=null) {
+  if(temp.x==m) 
+	break;
+ prev= temp;
+ temp = temp.next;
+ }
+ if(temp==null)
+ System.out.println("Inserted at last");
+ prev.next=node;
+ node.next=temp;	
+ }
+ System.out.println(n+" is inserted ");
+ return;
+}
+
+/*
+
+static void delete(int n) {
+if(head.next==null)
+	System.out.println("NO number"); return;
+	
+Node prev=head, temp = head.next;
+ while(temp!=null) {
+ 	if(temp.x==n)break;
+	prev=temp;
+	temp=temp.next;    
+   }
+  if(temp==null)
+  System.out.println(n+" is not there");return;
+
+  prev.next=temp.next;
+  System.out.println(n+" is deleted");	  
+  }  
+}	
+*/	
+
+}
+
+
+
+//END
+//OUTPUT
+
+Enter your choice
+1 insert
+2 delete
+3 display
+1
+ At where to insert
+1
+ Enter number
+34
+34 is inserted 
+Enter your choice
+1 insert
+2 delete
+3 display
+1
+ At where to insert
+1
+ Enter number
+22
+Inserted at last
+22 is inserted 
+Enter your choice
+1 insert
+2 delete
+3 display
+1
+ At where to insert
+22
+ Enter number
+2
+2 is inserted 
+Enter your choice
+1 insert
+2 delete
+3 display
+3
+Numbers are:
+34 	2 	22 	 
+Enter your choice
+1 insert
+2 delete
+3 display
+1
+ At where to insert
+34
+ Enter number
+12
+12 is inserted 
+Enter your choice
+1 insert
+2 delete
+3 display
+3
+Numbers are:
+12 	34 	2 	22 	 
+Enter your choice
+1 insert
+2 delete
+3 display
+1
+ At where to insert
+2
+ Enter number
+1234
+1234 is inserted 
+Enter your choice
+1 insert
+2 delete
+3 display
+3
+Numbers are:
+12 	34 	1234 	2 	22 	 
+Enter your choice
+1 insert
+2 delete
+3 display
+2
+ Enter number
+22
+22 is deleted
+Enter your choice
+1 insert
+2 delete
+3 display
+3
+Numbers are:
+12 	34 	1234 	2 	 
+Enter your choice
+1 insert
+2 delete
+3 display
+2
+ Enter number
+1234
+1234 is deleted
+Enter your choice
+1 insert
+2 delete
+3 display
+3
+Numbers are:
+12 	34 	2 	 
+Enter your choice
+1 insert
+2 delete
+3 display
+2
+ Enter number
+12
+12 is deleted
+Enter your choice
+1 insert
+2 delete
+3 display
+3
+Numbers are:
+34 	2 	 
+Enter your choice
+1 insert
+2 delete
+3 display
+123
+Invalid choice
+Enter your choice
+1 insert
+2 delete
+3 display
+3
+Numbers are:
+34 	2 	 
+Enter your choice
+1 insert
+2 delete
+3 display
+2
+ Enter number
+111
+111 is not there
+Enter your choice
+1 insert
+2 delete
+3 display
+3
+Numbers are:
+34 	2 	 
+Enter your choice
+1 insert
+2 delete
+3 display
+2
+ Enter number
+2
+2 is deleted
+Enter your choice
+1 insert
+2 delete
+3 display
+2
+ Enter number
+34
+34 is deleted
+Enter your choice
+1 insert
+2 delete
+3 display
+2
+ Enter number
+2
+NO number
+Enter your choice
+1 insert
+2 delete
+3 display

@@ -1,0 +1,91 @@
+//JAVA PROGRAM FOR CHECKING NUMBWER 
+// WHETHER IT IS EVEN ODD OR PRIME NUMBER
+package numcheck;
+import java.util.Scanner;
+public class checknum {
+ static int n,i;
+public static void main(String args[]) {
+	
+for(;;){
+Scanner sc= new Scanner(System.in);
+System.out.println("Enter number");
+	n= sc.nextInt();
+	if(n<0)continue;
+	System.out.println("Enter choice \n1 even\n2 odd \n3 prime");
+	i =sc.nextInt();
+	
+	switch(i) {
+	case 1:even();break;
+	case 2:odd();break;
+	case 3:prime();break;
+	default:System.out.println();break;
+	}
+}	
+
+}	
+
+
+static void even() {
+	
+if(n%2==0) {
+System.out.println(n+"is even number");
+}
+ else {
+ System.out.println(" Not A EVEN NUMBER");
+ }
+
+ return;
+}
+
+static void odd() {
+	if(n%2!=0) {
+ System.out.println(n+"is a an odd number");	
+ }
+ else
+ System.out.println("NOT A ODD NUMBER");
+return;
+}
+
+static void prime() {
+	for(i=2;i<n;i++) {
+	if(n%i==0) {
+	System.out.println(n + "is not a prime numebr ");
+	return;
+ 	}
+  else {continue;}
+ }
+
+  System.out.println(n+"is a prime numner");
+		
+ }
+
+}
+	
+
+
+//OUTPUT
+Enter number
+5
+Enter choice 
+1 even
+2 odd 
+3 prime
+1
+ Not A EVEN NUMBER
+Enter number
+5
+Enter choice 
+1 even
+2 odd 
+3 prime
+2
+5is a an odd number
+Enter number
+5
+Enter choice 
+1 even
+2 odd 
+3 prime
+3
+5is a prime numner
+Enter number

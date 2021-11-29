@@ -1,0 +1,245 @@
+//JAVA PROGRAM 
+// BASIC OPERATION IN LINKED LIST
+
+
+package linkedlist;
+import java.util.Scanner;
+public class circular {
+static class Node{
+	int x;
+	Node next;
+	Node(int x){
+		this.x=x;
+	}
+}	
+static Node first= null;
+static Scanner sc = new Scanner(System.in);
+
+     public static void main(String [] args) {
+
+	for(;;) {
+		
+		System.out.println("Enter your choice");
+		System.out.println("1 insert_front\n2 delete_front\n3 insert_rear"
+				+ "\n4 delete_rear\n5 display");
+		int choice = sc.nextInt();
+		
+		switch(choice) {
+		case 1:
+		first=insert_front(first);
+		break;
+		case 2:
+		first=delete_front(first);
+		break;
+         	case 3:
+                first=insert_rear(first);	
+		break;
+	        case 4:
+                first= delete_rear(first);
+		break;
+		case 5:
+			display(first);break;
+		default:
+			System.out.println("Invalid choice");
+			break;
+		}
+		
+	}			
+}
+ 
+     
+static Node delete_rear(Node first) {
+    	 if(first==null) {
+    	 System.out.println("No item in list");
+    	 return null;
+    	 }
+     
+      Node prev=null, cur=first;	
+      if(cur.next==null) {
+    	 return null;
+        }
+  
+      while(cur.next!=null) {
+    	  prev=cur;
+    	  cur=cur.next;
+      }
+      prev.next=null;
+      return first;
+}     
+ static void display(Node first) {
+	 if(first==null) {
+	 System.out.println("No item in list");
+	return ;
+	}
+	 
+	Node temp=first;	 
+	while(temp!=null) {
+
+	System.out.print(temp.x+"\t");
+	
+	temp = temp.next;
+   }
+
+  System.out.println("");
+ }   
+
+ static Node insert_front(Node first) {
+	System.out.println("Enter item to insert");
+    int n= sc.nextInt();	
+    Node temp = new Node(n);
+    temp.next=first;   
+    return temp;
+	     	    
+	}
+
+ static Node delete_front(Node first) {
+	   if(first==null) {
+	   System.out.println("No item in list");return null;
+	   }
+	   return first.next;
+   	 } 
+  static Node insert_rear(Node first) {
+	 
+	System.out.println("Enter item to insert");
+	int n= sc.nextInt();	
+	Node temp = new Node(n);	    
+	    if(first==null) {	
+	    	return temp;
+	    }
+	Node  cur=first;
+	while(cur.next!=null) {
+		cur= cur.next;
+	}
+	cur.next=temp; 
+	 return first;
+ }
+ 
+}
+
+
+
+
+
+
+
+
+
+//OUTPUT
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+1
+Enter item to insert
+23
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+1
+Enter item to insert
+2
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+2	23	
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+3
+Enter item to insert
+45
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+3
+Enter item to insert
+67
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+2	23	45	67	
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+4
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+2	23	45	
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+4
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+2	23	
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+2
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+23	
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+2
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display
+5
+No item in list
+Enter your choice
+1 insert_front
+2 delete_front
+3 insert_rear
+4 delete_rear
+5 display

@@ -1,0 +1,406 @@
+
+/*
+STACK WITH USING OTHER CLASS
+
+START  
+*/
+//FIRST
+
+
+package STACK;
+import java.util.Scanner;
+public class Stack {
+  
+  
+  
+  public static void main(String[] args) {	
+
+	                fn.read();
+	  
+	  
+	                         for(;;) {
+			                System.out.println("Enter your choice\n\n 1 push\t2 pop\t 3 display");
+	                       Scanner sc = new Scanner(System.in);
+			                int ch = sc.nextInt();
+		
+	                   	switch(ch) {
+	                	case 1:
+			               fn.push(); break;
+	                	case 2:
+		                   fn.pop();break;
+		                case 3:
+		             	   fn.display(); break;
+			
+		                default:
+		               	System.out.println("Invalid correct choice");
+			
+		                          }
+			                          }
+	
+	                    }
+
+			}
+
+
+class fn{
+
+	 static int x[]=new int[6];
+	  
+	static  int n;	 
+	  
+	 static int top=-1;
+	
+	static Scanner sc =new Scanner(System.in);
+		
+	  
+	  
+  static void read() {
+		System.out.println("Enter no of elements to be entered");
+	
+		 
+		n = sc.nextInt();
+			
+		for(int i=0;i<n;i++){
+			top++;
+	
+			
+			x[i]=sc.nextInt();	
+				
+
+		}
+  }
+	  
+	  
+	  
+	  
+static void pop() {
+
+		if(top==-1)
+		{
+			System.out.println("Stack under flow"); 
+	return;
+		}
+		else {
+			System.out.println(x[top--]+"Element is popped up");
+				
+				return;		
+		}
+	}
+	
+	
+	
+ static void push(){
+		
+		if(top==6) {
+			
+			System.out.println("Stack overflow");
+            return;
+		}
+		else {
+			
+			
+			x[++top] = sc.nextInt();
+
+			System.out.println(x[top]+"is pushed in Stack");
+	      return;		
+		}
+	
+	}
+	
+	
+ 
+ 
+	static void display() {
+		
+		if(top==-1)
+			{System.out.println("Stack under flow"); 
+		return;
+			}
+		else {
+
+			for(int j=top;j>=0;j--) {
+
+			System.out.print(x[j]+"\t");
+			
+		}
+		System.out.println();	return;
+		}
+
+	}	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//END OF CODE
+ 
+/*
+IN STACK SCANNER IS DECLARED WITH STATIC KEYWORD
+
+STACK WITH STATIC KEWORD
+
+
+*/
+//SECODND
+
+
+
+package STACK;
+import java.util.Scanner;
+public class Stack {
+
+  static int x[]=new int[6];
+  static int n;	 
+  static int top=-1;
+  
+
+  static Scanner sc =new Scanner(System.in);
+  
+	public static void main(String[] args) {	
+		 
+ 
+	System.out.println("Enter no of elements to be entered");
+    n = sc.nextInt();
+		
+	for(int i=0;i<n;i++){
+		top++;
+	x[i]=sc.nextInt();	
+			
+	}
+	
+	for(;;) {
+		
+
+		System.out.println("Enter your choice\n\n 1 push\t2 pop\t 3 display");
+		int ch = sc.nextInt();
+		
+		switch(ch) {
+		case 1:
+			push(); break;
+		case 2:
+		pop();break;
+		case 3:
+			display(); break;
+			
+		default:
+			System.out.println("Invalid correct choice");
+			
+		}
+		
+		
+		
+	}
+
+	
+   
+	
+	}
+
+	
+	
+	static void pop() {
+		
+		if(top==-1)
+		{
+			System.out.println("Stack under flow"); 
+	return;
+		}
+		else {
+			System.out.println(x[top--]+"Element is popped up");
+				
+				return;
+			
+			
+		}
+		
+		
+	}
+	
+	
+	
+	static void push(){
+		
+		if(top==5) {
+			
+			System.out.println("Stack overflow");
+            return;
+		}
+		else {
+			
+			x[++top] = sc.nextInt();
+
+			System.out.println(x[top]+"is pushed in Stack");
+	      return;		
+		}
+	
+	}
+	
+	
+	static void display() {
+		
+		if(top==-1)
+			{System.out.println("Stack under flow"); 
+		return;
+			}
+		else {
+
+			for(int j=top;j>=0;j--) {
+
+			System.out.print(x[j]+"\t");
+			
+		}
+		System.out.println();	return;
+		}
+
+	}
+
+	
+}
+
+
+/*
+ STACK SAME PROGRAM BUT DIFFERENT WAY TO WRITE
+HERE SACNNER IS NOT DECLARED WITH STATIC KEYWORD
+
+ */
+//THIRD
+
+package STACK;
+import java.util.Scanner;
+public class Stack {
+
+  static int x[]=new int[6];
+  static int n;	 
+  static int top=-1;
+  
+
+   
+  
+	public static void main(String[] args) {	
+		 
+		Scanner sc =new Scanner(System.in);
+		
+	System.out.println("Enter no of elements to be entered");
+    n = sc.nextInt();
+		
+	for(int i=0;i<n;i++){
+		top++;
+	x[i]=sc.nextInt();	
+			
+	}
+	
+	for(;;) {
+		
+
+		System.out.println("Enter your choice\n\n 1 push\t2 pop\t 3 display");
+		int ch = sc.nextInt();
+		
+		switch(ch) {
+		case 1:
+			push(); break;
+		case 2:
+		pop();break;
+		case 3:
+			display(); break;
+			
+		default:
+			System.out.println("Invalid correct choice");
+			
+		}
+		
+		
+		
+	}
+
+	
+   
+	
+	}
+
+	
+	
+	static void pop() {
+		
+		if(top==-1)
+		{
+			System.out.println("Stack under flow"); 
+	return;
+		}
+		else {
+			System.out.println(x[top--]+"Element is popped up");
+				
+				return;
+			
+			
+		}
+		
+		
+	}
+	
+	
+	
+	static void push(){
+		
+		if(top==5) {
+			
+			System.out.println("Stack overflow");
+            return;
+		}
+		else {
+			Scanner sc =new Scanner(System.in);	
+			x[++top] = sc.nextInt();
+
+			System.out.println(x[top]+"is pushed in Stack");
+	      return;		
+		}
+	
+	}
+	
+	
+	static void display() {
+		
+		if(top==-1)
+			{System.out.println("Stack under flow"); 
+		return;
+			}
+		else {
+
+			for(int j=top;j>=0;j--) {
+
+			System.out.print(x[j]+"\t");
+			
+		}
+		System.out.println();	return;
+		}
+
+	}
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

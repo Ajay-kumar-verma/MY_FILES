@@ -1,0 +1,321 @@
+
+//1st in detailing
+//its output is below
+
+
+package linkedlist;
+import java.util.Scanner;
+public class list {
+
+  static int n;
+// we declare n globally
+ public static void main(String[] args) {
+	  for(;;) {
+		
+		  Scanner sc= new Scanner(System.in);  			
+  		  System.out.println("Enter your choice\n1 push\n2 pop\n3 display");
+          n= sc.nextInt();
+       
+       switch(n) {
+        case 1:
+        	System.out.println("Enter item");
+        	  n= sc.nextInt();
+         methods.push(n); break;
+        case 2:methods.pop(); break;
+        case 3:methods.show(); break;
+        default:
+        	System.out.println("Invalid choice");
+              break; 
+       }  		
+	  }
+	  
+   }
+		  
+}
+//end main class
+
+// data will be field here 
+class node{	
+	int x;
+	node link;
+	node(int x){
+	this.x = x;
+	}
+}
+
+//all methods are here 
+ class methods{
+ static node first=null;
+
+ static void push(int n){	
+ System.out.println(n+"is inserted");
+ node temp,head;
+ temp = new node(n);  	
+
+ if(first==null) {
+	 first=temp;
+	 return;
+ }
+ head=first;
+ while(head.link!=null){
+	head=head.link;
+ }
+ 
+ head.link=temp;
+ return;
+ 
+}	
+
+static void show() { 
+ node temp;
+ temp =first;
+ if(temp==null) {
+ System.out.println("Stack empty");
+ return;
+ }
+ System.out.println("items are");
+ while(temp!=null) {
+System.out.print(temp.x+"\t");
+temp= temp.link;	
+}  
+System.out.println(" "); return;
+  }
+	  
+ static void pop() {
+ //if empty then
+    if(first==null){
+  System.out.println("Stack underflow");	 
+   return;
+ }
+    
+ else {
+   node head,prev;
+   head= first;
+   prev=first;
+   // here node is like datatype and 
+   //first and prev are variables name of node type
+  // if one node is there then
+   if(head.link==null) {
+	   System.out.println(head.x+" is deleted");  
+	  first=null;
+   }
+   //otherwise
+   //it will find last last node 
+   //make it null
+   
+   else {
+   while(head.link!=null) {
+   prev=head;
+   head=head.link;
+   }
+      
+//here,last node  is  head (bcz no next node)
+  //here clearly visible 
+// prev.link==head
+     System.out.println(head.x+" is deleted");
+   
+   prev.link=null;
+ //even through we have to replace prev.link with null
+// we can't replace head with null      
+  }  
+   }
+  }
+
+ }
+
+
+
+
+//END
+-----------------------------------------------
+
+
+
+
+
+
+/2ND METHOD
+
+package linkedlist;
+import java.util.Scanner;
+public class list {
+
+  static int n;
+// we declare n globally
+ public static void main(String[] args) {
+  for(;;) {
+
+  Scanner sc= new Scanner(System.in);  			
+  System.out.println("Enter your choice\n1 push\n2 pop\n3 display");
+   n= sc.nextInt();
+      
+   switch(n) {
+    case 1:
+   System.out.println("Enter item");
+      n= sc.nextInt();
+     methods.push(n); break;
+     case 2:methods.pop(); break;
+     case 3:methods.show(); break;
+     default:
+        	System.out.println("Invalid choice");
+              break; 
+   }  		
+ }
+ 
+  }
+		  
+}
+//end main class
+
+// data will be field here 
+class node{	
+	int x;
+	node link;
+	node(int x){
+	this.x = x;
+	}
+}
+
+//all methods are here 
+ class methods{
+ static node first=null;
+
+ static void push(int n){	
+ System.out.println(n+"is inserted");
+ node temp,head;
+ temp = new node(n);  	
+
+ if(first==null) {
+	 first=temp;
+	 return;
+ }
+ head=first;
+ while(head.link!=null){
+	head=head.link;
+ }
+ 
+ head.link=temp;
+ return;
+ 
+}	
+
+static void show() { 
+ node temp;
+ temp =first;
+ if(temp==null) {
+ System.out.println("Stack empty");
+ return;
+ }
+ System.out.println("items are");
+ while(temp!=null) {
+System.out.print(temp.x+"\t");
+temp= temp.link;	
+}  
+System.out.println(" "); return;
+  }
+	  
+ static void pop() {
+ //node temp;
+ // temp =first;
+ // here node is like datatype and 
+ //temp is variable name (not actually)
+	 
+ if(first==null) {
+ System.out.println("Stack underflow");	 
+   return;
+ }
+ else {
+   node head,prev;
+   head= first;
+   prev=first;
+   if(head.link==null) {
+   System.out.println(head.x+" is deleted");  
+  first=null;
+   }else {
+
+     while(head.link!=null) {
+   prev=head;
+   head=head.link;
+   }
+   System.out.println(head.x+" is deleted");
+  
+   prev.link=null;
+	 
+
+   }  
+   
+ 
+ 
+  }
+ }
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//OUTPUT
+Enter your choice
+1 push
+2 pop
+3 display
+1
+Enter item
+23
+23is inserted
+Enter your choice
+1 push
+2 pop
+3 display
+1
+Enter item
+45
+45is inserted
+Enter your choice
+1 push
+2 pop
+3 display
+3
+items are
+23	45	 
+Enter your choice
+1 push
+2 pop
+3 display
+2
+45 is deleted
+Enter your choice
+1 push
+2 pop
+3 display
+2
+23 is deleted
+Enter your choice
+1 push
+2 pop
+3 display
+2
+Stack underflow
+Enter your choice
+1 push
+2 pop
+3 display
+3
+Stack empty
+Enter your choice
+1 push
+2 pop
+3 display

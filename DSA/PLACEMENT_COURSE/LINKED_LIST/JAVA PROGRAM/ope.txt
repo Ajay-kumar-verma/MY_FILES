@@ -1,0 +1,334 @@
+package operationoverlist;
+import java.util.Scanner;
+public class ListOperation {
+public static void main(String args[]) {
+	
+for(;;) {
+ System.out.println("Enter your choice "
+	+ "\n1 insert front\n2 insert rear"
+    + "\n3 delete front\n4 delete rear"
+	+ "\n5 display"
+	+ "\n6 no of items"
+	+ "\n7 search"
+	+ "\n8 delete"
+	+ "\n9 insert"
+	+ "\n10 reverse list");
+
+	   Scanner sc= new Scanner(System.in);
+	  int n= sc.nextInt();
+	  switch(n) {
+	  case 1:
+		  methods.insert_front(); break;
+	  case 2:
+		 methods.insert_rear(); break;
+	  case 3:
+		  methods.delete_front(); break;
+	  case 4:
+		  methods.delete_rear(); break;
+	  case 5:
+		  methods.display(); break;
+	  case 6:
+		  methods.counts();break;
+	 case 7:
+		 methods.search();break;
+	 case 8:
+		 methods.delete();break;
+	 case 9:
+		 methods.insert();break;
+	 case 10:
+		 methods.reverse();break;
+	 default:
+			  System.out.println("Invalid choice\n");break;
+	  }  
+	}	
+ }	
+}
+//END OF MAIN
+
+
+class methods{
+
+static int count=0;
+	
+static Node first;	
+
+static Scanner sc= new Scanner(System.in);
+
+//NODE
+static class Node{
+	   int  x;
+	   
+		Node next=null;
+		Node(int x){
+			this.x=x;
+
+		}
+	}
+
+//END OF NODE
+
+static void counts() {
+	if(count==0)
+	System.out.println(count+"item");
+	else
+		System.out.println(count+"items");
+	return;
+}	
+//START SEARCH CODE	
+static void search() {
+System.out.println("Enter elment to search");
+int key= sc.nextInt();
+Node temp;
+temp=first;
+if(temp==null) {
+	System.out.println("List empty");return;
+}
+//this part of code search key element through
+//out the list and at make temp null
+//if not found any element
+while(temp!=null) {
+	if(temp.x==key) {
+		System.out.println(key+"  is present is the list");
+		return;
+	}
+		temp=temp.next;
+}
+//if key not found
+System.out.println(key+" is not present is the list");	
+	return;
+}  
+//END SEARCH CODE
+
+//START DELETE CODE
+ static void delete() { 
+	System.out.println("Enter element to delete");
+	int key= sc.nextInt();
+	 Node prev=first,temp;
+	 temp=first;
+	 //initially temp, prev is first
+	 
+	//for empty list
+	if(first==null) {
+		   System.out.println("Empty list");
+		   return;
+	   }
+	
+//this code when first element has to be  deleted.
+/*	if(temp.x==key) {
+		System.out.println(key+" is deleted");
+		count--;
+		first=temp.next; return;
+	}*/
+	
+	//delete like delete front
+	//this is for finding key element
+	// and thier prev elem    
+    
+	while(temp!=null) {
+	 //this code is checking from begining.
+	    if(temp.x==key) break;
+		prev=temp;
+	    temp=temp.next;
+	    /* 
+	    //this code is checking from next one.
+  		prev=temp;
+	    temp=temp.next;
+	    if(temp.x==key) break;
+	   */    
+	}
+	// FOR INSERTION AND DELETEION WE MUST NEED 
+	//ADDRESS OF THAT NODE AND PREVIOUS ONE.
+	//temp==null means it checked key 
+	// element through out the list
+   if(temp==null) {
+	   
+	   System.out.println(key+" is not present in the list");
+	   return;
+   }
+  else {
+          count--;
+		System.out.println(key+" is deleted");
+		//this code when first element has to be  deleted.
+		if(temp==first) {
+		first=first.next;
+		return;
+	}
+ // this code when any intermediate element has to be deleted. 
+		prev.next=temp.next;
+		return;
+	}
+}	
+//END DELETE CODE
+ 
+static void insert() {
+	System.out.println("Enter elem to insert item");
+	int n= sc.nextInt();
+	if(n==1) {
+		insert_front();
+		return;
+    }
+	if(n==count) {
+	  insert_rear();return;
+	}
+	//OUT OF RANGE
+	if(n>count || n< 1) {
+		System.out.println("Invalid position");return;
+	}
+	System.out.println("Enter elem to insert");
+	int i= sc.nextInt();
+	Node node,temp=first,prev=first;
+	  node= new Node(i);
+      i=1;
+	while(i!=n) {
+	    prev=temp;
+		temp=temp.next;
+	i++;
+	//i is independent , it may be any where
+	}
+	// for insertion and deletion we
+	//must need that node and previous node
+	
+	
+	prev.next=node;
+	node.next=temp;
+	return;
+}
+
+static void reverse() {
+	Node revs=null,temp;
+	
+	while(first!=null) {
+		
+	temp=first.next;
+	//assigning first next node 
+	// to be first in temp
+
+	first.next=revs;
+	//reversing and adding next node
+	//in reverse
+	
+	revs= first;
+	//list reversed up to here
+	
+	first=temp;		
+	//first become next node 
+	//it will repeat till 
+	//it first become null
+	//means list is reveresed
+	}
+	first=revs;
+	
+	System.out.println("List is reversed"); return;
+}
+
+
+
+static void insert_front() {
+
+	System.out.println(" Enter item");
+	
+	int no = sc.nextInt();
+	Node node = new Node(no);
+	//whether it is first node or not 
+	node.next=first;
+	first=node;
+	System.out.println(no+" is inserted at front");
+	count++;
+	return;
+	//this is how front insertion is 
+}	
+	
+static void insert_rear() {
+	Node temp,node;
+	temp=first;
+	System.out.println("Enter item");
+	
+	int no= sc.nextInt();
+	 node= new Node(no);
+	if(first==null) {
+		first=node;
+		System.out.println(no+" is inserted at rear");
+	    
+		return;
+	}
+	 //finding last node
+	 while(temp.next!=null){
+		 temp=temp.next; 
+	 }
+	 //if we want to add next node 
+	 //this way we can add
+	 //no need previous node
+	temp.next=node;
+	System.out.println(no+" is inserted at rear");
+	count++;	
+	return;
+}	
+
+
+static void delete_front() {
+	Node temp;
+	temp = first;
+	// for empty
+	if(temp==null) {
+		System.out.println("List is empty");
+		return;
+	}
+
+	System.out.println(temp.x+"is deleted front ");
+	first=temp.next;
+	//whether one item is or more 
+	count--;return;
+}
+
+static void delete_rear() {
+	Node temp,prev;
+	temp= first;
+	prev=first;
+	if(first==null) {
+		System.out.println("List empty");
+		return;
+		}
+	if(temp.next==null){
+	System.out.println(temp.x+" is deleted rear ");
+	first=null;
+	return;	
+	}
+	//finding last node 
+	//and previous one
+	
+	while(temp.next!=null) {
+		prev=temp;
+		temp=temp.next;
+	}
+	//here last node is temp 
+	//and previous node prev
+	//we can't make temp is NULL
+	//prev.next is last node 
+	//this we can make as a
+	//null only SO
+	System.out.println(temp.x+" is deleted rear ");
+
+	prev.next=null;
+	count--;
+	return;
+}
+
+
+static void display() {
+	
+	Node temp;
+	temp= first;
+	if(temp==null) {
+		System.out.println("List is empty");
+		return;
+	}
+	int i=1;
+	System.out.println("Items are:");
+	while(temp!=null) {
+		System.out.print(temp.x+"\t");
+		temp=temp.next;
+	}
+	System.out.println("");
+	return;
+ }
+}
